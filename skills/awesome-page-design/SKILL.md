@@ -1,14 +1,18 @@
 ---
 name: awesome-page-design
 description: >-
-  设计或改进网页和 UI 组件：选择视觉方向、围绕产品调整布局、为现有前端项目集成功能、
-  打磨局部区域，或审查界面质量。适用于页面设计、布局、配色、UI 优化和实现审查；
+  从零设计和实现网站、Web App 与多页面系统的前端 UI，或改进已有页面和组件：
+  规划任务、模块与导航，建立视觉方向和共享组件，诊断与打磨界面。适用于新系统建设、页面设计、UI 优化和实现审查；
   处理现有项目时保留项目的设计系统。
 ---
 
 # Awesome Page Design
 
 将本库用作视觉方向参考和 UI 工作流程。围绕用户的产品设计，不要照搬附带的预览页面。
+
+整页设计应建立可落实的产品方向：任务与品牌边界、具体气质及其依据、主要视觉内容和必要的识别细节，再将风格映射到布局、字体、材质与控件。现有页面先根据实际问题决定保留、打磨或重构，在授权范围内推进；完成后对照最初的问题复查。具体方法见[使用原则](references/usage-principles.md)与[工作流程](references/workflow.md)。局部修改无需额外编写方向说明。
+
+先区分任务：从零建设系统走[新系统路径](references/new-system-design.md)，以角色、模块、页面关系和核心流程起步；新增单页按任务与布局设计；改造已有系统从当前实现和问题起步。没有旧界面不影响新建任务，示例页面不能代替多页面系统的规划与实现。
 
 ## 决策优先级
 
@@ -29,11 +33,12 @@ description: >-
 
 | 任务 | 最少需要阅读的参考 |
 |---|---|
-| 新页面或明确要求的页面重设计 | [布局指南](references/layout-guidance.md)、[使用原则](references/usage-principles.md)、[风格索引](references/style-index.md)；选定方向后，阅读[设计调节项](references/design-dials.md)，以及选中风格的说明，不读取其他风格说明 |
+| 从零建设网站、Web App 或多页面系统 | [新系统建设](references/new-system-design.md)；按需补充布局、视觉方向和相关交互契约，先连通核心流程再扩展全部请求模块 |
+| 新增单页或明确要求的页面重设计 | [布局指南](references/layout-guidance.md)、[使用原则](references/usage-principles.md)、[风格索引](references/style-index.md)；选定方向后，阅读[设计调节项](references/design-dials.md)，以及选中风格的说明，不读取其他风格说明 |
 | 现有项目中的功能或 UI 修改 | [现有项目集成](references/existing-project-integration.md) |
 | 存在布局依赖的局部 UI 修补 | [局部 UI 修补](references/local-ui-patch.md)；需要追踪共享组件时，补充阅读集成指南 |
 | 组件打磨 | [组件实现](references/component-implementation.md) |
-| 视觉审查 | [质量检查清单](references/quality-checklist.md)；构图显得通用、缺少特点时，补充阅读[避免通用化 UI](references/anti-generic-ui.md) |
+| 视觉审查 | [质量检查清单](references/quality-checklist.md)；发现模板化问题时，用[问题与修正方向](references/anti-generic-ui.md)定位原因，而非机械删除风格特征 |
 | 实现审查或交互实现 | [界面实现规范](references/interface-compliance.md)和[UI 基础控件契约](references/ui-primitive-contract.md) |
 | 可复用的项目设计指南 | [设计系统输出](references/design-system-output.md) |
 

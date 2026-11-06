@@ -1,7 +1,7 @@
 {
   "name": "awesome-page-design",
   "version": "0.1.0",
-  "description": "支持视觉方向选择、产品布局适配、现有项目集成、组件优化和响应式质量检查的网页 UI 设计 Skill。",
+  "description": "支持从零建设多页面系统、设计独立页面和现有项目集成的网页 UI 设计 Skill，覆盖视觉方向、共享组件、核心流程、界面优化与响应式质量。",
   "license": "MIT",
   "type": "commonjs",
   "skills": "./skills/",

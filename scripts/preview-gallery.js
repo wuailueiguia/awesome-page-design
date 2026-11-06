@@ -3,7 +3,7 @@ const path = require("node:path");
 const { promptKinds, buildStylePrompt } = require("./preview-prompts");
 const { allStyles } = require("./preview-catalog");
 const { getStylePlaybook } = require("./preview-style-profiles");
-const { getGalleryStyles, packPromptVariants, unpackPrompt } = require("./gallery-model");
+const { getGalleryStyles, packPromptVariants, unpackPrompt, composeTaskPrompt } = require("./gallery-model");
 const copy = require("./gallery-copy");
 const { initializeGallery } = require("./gallery-client");
 
@@ -60,18 +60,18 @@ function renderGallery({ viewportWidth = 1440, viewportHeight = 1200, mobileView
   <main>
     <div class="results-bar"><div><h1 id="result-count">${styles.length} 种风格</h1></div><p data-i18n="curated">每一种都有自己的布局、材质与组件语言。</p></div>
     <section class="grid" id="style-grid" aria-label="风格目录 / Style catalog">${styles.map((style) => renderCard(style, viewports)).join("\n")}</section>
-    <section class="guide" id="how-to-use"><div><h2 data-i18n="guideTitle">选的是方向，不是固定模板。</h2><p data-i18n="guideBody">喜欢一个方向后，复制对应页面类型的提示词交给 Agent。保留它的视觉语言，让布局服务于你的真实产品。</p></div><div><h2 data-i18n="secondTitle">打开示例，查看细节。</h2><p data-i18n="secondBody">打开演示体验布局和控件，再从详情中复制适合你任务的提示词。</p></div></section>
+    <section class="guide" id="how-to-use"><div><h2 data-i18n="guideTitle">选的是方向，不是固定模板。</h2><p data-i18n="guideBody">${escapeHtml(copy.zh.guideBody)}</p></div><div><h2 data-i18n="secondTitle">打开示例，查看细节。</h2><p data-i18n="secondBody">打开演示体验布局和控件，再从详情中复制适合你任务的提示词。</p></div></section>
   </main>
   <footer class="footer" data-i18n="footer">Awesome Page Design · 让设计选择更明确</footer>
 </div>
 <dialog id="detail-dialog" aria-labelledby="detail-name" aria-describedby="detail-description">
   <header class="dialog-head"><h2><span id="detail-name"></span><small id="detail-subtitle"></small></h2><div class="dialog-tools"><button type="button" class="dialog-close" data-close-dialog><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"><path d="m4 4 8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span data-i18n="close">关闭</span></button></div></header>
-  <div class="detail-layout"><div class="detail-preview"><div class="dialog-viewport">${viewportControls()}</div><div class="preview-stage"><img id="detail-image" data-preview-image data-style="${styles[0].id}" src="../styles/${styles[0].slug}/${styles[0].slug}.png" alt="风格预览" width="${viewportWidth}" height="${viewportHeight}"></div></div><div class="detail-content"><p id="detail-description"></p><dl class="detail-facts" id="detail-facts"></dl><h3 data-i18n="palette">颜色角色</h3><div class="palette-detail" id="detail-palette"></div><h3 data-i18n="task">你要做什么页面？</h3><div class="prompt-kinds" role="group" aria-label="提示词页面类型 / Prompt page type">${promptKinds.map((kind) => `<button type="button" data-prompt-kind="${kind.key}" aria-pressed="${kind.key === "full"}">${kind.labelZh}</button>`).join("")}</div><p class="kind-help" id="kind-help"></p><div class="detail-actions"><button type="button" class="button accent" id="copy-prompt" data-i18n="copy">复制此风格提示词</button><a class="button quiet" id="detail-live" href="../styles/${styles[0].slug}/${styles[0].slug}.html" target="_blank" rel="noopener noreferrer" data-i18n="live">打开演示</a></div><details class="prompt-disclosure" id="prompt-disclosure"><summary data-i18n="prompt">查看完整提示词</summary><pre id="prompt-output" tabindex="0" aria-label="完整提示词 / Full prompt"></pre></details></div></div>
+  <div class="detail-layout"><div class="detail-preview"><div class="dialog-viewport">${viewportControls()}</div><div class="preview-stage"><img id="detail-image" data-preview-image data-style="${styles[0].id}" src="../styles/${styles[0].slug}/${styles[0].slug}.png" alt="风格预览" width="${viewportWidth}" height="${viewportHeight}"></div></div><div class="detail-content"><p id="detail-description"></p><dl class="detail-facts" id="detail-facts"></dl><h3 data-i18n="palette">颜色角色</h3><div class="palette-detail" id="detail-palette"></div><h3 data-i18n="task">${escapeHtml(copy.zh.task)}</h3><div class="prompt-kinds" role="group" aria-label="提示词任务类型 / Prompt task type">${promptKinds.map((kind) => `<button type="button" data-prompt-kind="${kind.key}" aria-pressed="${kind.key === "full"}">${kind.labelZh}</button>`).join("")}</div><p class="kind-help" id="kind-help"></p><div class="task-brief"><label for="task-brief" data-i18n="briefLabel">${escapeHtml(copy.zh.briefLabel)}</label><textarea id="task-brief" rows="2" maxlength="1200" aria-describedby="task-brief-help" placeholder="${escapeHtml(copy.zh.briefPlaceholder)}"></textarea><p id="task-brief-help" data-i18n="briefHelp">${escapeHtml(copy.zh.briefHelp)}</p></div><div class="detail-actions"><button type="button" class="button accent" id="copy-prompt">${escapeHtml(promptKinds.find((kind) => kind.key === "full").copyZh)}</button><a class="button quiet" id="detail-live" href="../styles/${styles[0].slug}/${styles[0].slug}.html" target="_blank" rel="noopener noreferrer" data-i18n="live">打开演示</a></div><details class="prompt-disclosure" id="prompt-disclosure"><summary data-i18n="prompt">查看完整提示词</summary><pre id="prompt-output" tabindex="0" aria-label="完整提示词 / Full prompt"></pre></details></div></div>
 </dialog>
 <div class="toast" id="toast" role="status" hidden></div><div id="status" class="sr-only" aria-live="polite"></div>
 <noscript>启用 JavaScript 以查看风格详情和复制提示词；风格名称与适用场景仍可浏览。</noscript>
 <script id="gallery-data" type="application/json">${payload}</script>
-<script>${unpackPrompt.toString()}\n(${initializeGallery.toString()})();</script>
+<script>${unpackPrompt.toString()}\n${composeTaskPrompt.toString()}\n(${initializeGallery.toString()})();</script>
 </body>
 </html>
 `;

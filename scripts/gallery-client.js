@@ -39,7 +39,7 @@ function initializeGallery() {
   }
 
   function currentPrompt() {
-    return unpackPrompt(prompts[state.active][state.lang], state.kind);
+    return composeTaskPrompt(unpackPrompt(prompts[state.active][state.lang], state.kind), $("task-brief").value, state.lang);
   }
 
   function renderPrompt() {
@@ -50,6 +50,7 @@ function initializeGallery() {
     });
     const kind = kinds.find((item) => item.key === state.kind);
     $("kind-help").textContent = state.lang === "zh" ? kind.descriptionZh : kind.descriptionEn;
+    $("copy-prompt").textContent = state.lang === "zh" ? kind.copyZh : kind.copyEn;
     $("prompt-output").textContent = currentPrompt();
   }
 
@@ -72,7 +73,6 @@ function initializeGallery() {
     if (!byId.has(id)) return;
     lastFocus = trigger || document.querySelector(`[data-open-style="${id}"]`);
     state.active = id;
-    state.kind = "full";
     renderDetail();
     $("prompt-disclosure").open = false;
     if (!$("detail-dialog").open) $("detail-dialog").showModal();
@@ -95,6 +95,7 @@ function initializeGallery() {
     all("[data-tag]").forEach((element) => { element.textContent = t(element.dataset.tag); });
     all("[data-lang]").forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.lang === lang)));
     $("result-count").textContent = `${styles.length} ${t("result")}`;
+    $("task-brief").placeholder = t("briefPlaceholder");
     if (state.active) renderDetail();
     applyView();
     try { localStorage.setItem("apd-language", lang); } catch {}
@@ -108,6 +109,8 @@ function initializeGallery() {
     if (button.dataset.openStyle) openDetail(button.dataset.openStyle, button);
     if (button.dataset.promptKind) { state.kind = button.dataset.promptKind; renderPrompt(); }
   });
+
+  $("task-brief").addEventListener("input", () => { if (state.active) renderPrompt(); });
 
   all("[data-close-dialog]").forEach((button) => button.addEventListener("click", () => button.closest("dialog").close()));
   all("dialog").forEach((dialog) => {
@@ -130,6 +133,10 @@ function initializeGallery() {
   });
   $("copy-prompt").addEventListener("click", async () => {
     const prompt = currentPrompt();
+    const kind = kinds.find((item) => item.key === state.kind);
+    const label = state.lang === "zh" ? kind.labelZh : kind.labelEn;
+    const success = t("copied").replace("{task}", label);
+    const failure = t("copyFailed");
     let copied = false;
     try { await navigator.clipboard.writeText(prompt); copied = true; } catch {}
     if (!copied) {
@@ -141,7 +148,7 @@ function initializeGallery() {
       helper.remove(); $("copy-prompt").focus();
     }
     if (!copied) { $("prompt-disclosure").open = true; $("prompt-output").focus(); }
-    announce(t(copied ? "copied" : "copyFailed"));
+    announce(copied ? success : failure);
   });
   setLanguage(state.lang);
   const initialStyle = new URLSearchParams(location.search).get("style");

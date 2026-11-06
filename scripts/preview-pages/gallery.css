@@ -37,7 +37,7 @@ button:disabled {
 a {
   color:inherit;
 }
-button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible,pre:focus-visible {
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible,pre:focus-visible {
   outline:3px solid var(--accent);
   outline-offset:4px;
 }
@@ -491,6 +491,33 @@ dialog::backdrop {
 .detail-actions {
   display:grid;
   gap:8px;
+}
+.task-brief label {
+  display:block;
+  font-size:12px;
+  margin-bottom:6px;
+}
+.task-brief textarea {
+  display:block;
+  width:100%;
+  min-height:72px;
+  max-height:160px;
+  resize:vertical;
+  border:1px solid var(--line);
+  border-radius:6px;
+  padding:9px 10px;
+  background:var(--surface);
+  color:var(--ink);
+  font-size:13px;
+  line-height:1.6;
+}
+.task-brief textarea::placeholder {
+  color:var(--muted);
+}
+.task-brief p {
+  font-size:11px;
+  color:var(--muted);
+  margin:6px 0 16px;
 }
 .prompt-disclosure {
   margin-top:18px;

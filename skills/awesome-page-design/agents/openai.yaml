@@ -1,7 +1,7 @@
 interface:
   display_name: "Awesome Page Design"
-  short_description: "提供视觉方向、兼容现有项目的 UI 组件集成，以及响应式与无障碍质量检查"
+  short_description: "从零建设多页面系统与单页 UI，或优化已有界面，兼顾共享组件和响应式质量"
   brand_color: "#4F46E5"
-  default_prompt: "使用 $awesome-page-design 设计或优化这个 UI，保留现有项目组件，完善交互原语、响应式与无障碍表现，并为新项目补齐 favicon 和元数据。"
+  default_prompt: "使用 $awesome-page-design 建设新系统或优化 UI：新系统先规划角色、模块、导航与核心流程，再建立共享组件并完成全部请求页面；已有界面沿用项目约定，按问题打磨并分别复查功能与视觉。"
 policy:
   allow_implicit_invocation: true

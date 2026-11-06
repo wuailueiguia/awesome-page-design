@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "generated_at": "2026-10-28T17:09:20.903Z",
+  "generated_at": "2026-11-06T15:45:03.518Z",
   "styles": {
     "style-01-card-grid": {
       "html": {
         "path": "../styles/style-01-card-grid/style-01-card-grid.html",
-        "sha256": "7e0d5a0a9440af59d32964dd410c6876ba50d5c4c5e78460a51fb796f2fea4d0"
+        "sha256": "d8a4cc3f7b6bcbccf5ad605b2b8d20012d630e174983462fd6fb7ce8c14903b6"
       },
       "desktop": {
         "path": "../styles/style-01-card-grid/style-01-card-grid.png",
@@ -23,7 +23,7 @@
     "style-02-block-brutalism": {
       "html": {
         "path": "../styles/style-02-block-brutalism/style-02-block-brutalism.html",
-        "sha256": "11ce896caa752161b1f4f00a4c376e1b18cbb842593b34b1617e488b9f548a83"
+        "sha256": "000046bc89dc6f05f5d95d3600560e83d873f2f7e8fdd4683414c3421fc659bd"
       },
       "desktop": {
         "path": "../styles/style-02-block-brutalism/style-02-block-brutalism.png",

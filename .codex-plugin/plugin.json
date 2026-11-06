@@ -1,7 +1,7 @@
 {
   "name": "awesome-page-design",
   "version": "0.1.0",
-  "description": "用于确定视觉方向、集成现有项目、完善 UI 交互原语和检查响应式质量的网页设计流程。",
+  "description": "支持从零建设多页面系统、设计单页和优化已有 UI，覆盖任务、导航、共享组件、核心流程与视觉质量。",
   "author": {
     "name": "kuschzzp",
     "url": "https://github.com/kuschzzp"
@@ -20,8 +20,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Awesome Page Design",
-    "shortDescription": "视觉方向、兼容现有项目的 UI 集成与质量检查",
-    "longDescription": "使用 Awesome Page Design 设计、审查或优化网页 UI：保留现有项目的组件体系，完善浏览器默认交互原语，检查响应式和无障碍表现，为新项目补齐页面元数据，并根据真实产品设计布局。",
+    "shortDescription": "新系统 UI 建设、单页设计与已有界面优化",
+    "longDescription": "使用 Awesome Page Design 从用户角色与任务规划模块、页面、导航和核心流程，适配 26 种风格并建立共享组件，完成多页面系统前端；也支持现有项目集成、界面诊断与打磨，并复用既有组件约定。",
     "developerName": "kuschzzp",
     "category": "Design",
     "capabilities": [
@@ -29,8 +29,8 @@
       "Write"
     ],
     "defaultPrompt": [
-      "使用 awesome-page-design 选择鲜明、易用的视觉方向，并完善新项目的响应式页面框架。",
-      "使用 awesome-page-design 优化现有前端，保留共享组件并完善 UI 交互原语。"
+      "使用 awesome-page-design 从零建设这个系统，规划模块、页面和导航，建立共享组件并完成核心流程与全部请求页面。",
+      "使用 awesome-page-design 诊断和打磨现有界面，在授权范围内保留项目组件并复查实际问题。"
     ],
     "websiteURL": "https://github.com/kuschzzp/awesome-page-design",
     "privacyPolicyURL": "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement",

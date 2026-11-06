@@ -69,4 +69,11 @@ function unpackPrompt(packed, kind) {
   return packed.prefix + packed.variants[kind] + packed.suffix;
 }
 
-module.exports = { getGalleryStyles, filterGalleryStyles, packPromptVariants, unpackPrompt };
+// User text remains plain text, both in the preview and on the clipboard.
+function composeTaskPrompt(prompt, brief, lang = "zh") {
+  const task = String(brief || "").trim();
+  if (!task) return prompt;
+  return `${lang === "zh" ? "用户任务" : "User task"}:\n${task}\n\n${prompt}`;
+}
+
+module.exports = { getGalleryStyles, filterGalleryStyles, packPromptVariants, unpackPrompt, composeTaskPrompt };

@@ -24,7 +24,7 @@ It gives an agent a reusable library of 26 web layout-aware visual directions, a
 
 This is **not** a fixed page-template library. The bundled HTML files are richer clickable previews so users can compare visual directions, copy a task-specific prompt, and ask an agent to apply the chosen style to their real product. Agents should reuse the visual language and redesign the actual page structure around the user's content and workflow.
 
-The Skill focuses on layout planning, visual style selection, existing-project feature integration, local UI patching for existing pages, UI primitive enforcement, UI quality review, implementation compliance, implementation polish, and reusable design guidance.
+The Skill supports building multi-page systems from scratch, designing standalone pages, and improving existing interfaces. New systems begin with roles, modules, navigation, and core workflows, then establish shared visual rules and components before expanding to all requested pages; existing systems retain their component conventions.
 
 ## Install
 
@@ -130,7 +130,7 @@ Then open the URL printed by the command:
 http://127.0.0.1:<port>/assets/previews/
 ```
 
-The gallery includes all 26 visual styles with English/Chinese switching and desktop/mobile previews inside each style detail. Inspect and copy full/landing/dashboard/admin/mobile prompts, then open an interactive example. Each example includes a return link; explore its interactions directly on the demo page. The gallery remains a standalone, offline-capable HTML file.
+The gallery includes all 26 visual styles with English/Chinese switching and desktop/mobile previews inside each style detail. Choose a new-system, existing-UI, single-page, landing, dashboard, admin, or mobile prompt, optionally add a task brief, and copy it. Your task selection and brief stay available while browsing styles. Each interactive example includes a return link. The gallery remains a standalone, offline-capable HTML file.
 
 When the skill is installed into a client, package scripts may not be available. From the installed `awesome-page-design` skill directory, start the bundled static server:
 
@@ -258,7 +258,7 @@ Edit style metadata and effective profiles only in `catalog/styles.json`. It con
 | `preview-screenshots.js`, `preview-transaction.js` | Browser execution, cleanup, staged publication, and rollback |
 | `sync-catalog-docs.js` | Generated README tables, concise style manuals, and style index |
 
-`preview-output.test.js` preserves the exported prompt hashes and checks preview structure and manual coverage. Gallery tests verify standalone rendering, safe embedded data and lossless reconstruction of all 260 prompt variants. `catalog-integration.test.js` verifies that one JSON edit reaches every consumer; validation also detects stale generated documentation and broken or unreachable Skill references.
+`preview-output.test.js` preserves the exported prompt hashes and checks preview structure and manual coverage. Gallery tests verify standalone rendering, safe embedded data, lossless reconstruction of every bilingual prompt variant, task selection, and clipboard fallback. `catalog-integration.test.js` verifies that one JSON edit reaches every consumer; validation also detects stale generated documentation and broken or unreachable Skill references.
 
 For documentation-only changes, refresh both README tables, all style manuals, and the style index without rewriting HTML, screenshots, or their manifest:
 
