@@ -33,3 +33,8 @@ body.demo-style-24 { background:#f8f5ef; }
 .s24-reading-progress progress::-webkit-progress-bar { background:#dedacf; border-radius:0; }
 .s24-reading-progress progress::-webkit-progress-value { background:#b43d31; border-radius:0; }
 .s24-reading-progress progress::-moz-progress-bar { background:#b43d31; border-radius:0; }
+
+.s24-plate{margin:8px 0 0}
+.s24-plate img{display:block;width:100%;height:220px;object-fit:cover;border:1px solid #c9c6b9}
+.s24-plate figcaption{margin-top:8px;font-size:10px;color:#77786a;text-align:right;letter-spacing:.12em}
+@media(max-width:600px){.s24-plate img{height:150px}}

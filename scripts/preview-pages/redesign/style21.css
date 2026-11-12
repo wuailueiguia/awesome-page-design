@@ -14,7 +14,7 @@ body.demo-style-21 { background: #08050d; }
 .s21 .acid21-issue b { font: 700 15px/1.5 monospace; color: #d6ff00; }
 .s21 .acid21-issue small { font-size: 10px; color: #806e90; }
 .s21 .acid21-sculpture { position: absolute; right: -20px; top: 12px; width: 60%; }
-.s21 .acid21-sculpture svg { width: 100%; display: block; }
+.s21 .acid21-sculpture img { width: 100%; display: block; }
 .s21 .acid21-title { position: relative; z-index: 1; padding-top: 88px; }
 .s21 .acid21-title > p { margin-bottom: 20px; padding-left: 5px; color: #b69bc7; font-size: 11px; letter-spacing: .2em; }
 .s21 h1 { font-size: clamp(48px,7.3vw,102px); font-weight: 950; line-height: 1.18; letter-spacing: -.07em; transform: skew(-8deg); transform-origin: left bottom; color: #e6e3eb; text-shadow: 2px 2px 0 #64596c; }
