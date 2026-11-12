@@ -27,37 +27,37 @@
         "Keep filters, row actions, pagination and form dialogs practical; avoid decorative KPI cards, hero sections and unrelated charts."
       ],
       "scenario": {
-        "brand": "栖物仓",
+        "brand": "衡工设备台账",
         "nav": [
-          "物资台账",
-          "归还跟进",
-          "库位分布"
+          "设备台账",
+          "借用跟进",
+          "检修计划"
         ],
-        "eyebrow": "共享物资工作台",
-        "headline": "物资台账",
-        "lede": "统一登记共享器材，查清库位、保管同事和流转进度。",
-        "primaryAction": "登记物资",
+        "eyebrow": "Plant equipment operations",
+        "headline": "设备台账",
+        "lede": "一家制造企业的设备台账。工程师在这里登记设备、查库位与保管人、跟进借用与检修，表格就是工作本身。",
+        "primaryAction": "登记设备",
         "secondaryAction": "查看流转记录",
-        "mediaLabel": "栖物仓共享物资台账",
+        "mediaLabel": "衡工设备台账",
         "scene": "dashboard",
         "metrics": [
           [
-            "16",
-            "在册物资"
+            "1,284",
+            "在册设备"
           ],
           [
-            "11",
-            "可领用"
+            "96",
+            "借用中"
           ],
           [
-            "3",
-            "归还跟进"
+            "12",
+            "逾期检修"
           ]
         ],
         "features": [
           [
             "清楚的工作框架",
-            "侧栏负责视图，顶栏交代当前位置，主面板集中处理物资。"
+            "侧栏负责视图，顶栏交代当前位置，主面板集中处理设备。"
           ],
           [
             "围绕 Table 操作",
@@ -65,27 +65,27 @@
           ],
           [
             "清晰的登记流程",
-            "双列表单分组呈现物资信息，在窄屏中收为单列。"
+            "双列表单分组呈现设备信息，在窄屏中收为单列。"
           ]
         ],
         "tabs": {
           "launch": [
-            "登记物资",
-            "填写名称、库位和保管同事，将新物资纳入台账。"
+            "登记设备",
+            "填写名称、库位和保管人，将新设备纳入台账。"
           ],
           "metrics": [
             "流转视图",
-            "按可领用、归还跟进和待检修查看当前工作。"
+            "按借用中、归还跟进和待检修查看当前工作。"
           ],
           "assets": [
             "维护资料",
-            "使用清晰的名称和库位信息识别物资。"
+            "使用清晰的名称和库位信息识别设备。"
           ]
         },
         "queue": [
           [
-            "便携录音套装",
-            "可领用"
+            "数控加工中心-03",
+            "借用中"
           ],
           [
             "无线投屏器",
@@ -177,18 +177,18 @@
         "Keep the free ticket form short: nickname and visit date only, with clear local-demo feedback."
       ],
       "scenario": {
-        "brand": "越界创意市集",
+        "brand": "边界设计周",
         "nav": [
           "Explore",
           "Two-day program",
           "Free tickets"
         ],
-        "eyebrow": "Independent creative fair · 2026.11.14–15",
+        "eyebrow": "Independent design week · 2026.11.14–15",
         "headline": "Bring good ideas / out onto the street.",
-        "lede": "Illustrated publications, independent crafts, and live music meet at Jiangwan · Old Printworks, a fictional venue. Reserve a free digital ticket for either day; this is a local demonstration.",
+        "lede": "两天的独立设计节：插画出版、手作、现场音乐。海报就是门票，先选场次，再领票。",
         "primaryAction": "Reserve a free ticket",
-        "secondaryAction": "Explore the program",
-        "mediaLabel": "Original geometric fair poster",
+        "secondaryAction": "Browse the program",
+        "mediaLabel": "边界设计周海报",
         "scene": "poster",
         "metrics": [
           [
@@ -206,43 +206,43 @@
         ],
         "features": [
           [
-            "Illustration & publishing",
-            "Browse small-press editions, illustrated stories, and printed experiments."
+            "海报即门票",
+            "黄色海报、黑框与硬阴影先定气氛，场次与票种一次说清。"
           ],
           [
-            "Independent crafts",
-            "Meet makers working with paper, textiles, and everyday objects."
+            "两天节目单",
+            "插画出版、手作与现场音乐按场次排布，不绕路。"
           ],
           [
-            "Live music",
-            "Pause between stalls for small live sets across the two-day program."
+            "免费领票",
+            "选场次、领数字票，流程不超过两步。"
           ]
         ],
         "tabs": {
           "launch": [
-            "November 14 · Saturday",
-            "Switch to the first day to browse the opening program and choose a visit date."
+            "Reserve a free ticket",
+            "选场次、领免费数字票。"
           ],
           "metrics": [
-            "November 15 · Sunday",
-            "Switch to the second day for another selection of stalls and live sets."
+            "Two-day program",
+            "按插画、手作与音乐查看两天节目。"
           ],
           "assets": [
-            "Free digital ticket",
-            "Enter only a nickname and visit date. The ticket is generated locally without contact details or a real booking."
+            "Festival poster",
+            "黄色海报与黑框是全部视觉识别。"
           ]
         },
         "queue": [
           [
-            "Illustration & publishing",
+            "插画与出版",
             "Browse"
           ],
           [
-            "Independent crafts",
+            "独立手作",
             "Discover"
           ],
           [
-            "Live music",
+            "现场音乐",
             "Listen"
           ]
         ]
@@ -326,18 +326,18 @@
         "Describe the chart as a local simulation and export only the selected observing plan."
       ],
       "scenario": {
-        "brand": "夜航天象台",
+        "brand": "北冕天文台",
         "nav": [
           "Sky atlas",
           "Observation list",
           "Export list"
         ],
-        "eyebrow": "Observe the quiet above",
+        "eyebrow": "Observatory open night",
         "headline": "Tonight, set out for the stars.",
-        "lede": "A local simulated autumn sky for curious beginners. Select five celestial objects, shift the observation hour, and prepare a personal observing list; this is not a live ephemeris.",
-        "primaryAction": "Add to tonight’s list",
+        "lede": "天文台开放夜的观测规划。选目标、调时段、看高度角，做一张今晚的观测单；星图为演示星历，非实时数据。",
+        "primaryAction": "Add to tonight's list",
         "secondaryAction": "Export observation list",
-        "mediaLabel": "Original interactive SVG star atlas",
+        "mediaLabel": "北冕天文台星图",
         "scene": "sky-atlas",
         "metrics": [
           [
@@ -356,29 +356,29 @@
         "features": [
           [
             "Find a point of light",
-            "Select an object to read its direction, simulated altitude, and apparent magnitude."
+            "点一颗星，读方向、高度角与星等。"
           ],
           [
             "Move through the night",
-            "Adjust the hour from 20:00 through midnight to change the simulated sky."
+            "从 20:00 调到午夜，看演示星空变化。"
           ],
           [
             "Keep a small plan",
-            "Add objects to a local list and download it as plain text."
+            "把目标加入本地观测单，可下载为纯文本。"
           ]
         ],
         "tabs": {
           "launch": [
             "Sky atlas",
-            "Explore the original SVG sky and choose an object."
+            "在原创 SVG 星图上选一个目标。"
           ],
           "metrics": [
             "Observation time",
-            "Change the hour to compare simulated altitudes."
+            "调时间，对比不同时段的高度角。"
           ],
           "assets": [
-            "Tonight’s list",
-            "Keep and export a local checklist without an account."
+            "Tonight's list",
+            "本地保存观测单，无需账号。"
           ]
         },
         "queue": [
@@ -476,18 +476,18 @@
         "Keep image processing local and limit files to common passive image formats."
       ],
       "scenario": {
-        "brand": "闪拍照相亭",
+        "brand": "瞬时照相馆",
         "nav": [
           "Photo strip",
           "Frames",
           "Export"
         ],
-        "eyebrow": "Your day deserves a little gloss.",
+        "eyebrow": "Instant photo studio",
         "headline": "Today, step into the spotlight.",
-        "lede": "Turn up to four local photos into a personalized strip. Pick a frame, a sticker, and a short caption; export a standalone SVG with photos embedded. No photos leave the device.",
+        "lede": "一家即时照相馆的线上拍照亭。选四格、调边框、贴贴纸，导出可打印的照片条。",
         "primaryAction": "Export my photo strip",
-        "secondaryAction": "Choose my photos",
-        "mediaLabel": "Original illustrated four-frame photo strip",
+        "secondaryAction": "Change frame",
+        "mediaLabel": "瞬时照相馆四格照片条",
         "scene": "photo-booth",
         "metrics": [
           [
@@ -505,30 +505,30 @@
         ],
         "features": [
           [
-            "Choose four moments",
-            "Read JPG, PNG, or WebP files locally; unfilled slots retain original illustrated samples."
+            "四格是中心",
+            "四格照片条纵向排布，边框与贴纸实时可见。"
           ],
           [
-            "Make it your own",
-            "Switch pink, blue, or silver frames, choose a sticker, and edit the caption."
+            "边框与贴纸",
+            "三种边框色、贴纸可换，改动即刻体现在照片条上。"
           ],
           [
-            "Take it with you",
-            "Download a standalone SVG that embeds your chosen photos."
+            "可打印导出",
+            "导出为内嵌 SVG，可直接打印。"
           ]
         ],
         "tabs": {
           "launch": [
-            "Load photos",
-            "Choose up to four images, each no larger than 8MB."
+            "Photo strip",
+            "选四格、调边框，做一条自己的照片条。"
           ],
           "metrics": [
-            "Style the strip",
-            "Frame colors, stickers, and a 24-character caption update the preview."
+            "Frames",
+            "三种边框色，对比后选一种。"
           ],
           "assets": [
-            "Export the keepsake",
-            "Generate a standalone SVG image without uploads or sign-in."
+            "Photo strip export",
+            "导出为内嵌 SVG，可直接打印。"
           ]
         },
         "queue": [
@@ -626,18 +626,18 @@
         "Filtering, details, collection, and CSV export form a complete local archive workflow."
       ],
       "scenario": {
-        "brand": "街字档案",
+        "brand": "城市印刷档案馆",
         "nav": [
           "Object index",
           "My collection",
           "Export collection"
         ],
-        "eyebrow": "Field notes / lettering / everyday design",
+        "eyebrow": "A city archive of printed letters",
         "headline": "Letters on the street, time within them.",
-        "lede": "An independent archive of eight fictional street signs, drawn as original SVG artworks. Filter materials and decades, inspect their stories, and build a local collection.",
+        "lede": "一座城市印刷档案馆的数字藏品库。按年代与材质检索招牌、票据与海报，建一份个人选集并导出。",
         "primaryAction": "Collect this sign",
-        "secondaryAction": "Export my collection",
-        "mediaLabel": "Original SVG street-sign archive objects",
+        "secondaryAction": "Filter by material",
+        "mediaLabel": "城市印刷档案馆藏品",
         "scene": "archive-index",
         "metrics": [
           [
@@ -655,30 +655,30 @@
         ],
         "features": [
           [
-            "Look at the lettering",
-            "Browse original sign illustrations with distinct materials, colors, and construction."
+            "编目即秩序",
+            "编目号、细线与红黑层级构成全部秩序。"
           ],
           [
-            "Read the street",
-            "Inspect each sign’s fictional location, date, condition, and story."
+            "不对称索引",
+            "图片按年代与材质不对称排布，细线对齐。"
           ],
           [
-            "Keep an edition",
-            "Filter the archive, collect favorites, and export their CSV index."
+            "个人选集",
+            "收藏一件藏品，建一份可导出的选集。"
           ]
         ],
         "tabs": {
           "launch": [
             "Object index",
-            "Browse a strict modular grid with a large leading object."
+            "按年代与材质检索 008 件藏品。"
           ],
           "metrics": [
-            "Material and decade",
-            "Filter metal, wood, enamel, and glass across five decades."
+            "Materials and decades",
+            "按材质与年代筛选藏品。"
           ],
           "assets": [
-            "My collection",
-            "Collect objects locally and export an indexed CSV."
+            "Personal selection",
+            "建一份可导出的个人选集。"
           ]
         },
         "queue": [
@@ -777,18 +777,18 @@
         "Use semantic severity colors sparingly and keep long paths readable."
       ],
       "scenario": {
-        "brand": "链路巡检台",
+        "brand": "巡检台",
         "nav": [
           "Console",
           "Response ledger",
           "Download report"
         ],
-        "eyebrow": "Link integrity / check before you ship",
+        "eyebrow": "Production link health, before you ship",
         "headline": "Do not send users down a broken link.",
-        "lede": "A developer-facing local link-check demonstration. Enter a target URL to label a report, run twelve preset responses, stop midway, filter status codes, and copy or download the result. No network requests are made.",
+        "lede": "发版前的链路巡检。跑 12 条预设路径，按响应分类定位问题，生成一份可复制的巡检报告；演示不联网。",
         "primaryAction": "Run inspection",
-        "secondaryAction": "Stop run",
-        "mediaLabel": "Live simulated terminal trace and response ledger",
+        "secondaryAction": "Download report",
+        "mediaLabel": "巡检台响应台账",
         "scene": "terminal-console",
         "metrics": [
           [
@@ -806,30 +806,30 @@
         ],
         "features": [
           [
-            "Run with control",
-            "Start a timed local scan and stop it without losing completed rows."
+            "等宽字体与严重程度",
+            "近黑终端、克制绿色，严重程度用颜色与文字双重表达。"
           ],
           [
-            "Inspect the response",
-            "Filter successful, redirected, or missing paths and read contextual remediation."
+            "可操作的响应行",
+            "每条响应都可展开、定位问题路径。"
           ],
           [
-            "Share the report",
-            "Copy or download an explicit simulated report with the entered target origin."
+            "可停止的本地运行",
+            "一次预设运行可随时停止，结果只在本地。"
           ]
         ],
         "tabs": {
           "launch": [
-            "Run console",
-            "Validate a URL label, then read locally generated response logs."
+            "Console",
+            "跑一次 12 条路径的预设巡检。"
           ],
           "metrics": [
-            "Response ledger",
-            "Filter status categories and inspect one path at a time."
+            "Response categories",
+            "按响应分类看问题路径。"
           ],
           "assets": [
-            "Report export",
-            "Copy or download a plain-text simulated report."
+            "Simulation report",
+            "复制或下载一份巡检报告。"
           ]
         },
         "queue": [
@@ -927,18 +927,18 @@
         "Do not replace useful care details with decorative rewards, or imply every reminder requires watering."
       ],
       "scenario": {
-        "brand": "芽芽阳台",
+        "brand": "绿洲养护",
         "nav": [
           "My plants",
           "Care notes",
           "Add a plant"
         ],
-        "eyebrow": "A small balcony garden",
+        "eyebrow": "Office plant care, kept simple",
         "headline": "A little care, a little more green.",
-        "lede": "A personal plant-care desk with original potted-plant illustrations, watering check-ins, observation reminders and a new-plant form.",
+        "lede": "一家办公室绿植养护服务的养护板。三个区域、浇水提醒与养护笔记，让绿植别死在角落里。",
         "primaryAction": "Add a plant",
-        "secondaryAction": "Record watering",
-        "mediaLabel": "Original illustrated potted plants",
+        "secondaryAction": "View care notes",
+        "mediaLabel": "绿洲养护板",
         "scene": "doodle",
         "metrics": [
           [
@@ -956,43 +956,43 @@
         ],
         "features": [
           [
-            "Plant identity",
-            "A nickname, species and location make every care card belong to a particular plant."
+            "柔和的表面",
+            "圆角、柔和色与友好形状，养护状态一眼可见。"
           ],
           [
-            "Care with context",
-            "A reminder prompts a soil check rather than prescribing automatic watering."
+            "养护即任务",
+            "浇水、检查与笔记围绕三株植物展开。"
           ],
           [
-            "Visible progress",
-            "Recording watering updates the next observation date and the daily progress meter."
+            "加一株不超过两步",
+            "填名字、选区域，就完成登记。"
           ]
         ],
         "tabs": {
           "launch": [
             "Add a plant",
-            "A personal plant-care desk with original potted-plant illustrations, watering check-ins, observation reminders and a new-plant form."
+            "填名字、选区域，加一株植物。"
           ],
           "metrics": [
-            "Current selection",
-            "A reminder prompts a soil check rather than prescribing automatic watering."
+            "Care today",
+            "今天还有 2 株待检查。"
           ],
           "assets": [
-            "Original illustrated potted plants",
-            "A nickname, species and location make every care card belong to a particular plant."
+            "Care notes",
+            "养护笔记按植物归档。"
           ]
         },
         "queue": [
           [
-            "Xiaojuan",
+            "龟背竹",
             "Check today"
           ],
           [
-            "A-Lyu",
+            "琴叶榕",
             "Check today"
           ],
           [
-            "Cici",
+            "薄荷",
             "Growing quietly"
           ]
         ]
@@ -1077,18 +1077,18 @@
         "Do not fill negative space with equal-weight cards or claim fictional imagery depicts real architecture."
       ],
       "scenario": {
-        "brand": "留白",
+        "brand": "光隙摄影展",
         "nav": [
           "Selected studies",
           "Contact sheet",
           "Print enquiry"
         ],
-        "eyebrow": "Architectural image studies",
+        "eyebrow": "A solo photography exhibition",
         "headline": "Where light passes through.",
-        "lede": "A restrained selection room for four original architectural SVG studies, with a large active image, contact sheet and a local print-enquiry docket.",
+        "lede": "一位摄影师的个展。4 组习作、极简排版，选一张问价或预约看展。",
         "primaryAction": "Prepare a print enquiry",
-        "secondaryAction": "Select a study",
-        "mediaLabel": "Original monochrome architectural scene",
+        "secondaryAction": "View contact sheet",
+        "mediaLabel": "光隙摄影展习作",
         "scene": "stark",
         "metrics": [
           [
@@ -1106,43 +1106,43 @@
         ],
         "features": [
           [
-            "Image before interface",
-            "A large architectural study anchors the screen while metadata remains sparse."
+            "一张图就是全部",
+            "近黑画布、细字、极大留白，一组习作只讲一件事。"
           ],
           [
-            "Selected with intention",
-            "The contact sheet changes the active work, caption and print-enquiry subject together."
+            "克制的层级",
+            "标题、编号与细线构成层级，不加装饰。"
           ],
           [
-            "A tangible enquiry",
-            "Paper, dimensions and quantity become a downloadable local intent sheet."
+            "问价流程克制",
+            "选一张、留联系方式，生成一份问价。"
           ]
         ],
         "tabs": {
           "launch": [
-            "Prepare a print enquiry",
-            "A restrained selection room for four original architectural SVG studies, with a large active image, contact sheet and a local print-enquiry docket."
+            "Selected studies",
+            "看 4 组摄影习作。"
           ],
           "metrics": [
-            "Current selection",
-            "The contact sheet changes the active work, caption and print-enquiry subject together."
+            "Archive",
+            "2025–26 年档案，按组别查看。"
           ],
           "assets": [
-            "Original monochrome architectural scene",
-            "A large architectural study anchors the screen while metadata remains sparse."
+            "Print enquiry",
+            "选一张问价或预约看展。"
           ]
         },
         "queue": [
           [
-            "Tidal corridor",
+            "潮汐走廊",
             "Selected"
           ],
           [
-            "Afternoon shadows",
+            "午后阴影",
             "Study 02"
           ],
           [
-            "An empty courtyard",
+            "空庭",
             "Study 04"
           ]
         ]
@@ -1228,18 +1228,18 @@
         "Do not use decorative code fragments or empty whitespace in place of production evidence."
       ],
       "scenario": {
-        "brand": "一张印务",
+        "brand": "印刻工坊",
         "nav": [
           "Print specification",
           "Paper proof",
           "Job summary"
         ],
-        "eyebrow": "Online print specification",
+        "eyebrow": "Print for independent publishers",
         "headline": "Start with one sheet.",
-        "lede": "A minimal print configurator with an original exhibition poster, responsive paper preview, immediate demo quotation and a downloadable job request.",
+        "lede": "一家服务独立出版的印务工坊。为一本诗集印 100 册，定尺寸、纸张与专色，实时算价，生成一份可下载的需求单；不下单、不支付。",
         "primaryAction": "Review print specification",
         "secondaryAction": "Inspect bleed proof",
-        "mediaLabel": "Original exhibition poster on selected paper",
+        "mediaLabel": "印刻工坊诗集纸样",
         "scene": "minimal",
         "metrics": [
           [
@@ -1257,30 +1257,30 @@
         ],
         "features": [
           [
-            "A useful central proof",
-            "Paper stock, size and ink choices visibly change one original poster preview."
+            "一张纸样预览",
+            "尺寸、纸张与专色实时改变一张原创纸样。"
           ],
           [
-            "Transparent estimate",
-            "Quantity, unit cost and plate setup are shown together in an immediate demo calculation."
+            "透明的估价",
+            "数量、单价与制版费一次算清。"
           ],
           [
-            "Review before recording",
-            "A named request summary is generated locally without placing a real production order."
+            "确认前可复核",
+            "生成需求单前先看摘要，本地完成，不下单。"
           ]
         ],
         "tabs": {
           "launch": [
             "Review print specification",
-            "A minimal print configurator with an original exhibition poster, responsive paper preview, immediate demo quotation and a downloadable job request."
+            "为一本诗集印 100 册，定尺寸、纸张与专色。"
           ],
           "metrics": [
             "Current selection",
-            "Quantity, unit cost and plate setup are shown together in an immediate demo calculation."
+            "数量、单价与制版费一次算清。"
           ],
           "assets": [
-            "Original exhibition poster on selected paper",
-            "Paper stock, size and ink choices visibly change one original poster preview."
+            "Original print specimen",
+            "尺寸、纸张与专色实时改变一张原创纸样。"
           ]
         },
         "queue": [
@@ -1379,18 +1379,18 @@
         "Do not use dark cards without a visible film, venue or booking structure; do not imply actual admission."
       ],
       "scenario": {
-        "brand": "晚场放映室",
+        "brand": "潮汐影院",
         "nav": [
           "Tonight",
           "Screenings",
           "Seats"
         ],
-        "eyebrow": "Independent evening screenings",
+        "eyebrow": "A repertory cinema by the sea",
         "headline": "Before the tide returns.",
-        "lede": "A cinematic screening room with original fictional film scenes, two selectable sessions, a forty-seat auditorium and local simulated tickets.",
+        "lede": "一家海边 repertory 影院。今晚两场、40 席，选座后生成一张本地模拟影票。",
         "primaryAction": "Confirm seats",
-        "secondaryAction": "Change screening",
-        "mediaLabel": "Original fictional coastal film scene",
+        "secondaryAction": "Switch screening",
+        "mediaLabel": "潮汐影院影片画幅",
         "scene": "cinema",
         "metrics": [
           [
@@ -1408,43 +1408,43 @@
         ],
         "features": [
           [
-            "Film-led composition",
-            "A panoramic original scene, title and concise film metadata establish the venue."
+            "影片画幅定气氛",
+            "全景原创场景、片名与简洁影片信息建立场馆气氛。"
           ],
           [
-            "A real selection path",
-            "Changing sessions updates the film, availability, unit price and seat selection."
+            "选座路径真实",
+            "场次切换联动影片、余座、单价与当前选择。"
           ],
           [
-            "Complete local booking",
-            "Available seats become a review summary and a downloadable simulated ticket."
+            "完成本地出票",
+            "可用座位经过摘要确认，生成可下载的模拟影票。"
           ]
         ],
         "tabs": {
           "launch": [
             "Confirm seats",
-            "A cinematic screening room with original fictional film scenes, two selectable sessions, a forty-seat auditorium and local simulated tickets."
+            "今晚两场、40 席，选座后生成一张本地模拟影票。"
           ],
           "metrics": [
             "Current selection",
-            "Changing sessions updates the film, availability, unit price and seat selection."
+            "场次切换联动影片、余座、单价与当前选择。"
           ],
           "assets": [
-            "Original fictional coastal film scene",
-            "A panoramic original scene, title and concise film metadata establish the venue."
+            "Film still",
+            "全景原创场景、片名与简洁影片信息建立场馆气氛。"
           ]
         },
         "queue": [
           [
-            "Before the tide returns",
+            "潮声抵达之前",
             "19:30"
           ],
           [
-            "The long way home",
+            "夜路慢行",
             "21:45"
           ],
           [
-            "Auditorium 1",
+            "一号厅",
             "Select seats"
           ]
         ]
@@ -1529,18 +1529,18 @@
         "Keep the tone factual and composed."
       ],
       "scenario": {
-        "brand": "沿途",
+        "brand": "途迹物流",
         "nav": [
           "Track",
           "Route",
           "History"
         ],
-        "eyebrow": "A parcel journey, explained stop by stop",
+        "eyebrow": "A 3PL parcel ledger, stop by stop",
         "headline": "Good things are on their way to you.",
-        "lede": "A local parcel-tracking demonstration with two sample waybills, a schematic route, delivery estimates, and individual scan-event details.",
+        "lede": "一家第三方物流的商家端查询。两单货、四站路，异常节点优先标出，预计 18:00 送达。",
         "primaryAction": "Track parcel",
-        "secondaryAction": "Inspect route event",
-        "mediaLabel": "Parcel Route Ledger",
+        "secondaryAction": "View route",
+        "mediaLabel": "途迹物流路线",
         "scene": "blueprint",
         "metrics": [
           [
@@ -1558,43 +1558,43 @@
         ],
         "features": [
           [
-            "Queryable waybills",
-            "Two sample numbers show different journeys; unknown numbers receive an inline recoverable error."
+            "时间线是主角",
+            "细线框与结构化节奏，四站路一次看清。"
           ],
           [
-            "One continuous route",
-            "A schematic line connects collection, sorting, transfer, and last-mile delivery rather than separating them into generic cards."
+            "异常优先标出",
+            "异常节点用文字与状态双重标出，不只靠颜色。"
           ],
           [
-            "Event-level evidence",
-            "Every keyboard-accessible route stop opens its timestamp and handling note in a labeled dialog."
+            "商家端视角",
+            "两单货、预计送达与历史记录围绕客服查询展开。"
           ]
         ],
         "tabs": {
           "launch": [
             "Track parcel",
-            "A local parcel-tracking demonstration with two sample waybills, a schematic route, delivery estimates, and individual scan-event details."
+            "查两单货，看四站路与预计送达。"
           ],
           "metrics": [
-            "Current session",
-            "Two sample numbers show different journeys; unknown numbers receive an inline recoverable error."
+            "Route",
+            "四站路、预计 18:00 送达。"
           ],
           "assets": [
-            "Objects and interaction",
-            "A schematic line connects collection, sorting, transfer, and last-mile delivery rather than separating them into generic cards."
+            "Route map",
+            "路线图与时间线一一对应。"
           ]
         },
         "queue": [
           [
-            "Jingdezhen collection",
+            "景德镇揽收",
             "Completed"
           ],
           [
-            "Hangzhou transfer",
+            "杭州中转",
             "Completed"
           ],
           [
-            "Gongshu last mile",
+            "拱墅末端",
             "Out for delivery"
           ]
         ]
@@ -1679,18 +1679,18 @@
         "Keep motion and states calm and systematic."
       ],
       "scenario": {
-        "brand": "书间",
+        "brand": "书屿",
         "nav": [
           "Reading",
           "Bookshelf",
           "Reading time"
         ],
-        "eyebrow": "A personal reading corner",
+        "eyebrow": "A reading club, one book at a time",
         "headline": "Open a book, and a little time for yourself.",
-        "lede": "A quiet reading workspace with three fictional books, independent page records, chapter progress, and cancellable thirty-minute reading slots.",
+        "lede": "一个读书会的阅读记录。3 本书、当前页码、30 分钟时段，读完一本再换下一本。",
         "primaryAction": "Record current page",
-        "secondaryAction": "Schedule reading time",
-        "mediaLabel": "Layered Reading Corner",
+        "secondaryAction": "View bookshelf",
+        "mediaLabel": "书屿书架",
         "scene": "material",
         "metrics": [
           [
@@ -1708,43 +1708,43 @@
         ],
         "features": [
           [
-            "A book as the main object",
-            "The cover, current page, and progress bar anchor the reading workspace rather than a wall of statistics."
+            "色调分层即结构",
+            "大圆角卡片与色调表面区分在读、书架与时段。"
           ],
           [
-            "Independent reading records",
-            "Switch among three fictional books; each keeps its own page count and chapter position for this visit."
+            "进度即内容",
+            "当前页码、总页数与阅读时段一次呈现。"
           ],
           [
-            "A small appointment with yourself",
-            "Choose a date and one of three time slots, then keep or cancel that book’s reading session."
+            "触摸友好",
+            "卡片够大、间距够宽，手机上也好点。"
           ]
         ],
         "tabs": {
           "launch": [
             "Record current page",
-            "A quiet reading workspace with three fictional books, independent page records, chapter progress, and cancellable thirty-minute reading slots."
+            "记下当前页码，推进一本书。"
           ],
           "metrics": [
-            "Current session",
-            "The cover, current page, and progress bar anchor the reading workspace rather than a wall of statistics."
+            "Reading time",
+            "30 分钟时段，今天读到哪。"
           ],
           "assets": [
-            "Objects and interaction",
-            "Switch among three fictional books; each keeps its own page count and chapter position for this visit."
+            "Bookshelf",
+            "3 本书，按在读与已读排布。"
           ]
         },
         "queue": [
           [
-            "Read Slowly",
+            "《慢慢读》",
             "Page 126"
           ],
           [
-            "Letters in the Trees",
+            "《树间来信》",
             "Page 42"
           ],
           [
-            "A Weekend by the Sea",
+            "《海边周末》",
             "Page 18"
           ]
         ]
@@ -1829,18 +1829,18 @@
         "Avoid turning every block into identical cards."
       ],
       "scenario": {
-        "brand": "午后厨房",
+        "brand": "午食盒",
         "nav": [
           "Mains",
           "Sides",
           "Pickup"
         ],
-        "eyebrow": "A lunch box made your way",
+        "eyebrow": "Workplace lunch, made your way",
         "headline": "Put the things you love into one lunch box.",
-        "lede": "A local lunch configurator with three mains, optional sides, live pricing, pickup slots, and a personalized demonstration ticket without payment.",
+        "lede": "一家面向办公室的午餐订阅。3 道主菜、3 样配菜，12:20 取餐，生成一张取餐票。",
         "primaryAction": "Generate pickup ticket",
-        "secondaryAction": "Choose a main dish",
-        "mediaLabel": "Lunch Box Configurator",
+        "secondaryAction": "Change pickup slot",
+        "mediaLabel": "午食盒取餐票",
         "scene": "bento",
         "metrics": [
           [
@@ -1858,39 +1858,39 @@
         ],
         "features": [
           [
-            "Different tiles, different jobs",
-            "A large illustrated main dish, two small side dishes, a horizontal soup tile, and a dark order summary form a purposeful bento."
+            "便当格是模块",
+            "主菜、配菜与取餐分块清晰，各自独立。"
           ],
           [
-            "A price that follows your choices",
-            "Changing the main or checking a side immediately updates the combination and total."
+            "价格与时段一次确认",
+            "选菜即见价格，选时段即见取餐票。"
           ],
           [
-            "A complete pickup handoff",
-            "Choose a pickup slot, enter a name, and generate an incrementing local pickup number with a readable order recap."
+            "取餐是终点",
+            "生成取餐票，凭票取餐。"
           ]
         ],
         "tabs": {
           "launch": [
             "Generate pickup ticket",
-            "A local lunch configurator with three mains, optional sides, live pricing, pickup slots, and a personalized demonstration ticket without payment."
+            "选主菜、配菜与取餐时段，生成取餐票。"
           ],
           "metrics": [
-            "Current session",
-            "A large illustrated main dish, two small side dishes, a horizontal soup tile, and a dark order summary form a purposeful bento."
+            "Pickup slot",
+            "12:20 取餐，13:00 已满。"
           ],
           "assets": [
-            "Objects and interaction",
-            "Changing the main or checking a side immediately updates the combination and total."
+            "Lunch box",
+            "便当格按主菜、配菜与取餐排布。"
           ]
         },
         "queue": [
           [
-            "Teriyaki chicken",
+            "照烧鸡",
             "26 yuan"
           ],
           [
-            "Soft-boiled egg",
+            "溏心蛋",
             "Selected"
           ],
           [
@@ -1979,18 +1979,18 @@
         "Limit the style to focused, calm interfaces."
       ],
       "scenario": {
-        "brand": "慢拍",
+        "brand": "静庭",
         "nav": [
           "Sound room",
           "Scenes",
           "Focus"
         ],
-        "eyebrow": "A local sound room and focus timer",
+        "eyebrow": "Focus timer and soundscapes",
         "headline": "Leave a little time to hear yourself slow down.",
-        "lede": "A tactile ambient player that genuinely synthesizes three local audio scenes with Web Audio and pairs them with a pauseable deadline-based focus timer.",
+        "lede": "一个专注工具。3 个本地声音场景、25 分钟计时、音量可调；不联网、不登录。",
         "primaryAction": "Play or pause sound",
-        "secondaryAction": "Start a focus session",
-        "mediaLabel": "Tactile Sound Room",
+        "secondaryAction": "Set focus duration",
+        "mediaLabel": "静庭声音房",
         "scene": "neumo",
         "metrics": [
           [
@@ -2008,35 +2008,35 @@
         ],
         "features": [
           [
-            "Sound that really plays",
-            "User-initiated Web Audio combines sine tones and filtered noise; playback, pause, scene switching, and volume affect the actual audio."
+            "柔和阴影要克制",
+            "内嵌深度与圆角控制只用于表达可按压，不堆装饰。"
           ],
           [
-            "Tactile but legible controls",
-            "An inset record well, raised playback button, pressed scene rows, and clear values create soft depth without hiding state."
+            "控制要大要稳",
+            "播放、音量与计时三个控制始终可见。"
           ],
           [
-            "Time with a clean ending",
-            "Choose a one-minute trial or a longer focus session, pause, resume, or reset it; completion stops the audio and leaving stops all sources and timers."
+            "计时状态始终可见",
+            "25 分钟倒计时与当前场景一次呈现。"
           ]
         ],
         "tabs": {
           "launch": [
             "Play or pause sound",
-            "A tactile ambient player that genuinely synthesizes three local audio scenes with Web Audio and pairs them with a pauseable deadline-based focus timer."
+            "选一个声音场景，开始 25 分钟专注。"
           ],
           "metrics": [
-            "Current session",
-            "User-initiated Web Audio combines sine tones and filtered noise; playback, pause, scene switching, and volume affect the actual audio."
+            "Focus duration",
+            "25 分钟，音量 35%。"
           ],
           "assets": [
-            "Objects and interaction",
-            "An inset record well, raised playback button, pressed scene rows, and clear values create soft depth without hiding state."
+            "Sound scenes",
+            "3 个本地声音场景，雨夜书房在内。"
           ]
         },
         "queue": [
           [
-            "Rainy study",
+            "雨夜书房",
             "Ready"
           ],
           [
@@ -2128,18 +2128,18 @@
         "Stack route controls before the map; place the selected-stop pane below the pin field."
       ],
       "scenario": {
-        "brand": "夜航",
+        "brand": "夜行地图",
         "nav": [
           "Routes",
           "Places",
           "Itinerary"
         ],
-        "eyebrow": "After-dark neighborhood walks",
+        "eyebrow": "Night walks for visitors",
         "headline": "Find a little more city after the lights come on.",
-        "lede": "A fictional riverside neighborhood with five places to pause, two walking routes, and a route you can make your own.",
+        "lede": "一份给游客的夜行地图。5 个点、2 条路线、30 分钟，导出一份可离线查看的行程。",
         "primaryAction": "Export walking route",
-        "secondaryAction": "Choose a stop",
-        "mediaLabel": "Nightwalk Route Planner",
+        "secondaryAction": "View places",
+        "mediaLabel": "夜行地图",
         "scene": "glass",
         "metrics": [
           [
@@ -2157,43 +2157,43 @@
         ],
         "features": [
           [
-            "Map and itinerary",
-            "Selecting a place links its map pin, details, route membership, and walking time."
+            "玻璃是材质，不是内容",
+            "磨砂玻璃层叠在地图之上，路线始终是主角。"
           ],
           [
-            "Glass over a quiet map",
-            "Translucent controls remain readable over restrained night streets and water."
+            "夜间可读性优先",
+            "深色底、亮色路线，夜间也看得清。"
           ],
           [
-            "Your own route",
-            "Add or remove stops and export an actual text itinerary."
+            "行程可导出",
+            "选一条路线，导出一份可离线查看的行程。"
           ]
         ],
         "tabs": {
           "launch": [
-            "Nightwalk Route Planner",
-            "A full-width night neighborhood map with a narrow frosted itinerary, selectable pins, an attached place pane, and a compact duration summary."
+            "Export walking route",
+            "选一条 30 分钟夜行路线，导出行程。"
           ],
           "metrics": [
-            "Local state",
-            "Selected place, route membership, custom route, empty itinerary, and export confirmation."
+            "Routes",
+            "2 条路线，5 个点。"
           ],
           "assets": [
-            "Visual objects",
-            "Use original geometric streets, quiet water, lit map pins, and a dashed path rather than decorative stock imagery."
+            "Night map",
+            "地图在玻璃之下，路线在玻璃之上。"
           ]
         },
         "queue": [
           [
-            "Old Pier",
+            "老码头",
             "On route"
           ],
           [
-            "Sleepless Books",
+            "不眠书店",
             "Selected"
           ],
           [
-            "Moon Bridge",
+            "月桥",
             "On route"
           ]
         ]
@@ -2278,18 +2278,18 @@
         "Remove overlap and stack the file row, reader, bookmark window, and taskbar in a clear reading order."
       ],
       "scenario": {
-        "brand": "磁盘周刊",
+        "brand": "回声唱片",
         "nav": [
           "Issues",
           "Bookmarks",
           "Reader"
         ],
-        "eyebrow": "A small publication with an offline feeling",
+        "eyebrow": "An independent record store weekly",
         "headline": "Good reading does not need to stay online.",
-        "lede": "Open three original short issues from a pixel desktop, minimize and restore the reader, and collect favorite articles in a session bookmark window.",
+        "lede": "一家独立唱片店的周刊。3 篇文章、3 期杂志，打开一篇慢慢读，离线也可看。",
         "primaryAction": "Open an issue",
-        "secondaryAction": "Bookmark article",
-        "mediaLabel": "Disk Weekly Reader",
+        "secondaryAction": "View bookmarks",
+        "mediaLabel": "回声唱片周刊",
         "scene": "retro",
         "metrics": [
           [
@@ -2307,43 +2307,43 @@
         ],
         "features": [
           [
-            "Files become reading",
-            "Desktop file buttons open a real article with issue metadata and original prose."
+            "像素风是窗口",
+            "老系统窗口与像素质感是容器，内容是主角。"
           ],
           [
-            "Working windows",
-            "The taskbar restores a minimized reading window and the bookmark pane links back to saved articles."
+            "一次读一篇",
+            "阅读窗口一次只放一篇文章。"
           ],
           [
-            "Take a copy",
-            "Export the selected issue as a real UTF-8 text file without requiring an account."
+            "离线也可看",
+            "打开过的文章离线也可读。"
           ]
         ],
         "tabs": {
           "launch": [
-            "Disk Weekly Reader",
-            "A cream-yellow pixel desktop with issue-file icons, a blue-titlebar reading window, an offset pink-titlebar bookmark window, and a functional taskbar."
+            "Open an issue",
+            "打开一期周刊，读 3 篇文章。"
           ],
           "metrics": [
-            "Local state",
-            "Open issue, minimized reader, restored reader, bookmarked article, empty bookmarks, and saved text."
+            "Issues",
+            "3 期杂志，按周更新。"
           ],
           "assets": [
-            "Visual objects",
-            "Use crisp file icons, a floppy-disk illustration, original article typography, and solid system window borders."
+            "Reader",
+            "阅读窗口一次一篇。"
           ]
         },
         "queue": [
           [
-            "Weekend Notes",
+            "周末笔记",
             "Available"
           ],
           [
-            "Paper Messages",
+            "纸上消息",
             "Reading"
           ],
           [
-            "Old Radio",
+            "旧电台",
             "Available"
           ]
         ]
@@ -2428,18 +2428,18 @@
         "Stack preview, editor, and composition choices; retain large text but remove collision and rotation from controls."
       ],
       "scenario": {
-        "brand": "放大字",
+        "brand": "硬核发布",
         "nav": [
           "Canvas",
           "Editor",
           "Compositions"
         ],
-        "eyebrow": "Make a poster worth hearing",
+        "eyebrow": "A launch poster for a developer tool",
         "headline": "Give your next event a louder first impression.",
-        "lede": "Edit an event title, time, and place, choose from three color clashes and compositions, and download an actual scalable SVG poster.",
+        "lede": "一次开发者工具发布的海报。改标题、换 3 套撞色，导出 SVG 直接用在发布页。",
         "primaryAction": "Download my poster",
-        "secondaryAction": "Change composition",
-        "mediaLabel": "Loud Type Poster Studio",
+        "secondaryAction": "Change palette",
+        "mediaLabel": "硬核发布海报",
         "scene": "brutal",
         "metrics": [
           [
@@ -2457,30 +2457,30 @@
         ],
         "features": [
           [
-            "Words are the artwork",
-            "The event title is the largest object, with hard geometry and a single oversized graphic."
+            "巨型字是视觉",
+            "粗线、强撞色与巨型字，混乱受控。"
           ],
           [
-            "Live composition",
-            "Editing text, palette, or layout immediately changes the same poster canvas."
+            "标题可改",
+            "活动标题即海报标题，改动即刻可见。"
           ],
           [
-            "Real SVG output",
-            "Inline field errors protect required content and the download contains the edited artwork."
+            "导出是终点",
+            "导出 SVG，直接用在发布页。"
           ]
         ],
         "tabs": {
           "launch": [
-            "Loud Type Poster Studio",
-            "A giant live poster canvas on the left, a thick-bordered text and palette editor on the right, and three composition thumbnails below."
+            "Download my poster",
+            "改标题、换配色，导出 SVG 海报。"
           ],
           "metrics": [
-            "Local state",
-            "Live text, selected palette, selected composition, empty required fields, reset artwork, and successful export."
+            "Palettes",
+            "3 套撞色，对比后选一套。"
           ],
           "assets": [
-            "Visual objects",
-            "Use original SVG typography, a blunt sunburst, hard-offset shadows, and simple composition thumbnails."
+            "Poster export",
+            "导出 SVG，直接用在发布页。"
           ]
         },
         "queue": [
@@ -2577,23 +2577,23 @@
         "Put the queue summary before the graph, followed by the node inspector and event log; preserve readable compact labels."
       ],
       "scenario": {
-        "brand": "帧序",
+        "brand": "衡算 Agent 运维台",
         "nav": [
           "Queue",
           "Pipeline",
           "Events"
         ],
-        "eyebrow": "Precise local render pipeline",
-        "headline": "Get every frame to its destination.",
-        "lede": "Inspect three preset render jobs and five pipeline nodes, recover a missing resource, pause or continue simulated rendering, and export the task log.",
+        "eyebrow": "AI Agent operations console",
+        "headline": "让每一次 Agent 运行，都有据可查。",
+        "lede": "一个 AI Agent 运行控制台。3 次运行、5 个节点：检索、重排、规划、工具调用、校验。失败节点可重试，日志可导出；演示数据在本地，不连真实服务。",
         "primaryAction": "Repair and retry",
         "secondaryAction": "Export current log",
-        "mediaLabel": "Frame Sequence Render Console",
+        "mediaLabel": "衡算 Agent 运维台",
         "scene": "precision",
         "metrics": [
           [
             "03",
-            "jobs"
+            "runs"
           ],
           [
             "05",
@@ -2601,48 +2601,48 @@
           ],
           [
             "240",
-            "frames"
+            "steps"
           ]
         ],
         "features": [
           [
-            "Pipeline first",
-            "The processing graph stays central and the selected node has an attached technical inspector."
+            "管线图是中心",
+            "处理图谱居中，选中节点配有技术检查器。"
           ],
           [
-            "Stateful recovery",
-            "Retry resumes from completed frames and updates node state, progress, output filename, and log entries."
+            "状态可恢复",
+            "重试从已完成步骤继续，节点状态、进度与日志随之更新。"
           ],
           [
-            "Deliberate precision",
-            "Compact monospaced values and controlled purple light distinguish selected, failed, paused, and completed states."
+            "精度要克制",
+            "紧凑的等宽数值与受控的紫色光，区分选中、失败、暂停与完成。"
           ]
         ],
         "tabs": {
           "launch": [
-            "Frame Sequence Render Console",
-            "A three-part technical console with a narrow job queue, central five-node process graph and frame progress, right node inspector, and bottom log region."
+            "Agent run console",
+            "三段式技术控制台：左侧运行队列、中央五节点管线图与进度、右侧节点检查器、底部日志。"
           ],
           "metrics": [
             "Local state",
-            "Failed node, completed upstream node, waiting downstream node, running retry, paused task, and verified output."
+            "失败节点、已完成上游节点、等待下游节点、运行中重试、已暂停任务与已核验输出。"
           ],
           "assets": [
             "Visual objects",
-            "Use actual process nodes, directed paths, frame counts, output sequence filenames, and event lines rather than decorative sci-fi scenery."
+            "用真实的管线节点、有向路径、步骤数、输出文件名与事件行，而非装饰性的科幻布景。"
           ]
         },
         "queue": [
           [
-            "Rainy Corner",
+            "客服问答运行",
             "Needs recovery"
           ],
           [
-            "Last Night Bus",
+            "文档问答运行",
             "Paused"
           ],
           [
-            "Paper City",
+            "订单异常处理",
             "Complete"
           ]
         ]
@@ -2727,18 +2727,18 @@
         "Do not replace the route with decorative statistics or hide essential departure details."
       ],
       "scenario": {
-        "brand": "夜跑电台",
+        "brand": "夜跑团",
         "nav": [
           "Route choices",
           "Your pace",
           "Local registration"
         ],
-        "eyebrow": "After Hours Run Club",
+        "eyebrow": "A city run club, after hours",
         "headline": "Make the city at night your own running ground.",
-        "lede": "A large running silhouette and orbit gradient lead into a readable route map, distance choices, pace settings and a local registration slip.",
+        "lede": "一个城市夜跑团。5 公里江边路线、配速组、19:30 出发，报名只在本地演示。",
         "primaryAction": "Reserve a starting place",
-        "secondaryAction": "Choose a route",
-        "mediaLabel": "An original vector runner, gradient orbit and two linked riverside routes.",
+        "secondaryAction": "View route map",
+        "mediaLabel": "夜跑团路线图",
         "scene": "gradient",
         "metrics": [
           [
@@ -2756,43 +2756,43 @@
         ],
         "features": [
           [
-            "Route choices",
-            "Switch 5 or 10 km and update the visible map."
+            "路线图要可读",
+            "大色块与轨道渐变是视觉，路线图本身必须可读。"
           ],
           [
-            "Your pace",
-            "Estimate time from the selected pace group."
+            "配速组一次选清",
+            "轻松、稳健、进阶三组，按配速选。"
           ],
           [
-            "Local registration",
-            "Choose a departure wave and create a demo slip."
+            "报名信息一次说清",
+            "出发时间、集合点与报名状态一次呈现。"
           ]
         ],
         "tabs": {
           "launch": [
             "Reserve a starting place",
-            "Switch 5 or 10 km and update the visible map."
+            "选 5 公里江边路线、配速组，占一个出发名额。"
           ],
           "metrics": [
-            "Your pace",
-            "Estimate time from the selected pace group."
+            "Route",
+            "5 公里，约 35 分钟，19:30 出发。"
           ],
           "assets": [
-            "Local registration",
-            "Choose a departure wave and create a demo slip."
+            "Route map",
+            "江边路线图与配速组一一对应。"
           ]
         },
         "queue": [
           [
-            "Riverside route",
+            "江边路线",
             "5 km"
           ],
           [
-            "Pace group",
+            "配速组",
             "Easy"
           ],
           [
-            "Registration",
+            "报名",
             "Local demo"
           ]
         ]
@@ -2877,18 +2877,18 @@
         "Do not turn gentle practice into a dense score dashboard or force automatic audio."
       ],
       "scenario": {
-        "brand": "慢拍子",
+        "brand": "慢拍音乐教室",
         "nav": [
           "Choose a lesson",
           "Keep a steady beat",
           "A little progress"
         ],
-        "eyebrow": "Slow Beats",
+        "eyebrow": "Piano practice for adult beginners",
         "headline": "Find your rhythm, one gentle beat at a time.",
-        "lede": "A friendly illustrated introduction opens onto a lesson rail, a central four-beat practice sheet, a tempo slider and a local completion record.",
+        "lede": "一家成人钢琴教室的跟练工具。选课、定 80 BPM、练 8 拍，完成一轮记一次。",
         "primaryAction": "Start a practice round",
-        "secondaryAction": "Tap with the beat",
-        "mediaLabel": "Original rhythmic flower illustration and four animated beat markers.",
+        "secondaryAction": "Choose a lesson",
+        "mediaLabel": "慢拍音乐教室练习谱",
         "scene": "doodle",
         "metrics": [
           [
@@ -2906,43 +2906,43 @@
         ],
         "features": [
           [
-            "Choose a lesson",
-            "Switch quarter-note and eighth-note practice."
+            "友好插画开场",
+            "亲和的插画引入，中央四拍练习谱是主角。"
           ],
           [
-            "Keep a steady beat",
-            "Adjust tempo and tap on distinct beats."
+            "节拍器要稳",
+            "节拍滑杆与 8 拍练习一一对应。"
           ],
           [
-            "A little progress",
-            "Review timing feedback and completed local rounds."
+            "完成即记录",
+            "完成一轮记一次，进度只在本地。"
           ]
         ],
         "tabs": {
           "launch": [
             "Start a practice round",
-            "Switch quarter-note and eighth-note practice."
+            "选一课，80 BPM 跟练 8 拍。"
           ],
           "metrics": [
-            "Keep a steady beat",
-            "Adjust tempo and tap on distinct beats."
+            "Tempo",
+            "80 BPM，8 拍。"
           ],
           "assets": [
-            "A little progress",
-            "Review timing feedback and completed local rounds."
+            "Practice sheet",
+            "中央四拍练习谱是主角。"
           ]
         },
         "queue": [
           [
-            "Quarter-note practice",
+            "四分音符练习",
             "Ready"
           ],
           [
-            "Sound",
+            "声音",
             "User initiated"
           ],
           [
-            "Record",
+            "记录",
             "This page only"
           ]
         ]
@@ -3027,18 +3027,18 @@
         "Do not distort functional text, autoplay sound or use decorative noise over controls."
       ],
       "scenario": {
-        "brand": "失真档案",
+        "brand": "失真唱片",
         "nav": [
           "Sound cuts",
           "Playback control",
           "Personal sequence"
         ],
-        "eyebrow": "Distorted Archive",
+        "eyebrow": "An independent electronic label",
         "headline": "Distortion can have its own order.",
-        "lede": "A chrome vector sculpture and offset typographic stage lead into track slices, a reorderable personal sequence and a stable bottom player.",
+        "lede": "一家独立电子厂牌的新专试听。4 首、每首 48 秒，排一个自己的顺序，底部播放器常驻。",
         "primaryAction": "Play an original sound study",
-        "secondaryAction": "Build a personal sequence",
-        "mediaLabel": "An original chrome ring, fluorescent cut lines and a procedural audio waveform.",
+        "secondaryAction": "Reorder my sequence",
+        "mediaLabel": "失真唱片试听",
         "scene": "acid",
         "metrics": [
           [
@@ -3056,30 +3056,30 @@
         ],
         "features": [
           [
-            "Sound cuts",
-            "Choose from four original browser-synthesized studies."
+            "铬色舞台",
+            "铬色雕塑与错位排版是舞台，音轨切片是内容。"
           ],
           [
-            "Playback control",
-            "Pause, scrub progress and adjust volume."
+            "音轨可排序",
+            "4 首试听可拖拽排序，顺序即个人歌单。"
           ],
           [
-            "Personal sequence",
-            "Add, reorder, remove and export a local playlist."
+            "播放器常驻底部",
+            "播放控制稳定在底部，不随滚动消失。"
           ]
         ],
         "tabs": {
           "launch": [
             "Play an original sound study",
-            "Choose from four original browser-synthesized studies."
+            "听 4 首 48 秒试听，排一个自己的顺序。"
           ],
           "metrics": [
-            "Playback control",
-            "Pause, scrub progress and adjust volume."
+            "Preview",
+            "每首 48 秒，2 首已排队。"
           ],
           "assets": [
-            "Personal sequence",
-            "Add, reorder, remove and export a local playlist."
+            "Sound studies",
+            "4 首原创声音习作。"
           ]
         },
         "queue": [
@@ -3177,18 +3177,18 @@
         "Do not replace symmetrical hierarchy with generic rounded cards or imply a real paid reservation."
       ],
       "scenario": {
-        "brand": "海上电台",
+        "brand": "鎏金大饭店",
         "nav": [
           "An evening together",
           "Find a table",
           "A local invitation"
         ],
-        "eyebrow": "The Sea Radio",
+        "eyebrow": "A heritage hotel, an evening of jazz",
         "headline": "Leave the evening to a record.",
-        "lede": "A symmetrical gold-lined invitation introduces the evening; date and party size flank a stage-and-table floor plan, with a menu and price summary at the side.",
+        "lede": "一家老牌饭店的爵士晚宴。19:30、8 张桌，选桌、看菜单与人均，生成一张本地预约单。",
         "primaryAction": "Create a reservation slip",
-        "secondaryAction": "Choose a table",
-        "mediaLabel": "Original stepped Art Deco linework, a listening stage and an eight-table floor plan.",
+        "secondaryAction": "View menu",
+        "mediaLabel": "鎏金大饭店平面图",
         "scene": "deco",
         "metrics": [
           [
@@ -3206,30 +3206,30 @@
         ],
         "features": [
           [
-            "An evening together",
-            "Choose one of three dates and a party size."
+            "对称与金线",
+            "对称布局与金色线框是全部秩序。"
           ],
           [
-            "Find a table",
-            "Unavailable or undersized tables cannot be selected."
+            "日期与人数在两侧",
+            "日期、人数与桌位一次对齐。"
           ],
           [
-            "A local invitation",
-            "Choose a menu and generate a reservation slip without payment."
+            "菜单与价格在侧边",
+            "时令菜单与人均价格在侧边一次呈现。"
           ]
         ],
         "tabs": {
           "launch": [
             "Create a reservation slip",
-            "Choose one of three dates and a party size."
+            "19:30、8 张桌，选桌、看菜单，生成一张本地预约单。"
           ],
           "metrics": [
-            "Find a table",
-            "Unavailable or undersized tables cannot be selected."
+            "Tables",
+            "8 张桌，3 个晚上。"
           ],
           "assets": [
-            "A local invitation",
-            "Choose a menu and generate a reservation slip without payment."
+            "Floor plan",
+            "舞台与餐桌平面图是核心视觉。"
           ]
         },
         "queue": [
@@ -3328,18 +3328,18 @@
         "Keep estimates, lead time and calm visit confirmation explicit."
       ],
       "scenario": {
-        "brand": "拾木修复工作室",
+        "brand": "拾器修复所",
         "nav": [
           "Story",
           "Repair plan",
           "Visit"
         ],
-        "eyebrow": "Wood repair studio / object archive",
+        "eyebrow": "A restoration atelier for old objects",
         "headline": "Keep the old stories. Give a good chair a second chapter.",
-        "lede": "An original beech chair anchors a quiet repair journal. Select damage, compare original patina with a wax finish, estimate a repair and reserve a local demonstration visit.",
+        "lede": "一家器物修复工作室。一把 1987 年的椅子，3 种修复方案、2 种表面处理，预约一次面谈。",
         "primaryAction": "Book a studio consultation",
-        "secondaryAction": "Build a repair plan",
-        "mediaLabel": "Use an original beech-chair SVG with wood grain, worn marks and grounded shadow; finish selection changes its surface tone.",
+        "secondaryAction": "View repair options",
+        "mediaLabel": "拾器修复所修复方案",
         "scene": "wabi",
         "metrics": [
           [
@@ -3357,43 +3357,43 @@
         ],
         "features": [
           [
-            "One old chair",
-            "Wood grain and an archive number give the page a specific object."
+            "手工痕迹是质感",
+            "泥土色与克制留白，手工痕迹不是瑕疵。"
           ],
           [
-            "Compare care",
-            "Damage and finish choices update the estimate and lead time."
+            "修复方案一次说清",
+            "3 种方案、2 种表面处理，对比后选一种。"
           ],
           [
-            "Quiet booking",
-            "A short labeled form reserves a local demonstration visit."
+            "面谈是终点",
+            "预约一次面谈，当面确认方案。"
           ]
         ],
         "tabs": {
           "launch": [
             "Book a studio consultation",
-            "One worn wooden chair anchors an asymmetric material stage. A quiet story is followed by damage selection, finish comparison, a repair estimate and a studio visit."
+            "为一把 1987 年的椅子选方案，预约一次面谈。"
           ],
           "metrics": [
-            "Current decisions",
-            "Show no damage selected, patina, waxed finish, bookable, inline field error and consultation reserved; disable booking without a repair item."
+            "Repair choices",
+            "3 种修复方案，2 种表面处理。"
           ],
           "assets": [
-            "Original visual material",
-            "Use an original beech-chair SVG with wood grain, worn marks and grounded shadow; finish selection changes its surface tone."
+            "Chair archive",
+            "1987 年的椅子，故事与修复记录。"
           ]
         },
         "queue": [
           [
-            "Joint repair",
+            "接合修复",
             "Available"
           ],
           [
-            "Keep patina",
+            "保留包浆",
             "Selected"
           ],
           [
-            "Studio consultation",
+            "工作室面谈",
             "Unreserved"
           ]
         ]
@@ -3480,18 +3480,18 @@
         "Let index, progress and annotations serve reading rather than decorative collage."
       ],
       "scenario": {
-        "brand": "山水旧札",
+        "brand": "山外茶室",
         "nav": [
           "Chapters",
           "Reading",
           "Notebook"
         ],
-        "eyebrow": "Fictional local chronicle / digital reading",
+        "eyebrow": "A tea house reading room",
         "headline": "Between mountains and rivers, everyday lives.",
-        "lede": "A fictional local chronicle unfolds through mountains, old lanes and seasonal routines. Change chapters, annotate a paragraph and return from the notebook to its original passage.",
+        "lede": "一家茶室的阅读角。3 章、9 段原文，加眉批、记笔记；纸白、墨黑、朱红印章。",
         "primaryAction": "Add a margin note",
-        "secondaryAction": "Open the notebook",
-        "mediaLabel": "Use original mountain-and-boat SVG art, subtle paper grain and restrained red volume seals.",
+        "secondaryAction": "View chapters",
+        "mediaLabel": "山外茶室阅读",
         "scene": "ink",
         "metrics": [
           [
@@ -3509,43 +3509,43 @@
         ],
         "features": [
           [
-            "Read a scroll",
-            "Three original chapters cover landscape, lanes and seasons."
+            "卷轴节奏",
+            "纸白画布、墨黑层级、朱红印章，卷轴式阅读。"
           ],
           [
-            "Write in the margin",
-            "Notes belong to a specific passage and appear beside the text."
+            "眉批是交互",
+            "加眉批、记笔记，笔记只在本地。"
           ],
           [
-            "Return to the source",
-            "Each note can locate its chapter and paragraph or be removed."
+            "印章只用在关键处",
+            "朱红印章只出现在章节与关键段落。"
           ]
         ],
         "tabs": {
           "launch": [
             "Add a margin note",
-            "A paper scroll opens with ink mountains and a volume title. A narrow chapter index, central prose and margin notebook form a reading workspace with chapter progress and return-to-passage notes."
+            "读 3 章山水散文，加眉批、记笔记。"
           ],
           "metrics": [
-            "Current decisions",
-            "Show the active chapter, reading progress, empty notebook, inline note error, saved notes and highlighted source passage; render user notes as text."
+            "Chapters",
+            "3 章、9 段原文。"
           ],
           "assets": [
-            "Original visual material",
-            "Use original mountain-and-boat SVG art, subtle paper grain and restrained red volume seals."
+            "Reading room",
+            "茶室阅读角，纸白、墨黑、朱红。"
           ]
         },
         "queue": [
           [
-            "Landscape",
+            "山水",
             "Volume I"
           ],
           [
-            "Old lanes",
+            "旧巷",
             "Volume II"
           ],
           [
-            "Seasonal notes",
+            "时令笔记",
             "Volume III"
           ]
         ]
@@ -3630,18 +3630,18 @@
         "Keep conflicts visible and include checks in the configuration export."
       ],
       "scenario": {
-        "brand": "泊位",
+        "brand": "方寸营造",
         "nav": [
           "Plan",
           "Configuration",
           "Review"
         ],
-        "eyebrow": "Camper interior planning / measured floor plan",
+        "eyebrow": "A studio for small homes",
         "headline": "Fit a distant life into 6.5 square metres.",
-        "lede": "A measured camper floor plan links bed or dining mode with cabinet depth and usable aisle width. Conflicts remain visible and the real JSON export records the chosen configuration.",
+        "lede": "一家做小户型的工作室。6.5㎡、3600×1800mm，排床、排柜，留出 450mm 过道，确认一次布局。",
         "primaryAction": "Confirm the current layout",
-        "secondaryAction": "Export configuration",
-        "mediaLabel": "Use an original camper top-view SVG, grid, dimensions, utility module, sliding-door swing and scale; linework carries relationships.",
+        "secondaryAction": "Adjust cabinet",
+        "mediaLabel": "方寸营造平面图",
         "scene": "blueprint",
         "metrics": [
           [
@@ -3659,43 +3659,43 @@
         ],
         "features": [
           [
-            "Linked dimensions",
-            "Cabinet and bed depths directly determine aisle clearance."
+            "标注即内容",
+            "深蓝网格与青色线是图纸，标注一次说清尺寸。"
           ],
           [
-            "An informative drawing",
-            "Adjustable furniture and fixed utilities are distinct on the plan."
+            "尺寸要真实可核",
+            "3600×1800mm、450mm 过道，数字可核对。"
           ],
           [
-            "Take the configuration",
-            "Export a real JSON file with dimensions, mode and checks."
+            "确认是终点",
+            "排床、排柜，确认一次布局。"
           ]
         ],
         "tabs": {
           "launch": [
             "Confirm the current layout",
-            "A deep-blue plan sheet places vehicle dimensions above a measured top view, with layout and cabinet controls on the right and clearance checks below."
+            "在 6.5㎡ 里排床、排柜，留 450mm 过道。"
           ],
           "metrics": [
-            "Current decisions",
-            "Show selected layout, dimension visibility, passing clearance, aisle conflict, blocked approval and export confirmation; disable approval on conflict."
+            "Dimensions",
+            "3600×1800mm，目标过道 450mm。"
           ],
           "assets": [
-            "Original visual material",
-            "Use an original camper top-view SVG, grid, dimensions, utility module, sliding-door swing and scale; linework carries relationships."
+            "Measured plan",
+            "带标注的实测平面图。"
           ]
         },
         "queue": [
           [
-            "Base bed layout",
+            "基础床型布局",
             "Selected"
           ],
           [
-            "450 mm cabinet",
+            "450 mm 柜体",
             "Adjustable"
           ],
           [
-            "450 mm aisle",
+            "450 mm 过道",
             "Passed"
           ]
         ]
@@ -3779,18 +3779,18 @@
         "Use local simulated data and actions without connecting real equipment."
       ],
       "scenario": {
-        "brand": "冷链哨站",
+        "brand": "冷链中控",
         "nav": [
           "Zones",
           "Alerts",
           "Shift log"
         ],
-        "eyebrow": "Cold-store shift console / local simulation",
-        "headline": "North cold store / shift overview",
-        "lede": "Eight fictional cold rooms form a visible zone matrix. A temperature alert moves through acknowledgement, treatment, simulated retest and archive, with traceable shift events.",
+        "eyebrow": "Cold-chain shift console",
+        "headline": "北区冷库 · 当班总览",
+        "lede": "一家食品冷链仓库的当班控制台。8 间冷库、1 起超温告警，确认、处置、复测，记入当班日志。",
         "primaryAction": "Acknowledge and record treatment",
-        "secondaryAction": "Inspect the zone",
-        "mediaLabel": "Use an original zone matrix, machine identifiers, threshold chart and concise event rows; safety colors indicate normal, over-temperature and recovered states.",
+        "secondaryAction": "View shift log",
+        "mediaLabel": "冷链中控当班总览",
         "scene": "industrial",
         "metrics": [
           [
@@ -3808,43 +3808,43 @@
         ],
         "features": [
           [
-            "Locate a zone",
-            "Zone selection links temperature, curve, door state and load."
+            "告警要确认",
+            "深色面板、安全色与密集状态行，告警确认后才算处理。"
           ],
           [
-            "Close the incident",
-            "Acknowledge, document treatment, simulate a retest and archive."
+            "处置步骤可追溯",
+            "确认、处置、复测，4 步记入当班日志。"
           ],
           [
-            "Trace the work",
-            "The local event queue retains each action and recovery result."
+            "层级即安全",
+            "超温、门磁与复测按严重程度排布。"
           ]
         ],
         "tabs": {
           "launch": [
             "Acknowledge and record treatment",
-            "A rugged dark console begins with an alarm band and shift summary, pairs the zone matrix with temperature inspection, and keeps event logs beside the treatment work order."
+            "处理 1 起超温告警，记入当班日志。"
           ],
           "metrics": [
-            "Current decisions",
-            "Show unacknowledged, treating, retest pending, recovered, archive pending, archived and empty anomaly results; record each step in the log."
+            "Zones",
+            "8 间冷库，1 起未确认告警。"
           ],
           "assets": [
-            "Original visual material",
-            "Use an original zone matrix, machine identifiers, threshold chart and concise event rows; safety colors indicate normal, over-temperature and recovered states."
+            "Shift log",
+            "确认、处置、复测，记入当班日志。"
           ]
         },
         "queue": [
           [
-            "C—01 over-temperature",
+            "C—01 超温",
             "Unacknowledged"
           ],
           [
-            "Door contact",
+            "门磁",
             "Closed"
           ],
           [
-            "Temperature retest",
+            "温度复测",
             "After treatment"
           ]
         ]
@@ -3900,6 +3900,906 @@
         "useCases": [
           "dashboard",
           "admin"
+        ]
+      }
+    },
+    {
+      "id": "27",
+      "slug": "style-27-dark-editorial",
+      "name": "Dark Editorial",
+      "zhName": "暗夜编辑",
+      "brief": "Black background, oversized serif headlines, hairline rules, and cinematic night photography.",
+      "zhBrief": "黑底、超大衬线标题、细线排版与电影感夜景照片。",
+      "bestFor": "magazines, editorial landing pages, reading products",
+      "zhBestFor": "杂志、编辑类落地页、阅读产品",
+      "bg": "#0a0a0a",
+      "surface": "#111111",
+      "text": "#f5f5f5",
+      "muted": "#a3a3a3",
+      "primary": "#f5f5f5",
+      "accent": "#c9a96a",
+      "border": "#262626",
+      "radius": "2px",
+      "shadow": "0 24px 80px rgba(0, 0, 0, .55)",
+      "className": "dark-editorial",
+      "image": "",
+      "notes": [
+        "A dark editorial magazine with a masthead, oversized serif cover story, full-bleed night photograph, three-column article list, and a subscription dialog.",
+        "Use real article titles, authors, reading times, and issue numbers rather than decorative typography scenery.",
+        "Keep the serif headline readable on mobile; stack the cover story above the article list."
+      ],
+      "scenario": {
+        "brand": "夜航",
+        "nav": [
+          "Current issue",
+          "Columns",
+          "Archive"
+        ],
+        "eyebrow": "Night culture magazine",
+        "headline": "在深夜，把世界读慢一点。",
+        "lede": "一本深夜文化刊物。本期 12 篇文章、3 个专栏、1 个特辑：雨夜城市、深夜书房与远行。文章可收藏，订阅后每周五深夜送达；演示数据在本地，不发送邮件。",
+        "primaryAction": "Subscribe to this issue",
+        "secondaryAction": "Browse past issues",
+        "mediaLabel": "夜航 · 雨夜城市",
+        "scene": "editorial",
+        "metrics": [
+          [
+            "12",
+            "articles"
+          ],
+          [
+            "03",
+            "columns"
+          ],
+          [
+            "01",
+            "feature"
+          ]
+        ],
+        "features": [
+          [
+            "衬线大标题",
+            "黑底上的衬线标题与细线排版，慢读的节奏。"
+          ],
+          [
+            "期号导航",
+            "按期号切换本期与往期，文章列表随之更新。"
+          ],
+          [
+            "收藏与订阅",
+            "收藏文章、订阅刊物，状态只保存在本地演示。"
+          ]
+        ],
+        "tabs": {
+          "launch": [
+            "Night magazine",
+            "深夜文化刊物：头版特辑、文章列表、专栏导航与订阅。"
+          ],
+          "metrics": [
+            "Local state",
+            "收藏、订阅与期号切换只改变本地演示状态。"
+          ],
+          "assets": [
+            "Visual objects",
+            "用真实的文章标题、作者、阅读时长与期号，而非装饰性的排版布景。"
+          ]
+        },
+        "queue": [
+          [
+            "雨夜城市",
+            "Featured"
+          ],
+          [
+            "深夜书房",
+            "Reading"
+          ],
+          [
+            "远行手记",
+            "Archived"
+          ]
+        ]
+      },
+      "playbook": {
+        "layout": "dark-editorial-issue",
+        "name": "Night Voyage Magazine",
+        "zhName": "夜航深夜刊物",
+        "structure": "A dark editorial magazine with a masthead, oversized serif cover story, full-bleed night photograph, three-column article list, and a subscription dialog.",
+        "zhStructure": "深色编辑刊物包含刊头、超大衬线头版特辑、通栏夜景照片、三栏文章列表与订阅对话框。",
+        "typography": "Use oversized system serif headlines with tight leading and generous whitespace; small caps eyebrows and thin rules separate sections.",
+        "zhTypography": "使用超大系统衬线标题、紧凑行高与大留白，小字号眉题与细线分隔各区。",
+        "components": "A dark editorial magazine with a masthead, oversized serif cover story, full-bleed night photograph, three-column article list, and a subscription dialog.",
+        "zhComponents": "深色编辑刊物包含刊头、超大衬线头版特辑、通栏夜景照片、三栏文章列表与订阅对话框。",
+        "buttons": "Use quiet text buttons and one gold outlined subscribe action; bookmarks toggle in place.",
+        "zhButtons": "使用安静的文字按钮与一个金色描边订阅按钮，收藏就地切换。",
+        "media": "Use one full-bleed night photograph and real article titles, authors, and reading times rather than decorative typography scenery.",
+        "zhMedia": "使用一张通栏夜景照片与真实的文章标题、作者与阅读时长，不以装饰性排版布景填充空间。",
+        "states": "Bookmarked article, subscribed reader, current issue, archived issue, and empty bookmark list.",
+        "zhStates": "已收藏文章、已订阅读者、本期、往期与空收藏列表。",
+        "avoid": "Do not add bright gradients, rounded cards, or playful illustration to a dark editorial page.",
+        "zhAvoid": "深色编辑页不要用明亮渐变、圆角卡片或活泼插画。"
+      },
+      "geometry": {
+        "panel": "2px",
+        "control": "2px",
+        "chip": "2px",
+        "media": "2px",
+        "description": "dark editorial geometry with hairline rules and minimal radius"
+      },
+      "implementation": {
+        "buttons": "Use quiet text buttons and one gold outlined subscribe action; bookmarks toggle in place.",
+        "zhButtons": "使用安静的文字按钮与一个金色描边订阅按钮，收藏就地切换。",
+        "feedback": "Keep required-field errors beside their fields, announce completed actions, and tie every visible status to the actual local demo state.",
+        "zhFeedback": "必填错误贴近字段显示，完成操作提供可读反馈，所有可见状态都与本地演示数据一致。",
+        "spacing": "Use 32-48px section gaps, 24px article rows, and hairline 1px rules.",
+        "zhSpacing": "区块间距 32-48px，文章行 24px，细线 1px。",
+        "responsive": "Stack the cover story above the article list on mobile; keep the serif headline readable at 32px.",
+        "zhResponsive": "手机上头版特辑在上、文章列表在下，衬线标题保持 32px 可读。"
+      },
+      "adaptation": {
+        "landing": "Use a cinematic editorial story with cover photograph, issue navigation, and subscription.",
+        "dashboard": "Not a dashboard style; use only for reading lists and issue archives.",
+        "admin": "Use for editorial archives, issue management, and subscriber lists.",
+        "forms": "Use visible labels, custom inline field errors, and local confirmations. Do not use browser validation bubbles.",
+        "mobile": "Stack the cover above the list; keep headline and subscribe action visible.",
+        "unsuitable": "Weak for dense admin tables, dashboards, or pages needing bright playful energy."
+      },
+      "selection": {
+        "family": "editorial",
+        "appearance": "dark",
+        "density": "sparse",
+        "useCases": [
+          "landing",
+          "editorial"
+        ]
+      }
+    },
+    {
+      "id": "28",
+      "slug": "style-28-mesh-gradient",
+      "name": "Mesh Gradient",
+      "zhName": "流光渐变",
+      "brief": "Soft iridescent mesh gradients, pill controls, and copyable CSS color stops.",
+      "zhBrief": "柔和彩虹光斑渐变、胶囊控件与可复制的 CSS 色标。",
+      "bestFor": "creative tools, landing pages, brand playgrounds",
+      "zhBestFor": "创意工具、落地页、品牌调色板",
+      "bg": "#fdfbff",
+      "surface": "#ffffff",
+      "text": "#1a1a2e",
+      "muted": "#6b7280",
+      "primary": "#7c3aed",
+      "accent": "#ec4899",
+      "border": "#e9e4f5",
+      "radius": "24px",
+      "shadow": "0 24px 80px rgba(124, 58, 237, .18)",
+      "className": "mesh-gradient",
+      "image": "",
+      "notes": [
+        "A gradient lab with a hero, a large mesh preview, three preset switches, a color-stop list, and a CSS export panel.",
+        "Use real gradient stops with HEX values and copyable CSS rather than decorative color chips.",
+        "Keep the preview, stops, and code in sync; the copy action confirms with a toast."
+      ],
+      "scenario": {
+        "brand": "虹光",
+        "nav": [
+          "Gradient library",
+          "Tuning",
+          "Export"
+        ],
+        "eyebrow": "Gradient lab",
+        "headline": "把光，调成你想要的颜色。",
+        "lede": "一个渐变实验室。3 套预设、12 个色标、1 键复制 CSS：紫罗兰、落日、薄荷三套渐变随调随看；演示数据在本地，不联网取色。",
+        "primaryAction": "Copy gradient CSS",
+        "secondaryAction": "Browse presets",
+        "mediaLabel": "虹光 · 紫罗兰",
+        "scene": "gradient",
+        "metrics": [
+          [
+            "03",
+            "presets"
+          ],
+          [
+            "12",
+            "color stops"
+          ],
+          [
+            "01",
+            "click to copy"
+          ]
+        ],
+        "features": [
+          [
+            "预设即所得",
+            "三套渐变预设一点就换，预览、色标与代码同步更新。"
+          ],
+          [
+            "色标可读",
+            "每个色标都标了 HEX 值，点一下就能复制。"
+          ],
+          [
+            "代码就绪",
+            "一键复制 background CSS，粘进项目就能用。"
+          ]
+        ],
+        "tabs": {
+          "launch": [
+            "Gradient lab",
+            "渐变实验室：大预览、预设切换、色标列表与 CSS 导出。"
+          ],
+          "metrics": [
+            "Local state",
+            "预设、色标与复制状态只改变本地演示。"
+          ],
+          "assets": [
+            "Visual objects",
+            "用真实的渐变色标、HEX 值与 CSS 代码，而非装饰性的色块。"
+          ]
+        },
+        "queue": [
+          [
+            "紫罗兰",
+            "Active"
+          ],
+          [
+            "落日",
+            "Preset"
+          ],
+          [
+            "薄荷",
+            "Preset"
+          ]
+        ]
+      },
+      "playbook": {
+        "layout": "mesh-gradient-lab",
+        "name": "Rainbow Light Gradient Lab",
+        "zhName": "虹光渐变实验室",
+        "structure": "A gradient lab with a hero, a large mesh preview, three preset switches, a color-stop list, and a CSS export panel.",
+        "zhStructure": "渐变实验室包含头版、大渐变预览、三套预设切换、色标列表与 CSS 导出面板。",
+        "typography": "Use large rounded sans headlines with tight leading; small caps labels for color stops and code.",
+        "zhTypography": "使用大号圆润无衬线标题、紧凑行高，小字号眉题标注色标与代码。",
+        "components": "A gradient lab with a hero, a large mesh preview, three preset switches, a color-stop list, and a CSS export panel.",
+        "zhComponents": "渐变实验室包含头版、大渐变预览、三套预设切换、色标列表与 CSS 导出面板。",
+        "buttons": "Use soft pill controls; the copy action is a solid violet primary.",
+        "zhButtons": "使用柔和胶囊控件，复制操作是实心紫色主按钮。",
+        "media": "Use one full-bleed mesh photograph and real gradient stops with HEX values rather than decorative color chips.",
+        "zhMedia": "使用一张通栏渐变灵感图与真实的渐变色标、HEX 值，不以装饰性色块填充空间。",
+        "states": "Active preset, copied CSS, and hovered color stop.",
+        "zhStates": "当前预设、已复制 CSS 与悬停色标。",
+        "avoid": "Do not flatten the mesh into a single flat gradient or add dark heavy panels.",
+        "zhAvoid": "不要把渐变压成单色平涂，也不要加深色厚重面板。"
+      },
+      "geometry": {
+        "panel": "24px",
+        "control": "999px",
+        "chip": "999px",
+        "media": "24px",
+        "description": "mesh gradient geometry with large radii and pill controls"
+      },
+      "implementation": {
+        "buttons": "Use soft pill controls; the copy action is a solid violet primary.",
+        "zhButtons": "使用柔和胶囊控件，复制操作是实心紫色主按钮。",
+        "feedback": "Keep required-field errors beside their fields, announce completed actions, and tie every visible status to the actual local demo state.",
+        "zhFeedback": "必填错误贴近字段显示，完成操作提供可读反馈，所有可见状态都与本地演示数据一致。",
+        "spacing": "Use 32px section gaps, 20px preview padding, and 12px stop rows.",
+        "zhSpacing": "区块间距 32px，预览内边距 20px，色标行 12px。",
+        "responsive": "Stack the preview above the stop list on mobile; keep the copy action visible.",
+        "zhResponsive": "手机上预览在上、色标列表在下，复制按钮保持可见。"
+      },
+      "adaptation": {
+        "landing": "Use a vivid gradient story with live preview, presets, and copyable CSS.",
+        "dashboard": "Use only for theme and brand color pickers.",
+        "admin": "Use for theme settings and brand asset libraries.",
+        "forms": "Use visible labels, custom inline field errors, and local confirmations. Do not use browser validation bubbles.",
+        "mobile": "Stack the preview above the list; keep presets and copy visible.",
+        "unsuitable": "Weak for dense data tables or pages needing restrained corporate tone."
+      },
+      "selection": {
+        "family": "expressive",
+        "appearance": "light",
+        "density": "normal",
+        "useCases": [
+          "landing",
+          "portfolio"
+        ]
+      }
+    },
+    {
+      "id": "29",
+      "slug": "style-29-saas-dark",
+      "name": "SaaS Dark",
+      "zhName": "深色 SaaS",
+      "brief": "Dark SaaS marketing hero with indigo glow, dashboard screenshot, and trial entry.",
+      "zhBrief": "深色 SaaS 营销页，靛蓝辉光、仪表盘截图与试用入口。",
+      "bestFor": "SaaS marketing, product launches, analytics tools",
+      "zhBestFor": "SaaS 营销、产品发布、数据分析工具",
+      "bg": "#0a0a12",
+      "surface": "#12121f",
+      "text": "#f1f5f9",
+      "muted": "#94a3b8",
+      "primary": "#6366f1",
+      "accent": "#22d3ee",
+      "border": "#23233a",
+      "radius": "12px",
+      "shadow": "0 24px 80px rgba(0,0,0,.55)",
+      "className": "saas-dark",
+      "image": "",
+      "notes": [
+        "A dark SaaS marketing hero with a headline, a product dashboard screenshot, three metric cards, and a free-trial form.",
+        "Use real metrics with mono numerals and a glowing indigo accent rather than stock photos.",
+        "Keep the dashboard tabs, metric cards, and trial state in sync; the trial confirms with a toast."
+      ],
+      "scenario": {
+        "brand": "数核",
+        "nav": [
+          "Product",
+          "Pricing",
+          "Docs"
+        ],
+        "eyebrow": "Analytics platform",
+        "headline": "数据一动，生意就跟得上。",
+        "lede": "数核是给增长团队的数据分析平台。3 个核心指标、3 个看板、1 个试用入口：注册 14 天免费，不用信用卡。",
+        "primaryAction": "Start free trial",
+        "secondaryAction": "See pricing",
+        "mediaLabel": "数核 · 增长总览",
+        "scene": "saas",
+        "metrics": [
+          [
+            "03",
+            "core metrics"
+          ],
+          [
+            "14",
+            "free trial days"
+          ],
+          [
+            "01",
+            "dashboard"
+          ]
+        ],
+        "features": [
+          [
+            "实时看板",
+            "指标每 30 秒刷新一次，异常自动标红。"
+          ],
+          [
+            "对比分析",
+            "任意两个时间段一键对比，涨跌一目了然。"
+          ],
+          [
+            "导出报告",
+            "每周一自动生成 PDF 周报，发到你的邮箱。"
+          ]
+        ],
+        "tabs": {
+          "launch": [
+            "SaaS marketing hero",
+            "深色 SaaS 营销页：大标题、产品截图、指标与试用入口。"
+          ],
+          "metrics": [
+            "Local state",
+            "试用表单与看板切换只改变本地演示。"
+          ],
+          "assets": [
+            "Visual objects",
+            "用真实的产品截图、指标数字与价格，而非装饰性图表。"
+          ]
+        },
+        "queue": [
+          [
+            "增长总览",
+            "Active"
+          ],
+          [
+            "留存分析",
+            "View"
+          ],
+          [
+            "收入报表",
+            "View"
+          ]
+        ]
+      },
+      "playbook": {
+        "layout": "saas-dark-hero",
+        "name": "Shuhe Analytics",
+        "zhName": "数核数据分析平台",
+        "structure": "A dark SaaS marketing hero with a headline, a product dashboard screenshot, three metric cards, and a free-trial form.",
+        "zhStructure": "深色 SaaS 营销页包含头版、产品仪表盘截图、三张指标卡与免费试用表单。",
+        "typography": "Use bold tight sans headlines with generous tracking on eyebrow labels; mono numerals for metrics.",
+        "zhTypography": "使用粗体紧凑无衬线标题，眉题字距放宽，指标数字用等宽字体。",
+        "components": "A dark SaaS marketing hero with a headline, a product dashboard screenshot, three metric cards, and a free-trial form.",
+        "zhComponents": "深色 SaaS 营销页包含头版、产品仪表盘截图、三张指标卡与免费试用表单。",
+        "buttons": "Use a solid indigo primary for the trial action and ghost buttons for secondary links.",
+        "zhButtons": "试用操作是实心靛蓝主按钮，次要链接用幽灵按钮。",
+        "media": "Use one dark dashboard screenshot with real metrics and a glowing indigo accent rather than stock photos.",
+        "zhMedia": "使用一张深色仪表盘截图与真实指标、靛蓝辉光，不用库存照片。",
+        "states": "Active dashboard tab, trial form validation, and hovered metric card.",
+        "zhStates": "当前看板标签、试用表单校验与悬停指标卡。",
+        "avoid": "Do not use light panels or pastel colors that break the dark SaaS mood.",
+        "zhAvoid": "不要用浅色面板或粉彩色破坏深色 SaaS 氛围。"
+      },
+      "geometry": {
+        "panel": "12px",
+        "control": "8px",
+        "chip": "999px",
+        "media": "12px",
+        "description": "saas dark geometry with small radii and pill chips"
+      },
+      "implementation": {
+        "buttons": "Use a solid indigo primary for the trial action and ghost buttons for secondary links.",
+        "zhButtons": "试用操作是实心靛蓝主按钮，次要链接用幽灵按钮。",
+        "feedback": "Keep required-field errors beside their fields, announce completed actions, and tie every visible status to the actual local demo state.",
+        "zhFeedback": "必填错误贴近字段显示，完成操作提供可读反馈，所有可见状态都与本地演示数据一致。",
+        "spacing": "Use 40px section gaps, 24px card padding, and 16px metric rows.",
+        "zhSpacing": "区块间距 40px，卡片内边距 24px，指标行 16px。",
+        "responsive": "Stack the dashboard below the headline on mobile; keep the trial button visible.",
+        "zhResponsive": "手机上仪表盘移到标题下方，试用按钮保持可见。"
+      },
+      "adaptation": {
+        "landing": "Use a dark SaaS hero with product screenshot, metrics, and trial entry.",
+        "dashboard": "Use for product marketing and onboarding pages.",
+        "admin": "Use for admin marketing and feature announcements.",
+        "forms": "Use visible labels, custom inline field errors, and local confirmations. Do not use browser validation bubbles.",
+        "mobile": "Stack the screenshot below the headline; keep the trial CTA visible.",
+        "unsuitable": "Weak for editorial reading or warm lifestyle brands."
+      },
+      "selection": {
+        "family": "futuristic",
+        "appearance": "dark",
+        "density": "normal",
+        "useCases": [
+          "landing",
+          "dashboard"
+        ]
+      }
+    },
+    {
+      "id": "30",
+      "slug": "style-30-fintech",
+      "name": "Fintech",
+      "zhName": "金融科技",
+      "brief": "Deep green fintech with mono numerals, yellow accent, and account overview.",
+      "zhBrief": "深绿金融科技，等宽数字、亮黄强调与账户总览。",
+      "bestFor": "fintech, banking, personal finance",
+      "zhBestFor": "金融科技、银行、个人理财",
+      "bg": "#08150c",
+      "surface": "#0f2417",
+      "text": "#f5f5f0",
+      "muted": "#9db3a4",
+      "primary": "#ffda00",
+      "accent": "#34d399",
+      "border": "#1e3a2a",
+      "radius": "8px",
+      "shadow": "0 24px 80px rgba(0,0,0,.5)",
+      "className": "fintech",
+      "image": "",
+      "notes": [
+        "A fintech landing with a headline, a balance overview, three account cards, and an account-opening form.",
+        "Use real balances and transactions with mono numerals rather than stock finance photos.",
+        "Keep the account tabs, transaction list, and application state in sync; the application confirms with a toast."
+      ],
+      "scenario": {
+        "brand": "青禾",
+        "nav": [
+          "Accounts",
+          "Wealth",
+          "About"
+        ],
+        "eyebrow": "Digital bank",
+        "headline": "钱，要看得明白。",
+        "lede": "青禾是一家数字银行。3 个账户、3 笔动态、1 个目标：本月存下 ¥5,000，进度 62%。",
+        "primaryAction": "Open an account",
+        "secondaryAction": "See rates",
+        "mediaLabel": "青禾 · 本月账单",
+        "scene": "fintech",
+        "metrics": [
+          [
+            "03",
+            "accounts"
+          ],
+          [
+            "62",
+            "% savings goal"
+          ],
+          [
+            "01",
+            "goal"
+          ]
+        ],
+        "features": [
+          [
+            "账单一目了然",
+            "每笔支出自动分类，月底生成一张图。"
+          ],
+          [
+            "目标存钱",
+            "设个目标，每天自动转一点进去。"
+          ],
+          [
+            "安全第一",
+            "指纹与短信双重验证，异常交易立刻冻结。"
+          ]
+        ],
+        "tabs": {
+          "launch": [
+            "Fintech landing",
+            "金融科技落地页：深绿底色、等宽数字、账户总览与开户入口。"
+          ],
+          "metrics": [
+            "Local state",
+            "开户表单与账户切换只改变本地演示。"
+          ],
+          "assets": [
+            "Visual objects",
+            "用真实的账户余额、交易记录与利率，而非装饰性数字。"
+          ]
+        },
+        "queue": [
+          [
+            "储蓄账户",
+            "Active"
+          ],
+          [
+            "日常账户",
+            "View"
+          ],
+          [
+            "理财账户",
+            "View"
+          ]
+        ]
+      },
+      "playbook": {
+        "layout": "fintech-landing",
+        "name": "Qinghe Digital Bank",
+        "zhName": "青禾数字银行",
+        "structure": "A fintech landing with a headline, a balance overview, three account cards, and an account-opening form.",
+        "zhStructure": "金融科技落地页包含头版、余额总览、三张账户卡与开户表单。",
+        "typography": "Use large bold sans headlines; mono numerals for balances and rates.",
+        "zhTypography": "使用大号粗体无衬线标题，余额与利率用等宽数字。",
+        "components": "A fintech landing with a headline, a balance overview, three account cards, and an account-opening form.",
+        "zhComponents": "金融科技落地页包含头版、余额总览、三张账户卡与开户表单。",
+        "buttons": "Use a solid yellow primary for the open-account action and ghost buttons for secondary links.",
+        "zhButtons": "开户操作是实心亮黄主按钮，次要链接用幽灵按钮。",
+        "media": "Use one deep-green marble photograph with real balances and transactions rather than stock finance photos.",
+        "zhMedia": "使用一张深绿大理石照片与真实余额、交易记录，不用库存金融照片。",
+        "states": "Active account tab, form validation, and hovered transaction.",
+        "zhStates": "当前账户标签、表单校验与悬停交易记录。",
+        "avoid": "Do not use bright playful colors or cartoon illustrations that weaken trust.",
+        "zhAvoid": "不要用明亮俏皮的配色或卡通插画削弱信任感。"
+      },
+      "geometry": {
+        "panel": "8px",
+        "control": "8px",
+        "chip": "999px",
+        "media": "8px",
+        "description": "fintech geometry with small radii and pill chips"
+      },
+      "implementation": {
+        "buttons": "Use a solid yellow primary for the open-account action and ghost buttons for secondary links.",
+        "zhButtons": "开户操作是实心亮黄主按钮，次要链接用幽灵按钮。",
+        "feedback": "Keep required-field errors beside their fields, announce completed actions, and tie every visible status to the actual local demo state.",
+        "zhFeedback": "必填错误贴近字段显示，完成操作提供可读反馈，所有可见状态都与本地演示数据一致。",
+        "spacing": "Use 40px section gaps, 24px card padding, and 16px transaction rows.",
+        "zhSpacing": "区块间距 40px，卡片内边距 24px，交易行 16px。",
+        "responsive": "Stack account cards below the balance on mobile; keep the open-account button visible.",
+        "zhResponsive": "手机上账户卡移到余额下方，开户按钮保持可见。"
+      },
+      "adaptation": {
+        "landing": "Use a fintech hero with balance overview, accounts, and open-account entry.",
+        "dashboard": "Use for banking dashboards and account pages.",
+        "admin": "Use for finance admin and rate announcements.",
+        "forms": "Use visible labels, custom inline field errors, and local confirmations. Do not use browser validation bubbles.",
+        "mobile": "Stack cards below the balance; keep the CTA visible.",
+        "unsuitable": "Weak for playful consumer brands or editorial reading."
+      },
+      "selection": {
+        "family": "minimal",
+        "appearance": "dark",
+        "density": "normal",
+        "useCases": [
+          "landing",
+          "dashboard"
+        ]
+      }
+    },
+    {
+      "id": "31",
+      "slug": "style-31-travel-editorial",
+      "name": "Travel Editorial",
+      "zhName": "旅行编辑",
+      "brief": "Warm paper travel editorial with full-bleed photography and itinerary builder.",
+      "zhBrief": "暖纸旅行编辑，通栏摄影与行程单。",
+      "bestFor": "travel, magazines, editorial landing",
+      "zhBestFor": "旅行、杂志、编辑类落地页",
+      "bg": "#faf7f2",
+      "surface": "#ffffff",
+      "text": "#1c1917",
+      "muted": "#78716c",
+      "primary": "#c2410c",
+      "accent": "#0d9488",
+      "border": "#e7e0d6",
+      "radius": "4px",
+      "shadow": "0 24px 80px rgba(28,25,23,.12)",
+      "className": "travel-editorial",
+      "image": "",
+      "notes": [
+        "A travel editorial with a masthead, a full-bleed photograph, three route cards, and an itinerary builder.",
+        "Use real route dates and prices with one full-bleed photograph rather than decorative landscapes.",
+        "Keep the saved routes, itinerary form, and plan state in sync; the plan confirms with a toast."
+      ],
+      "scenario": {
+        "brand": "远行",
+        "nav": [
+          "Destinations",
+          "Itineraries",
+          "Stories"
+        ],
+        "eyebrow": "Travel magazine",
+        "headline": "走出去，世界就大了起来。",
+        "lede": "远行是一本旅行杂志。3 条路线、3 篇手记、1 份行程单：山间的雾、海边的风与一张车票的距离。",
+        "primaryAction": "Plan my trip",
+        "secondaryAction": "Read the stories",
+        "mediaLabel": "远行 · 山间的雾",
+        "scene": "travel",
+        "metrics": [
+          [
+            "03",
+            "routes"
+          ],
+          [
+            "03",
+            "stories"
+          ],
+          [
+            "01",
+            "itinerary"
+          ]
+        ],
+        "features": [
+          [
+            "路线可存",
+            "喜欢的路线点一下收藏，出发前再翻出来。"
+          ],
+          [
+            "行程单可导",
+            "选好日期与人数，行程单导出 PDF 随身带。"
+          ],
+          [
+            "手记可读",
+            "每条路线都有一篇手记，先读再出发。"
+          ]
+        ],
+        "tabs": {
+          "launch": [
+            "Travel editorial",
+            "旅行编辑页：暖纸底色、通栏摄影、路线与行程单。"
+          ],
+          "metrics": [
+            "Local state",
+            "路线收藏与行程单只改变本地演示。"
+          ],
+          "assets": [
+            "Visual objects",
+            "用真实的目的地照片、行程日期与价格，而非装饰性风景图。"
+          ]
+        },
+        "queue": [
+          [
+            "山间的雾",
+            "Featured"
+          ],
+          [
+            "海边的风",
+            "Reading"
+          ],
+          [
+            "一张车票的距离",
+            "Archived"
+          ]
+        ]
+      },
+      "playbook": {
+        "layout": "travel-editorial",
+        "name": "Yuanxing Travel",
+        "zhName": "远行旅行杂志",
+        "structure": "A travel editorial with a masthead, a full-bleed photograph, three route cards, and an itinerary builder.",
+        "zhStructure": "旅行编辑页包含刊头、通栏照片、三张路线卡与行程单生成器。",
+        "typography": "Use large serif headlines with generous leading; small caps labels for destinations and dates.",
+        "zhTypography": "使用大号衬线标题、宽松行高，小字号眉题标注目的地与日期。",
+        "components": "A travel editorial with a masthead, a full-bleed photograph, three route cards, and an itinerary builder.",
+        "zhComponents": "旅行编辑页包含刊头、通栏照片、三张路线卡与行程单生成器。",
+        "buttons": "Use a solid burnt-orange primary for planning and ghost buttons for reading.",
+        "zhButtons": "规划操作是实心焦橙主按钮，阅读链接用幽灵按钮。",
+        "media": "Use one full-bleed travel photograph and real route dates and prices rather than decorative landscapes.",
+        "zhMedia": "使用一张通栏旅行照片与真实路线日期、价格，不用装饰性风景图。",
+        "states": "Saved route, itinerary form validation, and hovered route card.",
+        "zhStates": "已收藏路线、行程单表单校验与悬停路线卡。",
+        "avoid": "Do not use neon colors or dense data grids that break the editorial calm.",
+        "zhAvoid": "不要用霓虹色或密集数据网格破坏编辑页的从容感。"
+      },
+      "geometry": {
+        "panel": "4px",
+        "control": "4px",
+        "chip": "999px",
+        "media": "4px",
+        "description": "travel editorial geometry with small radii and pill chips"
+      },
+      "implementation": {
+        "buttons": "Use a solid burnt-orange primary for planning and ghost buttons for reading.",
+        "zhButtons": "规划操作是实心焦橙主按钮，阅读链接用幽灵按钮。",
+        "feedback": "Keep required-field errors beside their fields, announce completed actions, and tie every visible status to the actual local demo state.",
+        "zhFeedback": "必填错误贴近字段显示，完成操作提供可读反馈，所有可见状态都与本地演示数据一致。",
+        "spacing": "Use 40px section gaps, 24px card padding, and 16px itinerary rows.",
+        "zhSpacing": "区块间距 40px，卡片内边距 24px，行程行 16px。",
+        "responsive": "Stack route cards below the hero photograph on mobile; keep the plan button visible.",
+        "zhResponsive": "手机上路线卡移到通栏照片下方，规划按钮保持可见。"
+      },
+      "adaptation": {
+        "landing": "Use a travel editorial with full-bleed photography, routes, and itinerary.",
+        "dashboard": "Use only for trip planning and saved routes.",
+        "admin": "Use for editorial and destination libraries.",
+        "forms": "Use visible labels, custom inline field errors, and local confirmations. Do not use browser validation bubbles.",
+        "mobile": "Stack cards below the photograph; keep the plan CTA visible.",
+        "unsuitable": "Weak for dense dashboards or corporate SaaS."
+      },
+      "selection": {
+        "family": "editorial",
+        "appearance": "light",
+        "density": "sparse",
+        "useCases": [
+          "landing",
+          "editorial"
+        ]
+      }
+    },
+    {
+      "id": "32",
+      "slug": "style-32-gamified-flat",
+      "name": "Gamified Flat",
+      "zhName": "游戏化扁平",
+      "brief": "Bold flat colors, chunky borders, hard shadows, levels and streaks.",
+      "zhBrief": "大胆扁平色、粗边框、硬阴影、关卡与连击。",
+      "bestFor": "education, language learning, kids apps",
+      "zhBestFor": "教育、语言学习、儿童应用",
+      "bg": "#fffbe6",
+      "surface": "#ffffff",
+      "text": "#1f2937",
+      "muted": "#6b7280",
+      "primary": "#f59e0b",
+      "accent": "#ef4444",
+      "border": "#1f2937",
+      "radius": "16px",
+      "shadow": "4px 4px 0 #1f2937",
+      "className": "gamified-flat",
+      "image": "",
+      "notes": [
+        "A gamified flat learning page with a hero, three level cards, a streak counter, and a leaderboard.",
+        "Use real level scores and badges with chunky borders and hard shadows rather than stock photos.",
+        "Keep the level progress, streak, and leaderboard in sync; completing a level confirms with a toast."
+      ],
+      "scenario": {
+        "brand": "跃学",
+        "nav": [
+          "Courses",
+          "Leaderboard",
+          "Mine"
+        ],
+        "eyebrow": "Language learning",
+        "headline": "每天 10 分钟，英语越学越上瘾。",
+        "lede": "跃学是一款游戏化语言学习应用。3 个关卡、3 个徽章、1 条连击：今天已连学 7 天，差 1 关升到下一级。",
+        "primaryAction": "Start learning",
+        "secondaryAction": "See leaderboard",
+        "mediaLabel": "跃学 · 今日关卡",
+        "scene": "learning",
+        "metrics": [
+          [
+            "03",
+            "levels"
+          ],
+          [
+            "03",
+            "badges"
+          ],
+          [
+            "07",
+            "day streak"
+          ]
+        ],
+        "features": [
+          [
+            "关卡闯关",
+            "每课 5 道题，答对加分，错了不扣连击。"
+          ],
+          [
+            "徽章收集",
+            "连续学习、满分通关、深夜学习都有徽章。"
+          ],
+          [
+            "好友排行",
+            "每周和好友比一比，输了请喝奶茶。"
+          ]
+        ],
+        "tabs": {
+          "launch": [
+            "Gamified flat",
+            "游戏化扁平页：粗边框、大胆扁平色、关卡与排行榜。"
+          ],
+          "metrics": [
+            "Local state",
+            "关卡进度与排行榜只改变本地演示。"
+          ],
+          "assets": [
+            "Visual objects",
+            "用真实的关卡、分数与徽章，而非装饰性贴纸。"
+          ]
+        },
+        "queue": [
+          [
+            "第 1 关 · 打招呼",
+            "Done"
+          ],
+          [
+            "第 2 关 · 点餐",
+            "Active"
+          ],
+          [
+            "第 3 关 · 问路",
+            "Locked"
+          ]
+        ]
+      },
+      "playbook": {
+        "layout": "gamified-flat",
+        "name": "Yuexue Language",
+        "zhName": "跃学语言学习",
+        "structure": "A gamified flat learning page with a hero, three level cards, a streak counter, and a leaderboard.",
+        "zhStructure": "游戏化扁平页包含头版、三张关卡卡、连击计数与排行榜。",
+        "typography": "Use extra-bold rounded sans headlines with tight leading; chunky labels for levels and badges.",
+        "zhTypography": "使用特粗圆润无衬线标题、紧凑行高，关卡与徽章用粗体标签。",
+        "components": "A gamified flat learning page with a hero, three level cards, a streak counter, and a leaderboard.",
+        "zhComponents": "游戏化扁平页包含头版、三张关卡卡、连击计数与排行榜。",
+        "buttons": "Use solid yellow primary with thick dark borders and hard shadows; secondary buttons are white with dark borders.",
+        "zhButtons": "主按钮是实心黄色配粗深色边框与硬阴影，次要按钮是白底深色边框。",
+        "media": "Use one playful flat illustration and real level scores and badges rather than stock photos.",
+        "zhMedia": "使用一张俏皮扁平插画与真实关卡分数、徽章，不用库存照片。",
+        "states": "Active level, completed level, locked level, and hovered badge.",
+        "zhStates": "进行中关卡、已完成关卡、未解锁关卡与悬停徽章。",
+        "avoid": "Do not use thin borders, soft gradients, or muted colors that weaken the playful energy.",
+        "zhAvoid": "不要用细边框、柔和渐变或灰暗配色削弱俏皮感。"
+      },
+      "geometry": {
+        "panel": "16px",
+        "control": "12px",
+        "chip": "999px",
+        "media": "16px",
+        "description": "gamified flat geometry with thick borders and hard shadows"
+      },
+      "implementation": {
+        "buttons": "Use solid yellow primary with thick dark borders and hard shadows; secondary buttons are white with dark borders.",
+        "zhButtons": "主按钮是实心黄色配粗深色边框与硬阴影，次要按钮是白底深色边框。",
+        "feedback": "Keep required-field errors beside their fields, announce completed actions, and tie every visible status to the actual local demo state.",
+        "zhFeedback": "必填错误贴近字段显示，完成操作提供可读反馈，所有可见状态都与本地演示数据一致。",
+        "spacing": "Use 32px section gaps, 20px card padding, and 12px level rows.",
+        "zhSpacing": "区块间距 32px，卡片内边距 20px，关卡行 12px。",
+        "responsive": "Stack level cards below the hero on mobile; keep the start button visible.",
+        "zhResponsive": "手机上关卡卡移到头版下方，开始按钮保持可见。"
+      },
+      "adaptation": {
+        "landing": "Use a gamified flat hero with levels, streak, and leaderboard.",
+        "dashboard": "Use only for learning progress and achievements.",
+        "admin": "Use for course and badge libraries.",
+        "forms": "Use visible labels, custom inline field errors, and local confirmations. Do not use browser validation bubbles.",
+        "mobile": "Stack cards below the hero; keep the start CTA visible.",
+        "unsuitable": "Weak for serious finance, legal, or corporate pages."
+      },
+      "selection": {
+        "family": "tactile",
+        "appearance": "light",
+        "density": "normal",
+        "useCases": [
+          "landing",
+          "portfolio"
         ]
       }
     }

@@ -232,6 +232,12 @@ skills/awesome-page-design/
 | 24 | Ink Wash | Ink Chronicle Reader | tea culture, museums, literature, cultural ecommerce, heritage product stories | Paper-white canvas, black ink hierarchy, red seal accents, scroll rhythm, and poetic editorial restraint. |
 | 25 | Blueprint | Camper Plan Sheet | architecture tools, renovation planning, systems maps, technical plans | Deep blue technical grid, cyan linework, annotated structure, measured components, and plan-sheet precision. |
 | 26 | Industrial Control | Cold Store Shift Console | print rooms, factory monitoring, logistics control, hardware fleets, incident rooms | Rugged dark panels, safety accents, dense status rows, machine labels, and maintainable control-room clarity. |
+| 27 | Dark Editorial | Night Voyage Magazine | magazines, editorial landing pages, reading products | Black background, oversized serif headlines, hairline rules, and cinematic night photography. |
+| 28 | Mesh Gradient | Rainbow Light Gradient Lab | creative tools, landing pages, brand playgrounds | Soft iridescent mesh gradients, pill controls, and copyable CSS color stops. |
+| 29 | SaaS Dark | Shuhe Analytics | SaaS marketing, product launches, analytics tools | Dark SaaS marketing hero with indigo glow, dashboard screenshot, and trial entry. |
+| 30 | Fintech | Qinghe Digital Bank | fintech, banking, personal finance | Deep green fintech with mono numerals, yellow accent, and account overview. |
+| 31 | Travel Editorial | Yuanxing Travel | travel, magazines, editorial landing | Warm paper travel editorial with full-bleed photography and itinerary builder. |
+| 32 | Gamified Flat | Yuexue Language | education, language learning, kids apps | Bold flat colors, chunky borders, hard shadows, levels and streaks. |
 <!-- style-catalog:end -->
 
 ## Manual Validation
