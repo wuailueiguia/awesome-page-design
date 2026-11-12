@@ -4,7 +4,7 @@ const { runtimeScript } = require('./runtime');
 const cache = new Map();
 const baseCss = fs.readFileSync(path.join(__dirname, 'base.css'), 'utf8');
 function getRedesignedPage(id) {
-  if (Number(id) < 3 || Number(id) > 26) return null;
+  if (Number(id) < 3 || Number(id) > 32) return null;
   if (!cache.has(id)) {
     const moduleFile = path.join(__dirname, `style${id}.js`);
     const cssFile = path.join(__dirname, `style${id}.css`);

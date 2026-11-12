@@ -1,4 +1,4 @@
-/* Style 01：栖物仓。只作用于物资调度示例。 */
+/* Style 01：衡工设备台账。只作用于设备调度示例。 */
 .stock-app {
   --stock-accent:#23879a;
   --stock-accent-strong:#176e7f;
@@ -232,3 +232,9 @@
 /* 数量由页面步进按钮控制，取消浏览器默认微型箭头。 */
 .stock-app input[type=number] { appearance:textfield; -moz-appearance:textfield; font-variant-numeric:tabular-nums; }
 .stock-app input[type=number]::-webkit-inner-spin-button,.stock-app input[type=number]::-webkit-outer-spin-button { -webkit-appearance:none; margin:0; }
+
+.stock-hero{display:flex;gap:16px;align-items:stretch;margin:0 0 20px;border:1px solid var(--stock-line);background:#fff;overflow:hidden}
+.stock-hero img{width:220px;height:96px;object-fit:cover;flex:0 0 auto}
+.stock-hero figcaption{display:flex;flex-direction:column;justify-content:center;gap:4px;padding:10px 4px;min-width:0}
+.stock-hero figcaption strong{font-size:13px;color:var(--stock-text)}
+.stock-hero figcaption span{font-size:11px;color:var(--stock-muted)}

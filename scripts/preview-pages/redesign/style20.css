@@ -94,3 +94,7 @@ body.demo-style-20 { background: #fbf6ed; }
 .s20 .beat20-mute input:focus-visible { outline:2px solid #7b9565; outline-offset:3px; }
 
 @media (forced-colors:active) { .s20 .beat20-mute input { appearance:auto; -webkit-appearance:auto; transform:none; box-shadow:none; } .s20 .beat20-mute input:checked::after { content:none; } }
+
+.s20 .beat20-sheet{margin:28px 4px 0;transform:rotate(-2deg)}
+.s20 .beat20-sheet img{display:block;width:100%;height:150px;object-fit:cover;border-radius:14px}
+.s20 .beat20-sheet figcaption{margin-top:8px;font-size:10px;color:#a08c77;text-align:center}

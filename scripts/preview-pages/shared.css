@@ -8062,10 +8062,10 @@ body.industrial-control .feature-block {
 
 /* 统一的预览工具栏，与演示产品的导航保持清晰层次。 */
 .preview-context-shell {
-  color: #f4f4f5;
-  background: #232529;
-  border-bottom: 1px solid #35373c;
-  color-scheme: dark;
+  color: #1f2937;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  color-scheme: light;
   font: 13px/1.4 ui-sans-serif, system-ui, sans-serif;
 }
 .preview-context {
@@ -8094,10 +8094,10 @@ body.industrial-control .feature-block {
   height: 24px;
   min-width: 30px;
   padding: 0 6px;
-  border: 1px solid #50535b;
+  border: 1px solid #d1d5db;
   border-radius: 4px;
-  color: #d4d6dc;
-  background: #303238;
+  color: #374151;
+  background: #f3f4f6;
   font: 500 11px/1 ui-monospace, SFMono-Regular, Consolas, monospace;
   font-variant-numeric: tabular-nums;
 }
@@ -8136,9 +8136,9 @@ body.industrial-control .feature-block {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-.preview-context-back { color: #c2c5cc; }
-.preview-context-back:hover { color: #ffffff; }
-.preview-context-use { color: #24262b; }
+.preview-context-back { color: #6b7280; }
+.preview-context-back:hover { color: #111827; }
+.preview-context-use { color: #f9fafb; }
 .preview-context-use-label {
   display: inline-flex;
   align-items: center;
@@ -8146,15 +8146,16 @@ body.industrial-control .feature-block {
   gap: 8px;
   min-height: 32px;
   padding: 0 12px;
-  border: 1px solid #f4f4f5;
+  border: 1px solid #111827;
   border-radius: 5px;
-  background: #f4f4f5;
+  background: #111827;
+  color: #f9fafb;
   font-weight: 600;
   transition: background .15s ease, border-color .15s ease;
 }
-.preview-context-use:hover .preview-context-use-label { background: #dedfe3; border-color: #dedfe3; }
+.preview-context-use:hover .preview-context-use-label { background: #374151; border-color: #374151; }
 .preview-context a:focus-visible {
-  outline: 2px solid #a5c8ff;
+  outline: 2px solid #2563eb;
   outline-offset: 1px;
 }
 /* Keep the print ledger's decision separate from its long heading. */
