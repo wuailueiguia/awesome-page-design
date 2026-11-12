@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Style 30 - Fintech</title>
+<link rel="icon" href="../../previews/favicon.ico" type="image/x-icon">
+<link rel="icon" href="../../previews/favicon.svg" type="image/svg+xml" sizes="any">
+<style>
+*, *::before, *::after { box-sizing: border-box; min-width: 0; }
+html, body { max-width: 100%; }
+body { margin: 0; background: #08150c; color: #f5f5f0; color-scheme: dark; }
+.preview-context-shell {
+  color: #1f2937;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  color-scheme: light;
+  font: 13px/1.4 ui-sans-serif, system-ui, sans-serif;
+}
+.preview-context {
+  width: 100%;
+  height: 47px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 0;
+  padding: 0 calc(24px + env(safe-area-inset-right)) 0 calc(24px + env(safe-area-inset-left));
+}
+.preview-context-identity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.preview-context-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  height: 24px;
+  min-width: 30px;
+  padding: 0 6px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  color: #374151;
+  background: #f3f4f6;
+  font: 500 11px/1 ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+}
+.preview-context-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .02em;
+}
+.preview-context-actions {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  gap: 20px;
+}
+.preview-context-back,
+.preview-context-use {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 44px;
+  text-decoration: none;
+  overflow-wrap: normal;
+  white-space: nowrap;
+  border-radius: 5px;
+}
+.preview-context svg {
+  width: 15px;
+  height: 15px;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.preview-context-back { color: #6b7280; }
+.preview-context-back:hover { color: #111827; }
+.preview-context-use { color: #f9fafb; }
+.preview-context-use-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 32px;
+  padding: 0 12px;
+  border: 1px solid #111827;
+  border-radius: 5px;
+  background: #111827;
+  color: #f9fafb;
+  font-weight: 600;
+  transition: background .15s ease, border-color .15s ease;
+}
+.preview-context-use:hover .preview-context-use-label { background: #374151; border-color: #374151; }
+.preview-context a:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 1px;
+}
+
+@media (max-width: 640px) {
+  .preview-context { gap: 10px; padding: 0 calc(12px + env(safe-area-inset-right)) 0 calc(12px + env(safe-area-inset-left)); font-size: 12px; }
+  .preview-context-identity { gap: 7px; }
+  .preview-context-name { font-size: 12px; }
+  .preview-context-actions { gap: 12px; }
+  .preview-context-use-label { gap: 5px; padding: 0 9px; }
+}
+
+body.demo-redesign .page { width: 100%; max-width: none; margin: 0; padding: 0; }
+.demo-root { isolation: isolate; min-height: calc(100vh - 48px); font-family: "PingFang SC", "Microsoft YaHei", ui-sans-serif, system-ui, sans-serif; }
+.demo-root *, .demo-root *::before, .demo-root *::after { box-sizing: border-box; min-width: 0; }
+.demo-root [hidden] { display: none !important; }
+.demo-root :is(button,input,select,textarea) { font: inherit; }
+.demo-root button { cursor: pointer; }
+.demo-root :is(h1,h2,h3,p) { margin: 0; color: inherit; }
+.demo-root :is(h1,h2,h3) { font-family: inherit; text-transform: none; }
+.demo-root a { color: inherit; }
+.demo-root :is(button,a,input,select,textarea):focus-visible { outline: 3px solid #5896e8; outline-offset: 3px; }
+.demo-root button:disabled { cursor: not-allowed; }
+.demo-root img, .demo-root svg { max-width: 100%; }
+.demo-root dialog { margin: auto; max-width: calc(100vw - 32px); max-height: calc(100dvh - 40px); overflow: auto; }
+.demo-root dialog::backdrop { background: rgb(4 8 18 / .68); }
+.demo-root .demo-close { width: 36px; height: 36px; min-height: 36px; padding: 0; display: grid; place-items: center; flex: 0 0 auto; }
+.demo-root .demo-close svg { width: 18px; height: 18px; display: block; fill: none; stroke: currentColor; stroke-width: 2; }
+.demo-field-error { display: block; min-height: 20px; font-size: 12px; line-height: 20px; color: #c23f38; }
+.demo-root input[aria-invalid=true], .demo-root textarea[aria-invalid=true] { border-color: #c23f38; }
+.demo-toast { position: fixed; z-index: 100; left: 50%; bottom: 24px; transform: translateX(-50%); max-width: calc(100vw - 32px); width: max-content; padding: 12px 20px; color: #ffffff; background: #202832; border: 1px solid #8794a3; border-radius: 5px; box-shadow: 0 5px 20px #0003; font-size: 13px; line-height: 1.5; }
+.demo-local-note { font-size: 11px; line-height: 1.6; opacity: .72; }
+@media (prefers-reduced-motion: reduce) { .demo-root *, .demo-root *::before, .demo-root *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+
+body.demo-style-30{background:#08150c}.s30{max-width:1180px;margin:auto;padding:0 32px 32px;color:#f5f5f0;font:13px/1.7 "PingFang SC","Microsoft YaHei",ui-sans-serif,system-ui,sans-serif}.s30 button{color:#f5f5f0;background:transparent;border:1px solid #2a4a38;border-radius:8px;min-height:38px;padding:8px 16px;font-size:12px}.s30 button:hover{border-color:#ffda00}.s30-header{min-height:76px;display:flex;align-items:center;gap:36px;justify-content:space-between;border-bottom:1px solid #1e3a2a}.s30-brand{display:flex;align-items:baseline;gap:12px;text-decoration:none;color:#f5f5f0}.s30-brand>span{display:grid;place-items:center;width:34px;height:34px;background:#ffda00;color:#08150c;font-weight:700;font-size:18px;border-radius:8px}.s30-brand b{font-size:22px;font-weight:700;letter-spacing:.1em}.s30-brand small{font:10px/1 ui-monospace,monospace;letter-spacing:.28em;color:#9db3a4}.s30-header nav{display:flex;gap:28px;margin-right:auto;font-size:12px;color:#9db3a4}.s30-header nav>span[aria-current]{color:#f5f5f0;border-bottom:2px solid #ffda00;padding-bottom:4px}.s30-apply{background:#ffda00!important;border-color:#ffda00!important;color:#08150c!important;font-weight:700}.s30-apply:disabled{background:#2a4a38!important;border-color:#2a4a38!important;color:#9db3a4!important}.s30-hero{padding:56px 0 36px;max-width:820px}.s30-eyebrow{font:11px/1.6 ui-monospace,monospace;letter-spacing:.3em;color:#ffda00}.s30 h1{font-size:54px;line-height:1.2;font-weight:800;letter-spacing:-.01em;margin:16px 0 18px}.s30-lede{font-size:15px;line-height:1.9;color:#c8d6cc;max-width:620px}.s30-goal{display:flex;align-items:center;gap:14px;margin-top:28px;font-size:12px;color:#9db3a4}.s30-goal-bar{flex:1;height:8px;background:#1e3a2a;border-radius:999px;overflow:hidden;max-width:320px}.s30-goal-bar i{display:block;height:100%;background:#ffda00}.s30-goal b{font:700 14px ui-monospace,monospace;color:#ffda00}.s30-meta{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:22px;font:11px ui-monospace,monospace;letter-spacing:.08em;color:#9db3a4}.s30-meta span{border-left:2px solid #34d399;padding-left:10px}.s30-shot{margin:0 0 36px;border:1px solid #1e3a2a;border-radius:8px;overflow:hidden;background:#0f2417;box-shadow:0 24px 80px rgba(0,0,0,.5)}.s30-shot img{display:block;width:100%;height:360px;object-fit:cover}.s30-shot figcaption{display:flex;justify-content:space-between;gap:12px;padding:12px 18px;font-size:11px;color:#9db3a4}.s30-balance{background:#0f2417;border:1px solid #1e3a2a;border-radius:8px;padding:28px}.s30-balance p{font-size:12px;color:#9db3a4}.s30-balance strong{display:block;font:700 44px/1.3 ui-monospace,monospace;margin:8px 0 4px;color:#ffda00}.s30-balance span{font:12px ui-monospace,monospace;color:#34d399}.s30-tabs{display:flex;gap:10px;margin:20px 0;flex-wrap:wrap}.s30-tabs button.is-active{background:#f5f5f0;color:#08150c;border-color:#f5f5f0;font-weight:600}.s30-txs{list-style:none;margin:0;padding:0;border-top:1px solid #1e3a2a}.s30-txs li{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:16px;align-items:center;padding:16px 4px;border-bottom:1px solid #1e3a2a}.s30-tx-date{font:11px ui-monospace,monospace;color:#9db3a4}.s30-txs strong{font:14px ui-monospace,monospace}.s30-txs .in{color:#34d399}.s30-txs .out{color:#f5f5f0}.s30-footer{display:flex;justify-content:space-between;gap:16px;padding-top:24px;font-size:11px;color:#6b8574}.s30-dialog{width:480px;background:#0f2417;color:#f5f5f0;border:1px solid #2a4a38;border-radius:8px;padding:28px}.s30-dialog>form>header{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}.s30-dialog header p{font:10px/1.6 ui-monospace,monospace;letter-spacing:.3em;color:#ffda00}.s30-dialog h2{font-size:24px;font-weight:700;margin-top:8px}.s30-dialog-note{font-size:12px;color:#9db3a4!important;margin:16px 0!important;padding-bottom:18px;border-bottom:1px solid #1e3a2a}.s30-dialog label{display:block;font-size:12px;color:#c8d6cc;margin:16px 0 6px}.s30-dialog input{width:100%;background:#08150c;color:#f5f5f0;border:1px solid #2a4a38;border-radius:8px;min-height:44px;padding:10px 12px;font-size:13px}.s30-dialog .demo-field-error{color:#f0a080;font-size:11px;min-height:16px;margin:6px 0 0}.s30-submit{display:block;width:100%;min-height:46px;margin-top:14px;background:#ffda00!important;border-color:#ffda00!important;color:#08150c!important;font-weight:700}
+@media(max-width:900px){.s30{padding:0 20px 24px}.s30-header nav{display:none}.s30-brand small{display:none}.s30 h1{font-size:40px}.s30-shot img{height:260px}.s30-balance strong{font-size:34px}}
+@media(max-width:640px){.s30{padding:0 16px 20px}.s30-hero{padding:40px 0 28px}.s30 h1{font-size:32px}.s30-shot img{height:200px}.s30-goal{flex-wrap:wrap}.s30-footer{display:block;line-height:2}.s30-dialog{padding:20px}}
+
+.demo-announcement { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+/* Shared interaction geometry; each demonstration supplies its own material palette. */
+.pd-choice,.pd-stepper{--control-bg:#fff;--control-ink:#344650;--control-line:#d6dfe3;--control-accent:#23879a;--control-hover:#eff6f7;--control-radius:5px;--control-shadow:0 12px 32px #172c3a20;color:var(--control-ink);font:inherit}
+.pd-choice{display:block;position:relative;width:100%;text-align:left}
+.pd-choice>input[type=hidden]{display:none!important}
+.demo-root .pd-choice-trigger,.stock-page .pd-choice-trigger{appearance:none;width:100%;min-height:44px;padding:10px 12px;margin:0;display:flex;align-items:center;justify-content:space-between;gap:14px;background:var(--control-bg);color:var(--control-ink);border:1px solid var(--control-line);border-radius:var(--control-radius);font:inherit;text-align:left;line-height:1.5;box-shadow:none;cursor:pointer}
+.pd-choice-trigger>[data-choice-label]{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pd-choice-trigger>svg{width:16px;height:16px;flex:none;fill:none;stroke:currentColor;stroke-width:1.5;transition:transform .15s}
+.pd-choice-trigger[aria-expanded=true]>svg{transform:rotate(180deg)}
+.demo-root .pd-choice-trigger:hover,.demo-root .pd-choice-trigger[aria-expanded=true]{border-color:var(--control-accent);background:var(--control-hover)}
+.demo-root .pd-choice-trigger:focus-visible{outline:2px solid var(--control-accent);outline-offset:3px}
+.pd-choice-list{box-sizing:border-box;z-index:1000;display:block;overflow-y:auto;overscroll-behavior:contain;padding:5px;background:var(--control-bg);color:var(--control-ink);border:1px solid var(--control-line);border-radius:var(--control-radius);box-shadow:var(--control-shadow);font:inherit;line-height:1.5;scroll-padding:5px}
+.pd-choice-list[hidden]{display:none!important}
+.pd-choice-option{display:flex;align-items:center;gap:10px;min-height:42px;padding:10px 11px;border-radius:max(0px,calc(var(--control-radius) - 3px));cursor:pointer;font-size:12px;line-height:1.5;white-space:normal}
+.pd-choice-option>span{flex:1}
+.pd-choice-option>svg{width:16px;height:16px;flex:none;fill:none;stroke:var(--control-accent);stroke-width:1.7;opacity:0}
+.pd-choice-option[aria-selected=true]{color:var(--control-accent);font-weight:600}
+.pd-choice-option[aria-selected=true]>svg{opacity:1}
+.pd-choice-option.pd-active,.pd-choice-option:hover{background:var(--control-hover)}
+.pd-choice-option[aria-disabled=true]{opacity:.4;cursor:not-allowed}
+.pd-swatch{width:24px;height:28px;flex:none;background:#f5f0df;border:1px solid #d6cfbd}
+.pd-swatch-1{background:repeating-linear-gradient(90deg,#d9d4c9 0 1px,#f5f3e9 1px 3px)}
+.pd-swatch-2{background-color:#e6ddc2;background-image:radial-gradient(#867d6099 .7px,transparent .7px);background-size:5px 6px}
+.pd-stepper{display:flex!important;align-items:stretch;width:100%;border:1px solid var(--control-line);border-radius:var(--control-radius);background:var(--control-bg);overflow:hidden}
+.pd-stepper:focus-within{outline:2px solid var(--control-accent);outline-offset:3px}
+.pd-stepper input[type=number]{appearance:textfield;-moz-appearance:textfield;min-width:0;width:100%;height:auto;min-height:42px;padding:8px 3px!important;margin:0!important;text-align:center;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:var(--control-ink);font:inherit;outline:0!important}
+.pd-stepper input::-webkit-inner-spin-button,.pd-stepper input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
+.demo-root .pd-stepper>button,.stock-dialog .pd-stepper>button{width:38px;min-width:32px;min-height:42px;padding:0;margin:0;flex:0 0 38px;display:grid;place-items:center;border:0;border-radius:0;background:transparent;color:var(--control-accent);font:18px/1 ui-sans-serif,system-ui;box-shadow:none;cursor:pointer}
+.demo-root .pd-stepper>button:hover,.stock-dialog .pd-stepper>button:hover{background:var(--control-hover)}
+.pd-stepper>button:disabled{opacity:.3;cursor:not-allowed}
+.pd-stepper>button[data-step="-1"]{order:-1}
+.pd-stepper>button:focus-visible{outline:2px solid var(--control-accent);outline-offset:-4px}
+.s05 .pd-choice,.pd-theme-05{--control-bg:#f7f5ef;--control-ink:#252521;--control-line:#9f9d95;--control-accent:#c8282b;--control-hover:#ece8df;--control-radius:0px;--control-shadow:4px 4px 0 #282824}
+.s05 .pd-choice-trigger{min-width:128px;font:12px ui-monospace,monospace}
+.s07 .pd-choice,.pd-theme-07{--control-bg:#fffdf5;--control-ink:#4b5845;--control-line:#cbd4b8;--control-accent:#476947;--control-hover:#edf2df;--control-radius:14px;--control-shadow:0 10px 0 -5px #d9ddc6,0 18px 35px #46543820}
+.s07 .pd-choice-trigger{border-width:2px;padding:11px 14px}
+.s08 .pd-choice,.s08 .pd-stepper,.pd-theme-08{--control-bg:#20231e;--control-ink:#d7dbcf;--control-line:#4c5346;--control-accent:#e2e9ce;--control-hover:#30372a;--control-radius:0px;--control-shadow:0 14px 36px #0008}
+.s08 .pd-choice-trigger{font-size:12px}
+.s09 .pd-choice,.s09 .pd-stepper,.pd-theme-09{--control-bg:#fff;--control-ink:#3d4a54;--control-line:#d8dfe3;--control-accent:#27343e;--control-hover:#f2f5f6;--control-radius:3px;--control-shadow:0 12px 28px #24313b1c}
+.s09 .pd-choice-trigger{font-size:11px;min-height:42px}
+.s09 .pd-choice-list{padding:5px}
+.s09 .pd-stepper{font-size:12px}
+.s12 .pd-stepper{--control-bg:#fffaff;--control-ink:#5e456c;--control-line:#d9c9e3;--control-accent:#79528e;--control-hover:#f0e8f5;--control-radius:6px}
+.s19 .pd-choice,.pd-theme-19{--control-bg:#fff;--control-ink:#382c4e;--control-line:#ddcfe9;--control-accent:#773ec9;--control-hover:#f2eafa;--control-radius:12px;--control-shadow:0 16px 36px #54298c24}
+.s19 .pd-choice{margin-bottom:16px}
+.s19 .pd-choice-trigger{font-size:13px;min-height:46px}
+.s22 .pd-choice,.pd-theme-22{--control-bg:#163f35;--control-ink:#f2e9d3;--control-line:#987d4b;--control-accent:#e2c58b;--control-hover:#284c3f;--control-radius:0px;--control-shadow:0 15px 35px #001d1acc}
+.s22 .pd-choice{margin-bottom:22px}
+.s22 .pd-choice-list{border-top:3px double #c8ac72;padding:6px}
+.s22 .pd-choice-option{border-bottom:1px solid #c8ac7220}
+.s23 .pd-choice,.pd-theme-23{--control-bg:#f8f5ed;--control-ink:#645846;--control-line:#cbbfa9;--control-accent:#806341;--control-hover:#eee5d4;--control-radius:6px;--control-shadow:0 15px 35px #51463320}
+.s23 .pd-choice{margin:8px 0 18px}
+.s23 .pd-choice-trigger{font-size:13px;min-height:46px}
+@media(max-width:640px){.pd-choice-option{min-height:46px}.demo-root .pd-stepper>button{flex-basis:34px;width:34px}.s05 .pd-choice-trigger{min-width:0}}
+@media(prefers-reduced-motion:reduce){.pd-choice-trigger>svg{transition:none}}
+
+
+.demo-root .demo-date{position:relative;display:block;width:100%;min-width:0}
+.demo-root .demo-date>input{width:100%;padding-right:42px;cursor:pointer;font-variant-numeric:tabular-nums}
+.demo-root .demo-date-trigger{position:absolute;right:5px;top:50%;transform:translateY(-50%);display:grid;place-items:center;width:32px;height:32px;min-height:0;padding:6px;border:0;border-radius:7px;color:inherit;background:transparent;box-shadow:none}
+.demo-root .demo-date-trigger svg{display:block;width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.5}
+.demo-root .demo-date-trigger:hover{background:#647a4920}
+.demo-calendar{--calendar-bg:#fffdf6;--calendar-ink:#4b5844;--calendar-muted:#7b896d;--calendar-line:#d8e1c9;--calendar-tint:#edf3e3;--calendar-accent:#597547;position:fixed;inset:auto;margin:0;width:304px;max-width:calc(100vw - 24px);max-height:calc(100dvh - 24px);overflow:auto;padding:15px;border:1.5px solid var(--calendar-line);border-radius:17px;background:var(--calendar-bg);color:var(--calendar-ink);box-shadow:0 12px 40px #293b2729;font:13px/1.5 "PingFang SC","Microsoft YaHei",sans-serif;z-index:1000}
+.demo-calendar-reading{--calendar-bg:#fffaff;--calendar-ink:#5e456c;--calendar-muted:#927d9d;--calendar-line:#d9c9e3;--calendar-tint:#f0e8f5;--calendar-accent:#79528e;border-radius:18px;box-shadow:0 12px 36px #513c6026}
+.demo-calendar[hidden]{display:none!important}
+.demo-calendar *{box-sizing:border-box}
+.demo-calendar button{font:inherit;cursor:pointer;box-shadow:none;min-width:0;min-height:0;line-height:1.5;letter-spacing:0}
+.demo-calendar button:focus-visible{outline:2px solid var(--calendar-accent);outline-offset:2px}
+.demo-calendar-head{display:grid;grid-template-columns:32px 1fr 32px;align-items:center;gap:8px;margin-bottom:13px}
+.demo-calendar-head strong{text-align:center;font-size:14px;font-weight:650}
+.demo-calendar-head button{border:1px solid var(--calendar-line);border-radius:8px;width:32px;height:32px;padding:0;background:var(--calendar-tint);color:var(--calendar-ink);font-size:23px}
+.demo-calendar-week,.demo-calendar-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}
+.demo-calendar-week{color:var(--calendar-muted);font-size:10px;text-align:center;margin-bottom:6px}
+.demo-calendar-days button{border:1px solid transparent;border-radius:8px;aspect-ratio:1;padding:0;background:transparent;color:var(--calendar-ink);font-size:12px;font-variant-numeric:tabular-nums}
+.demo-calendar-days button:not(:disabled):hover{background:var(--calendar-tint);border-color:var(--calendar-line)}
+.demo-calendar-days button[aria-current=date]{border-color:var(--calendar-accent)}
+.demo-calendar-days button[aria-pressed=true]{background:var(--calendar-accent);color:var(--calendar-bg);font-weight:700}
+.demo-calendar-days button[aria-pressed=true]:hover{background:var(--calendar-accent)}
+.demo-calendar button:disabled{opacity:.3;cursor:not-allowed}
+.demo-calendar-footer{display:flex;align-items:center;justify-content:space-between;gap:7px;border-top:1px dashed var(--calendar-line);margin-top:12px;padding-top:10px;font-size:10px;color:var(--calendar-muted)}
+.demo-calendar-footer button{padding:5px 7px;border:0;border-radius:6px;background:transparent;color:var(--calendar-accent);font-size:11px}
+.demo-calendar-footer button:hover{background:var(--calendar-tint)}
+
+</style>
+</head>
+<body class="fintech demo-redesign demo-style-30">
+  <header class="preview-context-shell">
+    <nav class="preview-context" aria-label="风格预览导航">
+      <div class="preview-context-identity" role="group" aria-label="风格 30：金融科技" title="金融科技"><span class="preview-context-number">30</span><strong class="preview-context-name" lang="zh-CN">金融科技</strong></div>
+      <div class="preview-context-actions">
+        <a class="preview-context-back" href="../../previews/index.html" lang="zh-CN"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 5-7 7 7 7M5 12h14"/></svg><span>风格库</span></a>
+        <a class="preview-context-use" href="../../previews/index.html?style=30#style-30" lang="zh-CN"><span class="preview-context-use-label">选用此风格<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a>
+      </div>
+    </nav>
+  </header>
+  <script>(function initializePageDesignDemo() {
+  const escapeHtml = value => String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
+  const openers = new WeakMap();
+  function openDialog(dialog, opener) { if (!dialog || dialog.open) return; openers.set(dialog, opener || document.activeElement); dialog.showModal(); }
+  function closeDialog(dialog) { if (dialog?.open) dialog.close(); }
+  function bindDialogs(root) {
+    root.querySelectorAll('[data-demo-open]').forEach(button => button.addEventListener('click', () => openDialog(root.querySelector(button.dataset.demoOpen), button)));
+    root.querySelectorAll('[data-demo-close]').forEach(button => button.addEventListener('click', () => closeDialog(button.closest('dialog'))));
+    root.querySelectorAll('dialog').forEach(dialog => {
+      dialog.addEventListener('close', () => { const opener = openers.get(dialog); if (opener?.isConnected) opener.focus(); });
+      dialog.addEventListener('click', event => { const rect = dialog.getBoundingClientRect(); if (event.target === dialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) closeDialog(dialog); });
+    });
+  }
+  function wireForm(form, onValid) {
+    form.noValidate = true;
+    const fields = [...form.querySelectorAll('input:not([type=radio]):not([type=checkbox]), textarea, select')];
+    function errorNode(field) { return document.getElementById(field.getAttribute('aria-describedby')); }
+    function setError(field, message) { const error = errorNode(field); if (error) error.textContent = message; if (message) field.setAttribute('aria-invalid','true'); else field.removeAttribute('aria-invalid'); }
+    fields.forEach(field => field.addEventListener('input', () => { if (field.value.trim() && field.validity.valid) setError(field, ''); }));
+    form.addEventListener('submit', event => {
+      event.preventDefault(); let firstInvalid;
+      fields.forEach(field => { const invalid = (field.required && !field.value.trim()) || !field.validity.valid; setError(field, invalid ? (field.dataset.error || '请填写有效内容后再继续。') : ''); if (invalid && !firstInvalid) firstInvalid = field; });
+      if (firstInvalid) { firstInvalid.focus(); return; }
+      onValid(new FormData(form), form);
+    });
+  }
+  function download(filename, content, type = 'text/plain;charset=utf-8') {
+    const url = URL.createObjectURL(new Blob([content], {type})); const anchor = document.createElement('a'); anchor.href = url; anchor.download = filename; anchor.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+  async function copy(text) { try { await navigator.clipboard.writeText(text); return true; } catch { return false; } }
+  function toast(root, message) {
+    let node = root.querySelector('.demo-toast');
+    if (!node) { node = document.createElement('div'); node.className = 'demo-toast'; node.setAttribute('role','status'); node.setAttribute('aria-live','polite'); root.appendChild(node); }
+    node.textContent = message; node.hidden = false; clearTimeout(node._hideTimer); node._hideTimer = setTimeout(() => node.hidden = true, 2600);
+  }
+  const choiceLabel = input => input.closest("[data-choice]").querySelector("[data-choice-label]").textContent;
+  window.PageDesignDemo = { choiceLabel, escapeHtml, openDialog, closeDialog, bindDialogs, wireForm, download, copy, toast };
+})();</script>
+  <main id="top" class="page"><div class="demo-root s30">
+  <header class="s30-header"><a href="#top" class="s30-brand"><span aria-hidden="true">禾</span><b>青禾</b><small>QINGHE</small></a>
+  <nav aria-label="银行导航"><span aria-current="page">账户</span><span>理财</span><span>关于</span></nav>
+  <button type="button" class="s30-apply" data-s30-apply>开户</button></header>
+  <section class="s30-hero" aria-labelledby="s30-title">
+    <p class="s30-eyebrow">DIGITAL BANK / FINTECH</p>
+    <h1 id="s30-title">钱，要看得明白。</h1>
+    <p class="s30-lede">青禾是一家数字银行。3 个账户、3 笔动态、1 个目标：本月存下 ¥5,000，进度 62%。</p>
+    <p class="s30-goal"><span>本月存钱目标 ¥5,000</span><span class="s30-goal-bar"><i style="width:62%"></i></span><b>62%</b></p>
+    <p class="s30-meta"><span>03 个账户</span><span>62% 存钱进度</span><span>01 个目标</span></p>
+  </section>
+  <figure class="s30-shot"><img src="fintech-green-marble.jpg" alt="深绿大理石面上的黑色银行卡与金色芯片"><figcaption><span>青禾黑卡 · 深绿大理石</span><span>AI 生成示意</span></figcaption></figure>
+  <section class="s30-accounts" aria-label="账户总览">
+    <div class="s30-balance"><p>当前账户余额</p><strong data-s30-balance>¥86,420.00</strong><span data-s30-rate>年利率 2.10%</span></div>
+    <div class="s30-tabs" role="group" aria-label="选择账户"><button type="button" data-s30-tab="0" aria-pressed="true" class="is-active">储蓄账户</button><button type="button" data-s30-tab="1" aria-pressed="false" class="">日常账户</button><button type="button" data-s30-tab="2" aria-pressed="false" class="">理财账户</button></div>
+    <ul class="s30-txs" data-s30-txs></ul>
+  </section>
+  <footer class="s30-footer"><span role="status" aria-live="polite" data-s30-note></span><span>演示数据只保存在本地 · 图片为 AI 生成示意</span></footer>
+  <dialog class="s30-dialog" id="s30-apply-dialog" aria-labelledby="s30-dialog-title">
+    <form data-s30-form novalidate>
+      <header><div><p>OPEN AN ACCOUNT</p><h2 id="s30-dialog-title">开一个青禾账户</h2></div><button type="button" class="demo-close" data-demo-close aria-label="关闭开户表单">×</button></header>
+      <p class="s30-dialog-note">开户免费，不用去网点。本地演示，不提交真实信息。</p>
+      <label><span>姓名 <b aria-hidden="true">*</b></span><input name="name" type="text" placeholder="张小禾" required aria-describedby="s30-name-error" data-error="请填写姓名。"></label>
+      <p class="demo-field-error" id="s30-name-error"></p>
+      <label><span>手机号 <b aria-hidden="true">*</b></span><input name="phone" type="tel" placeholder="138 0000 0000" required minlength="11" aria-describedby="s30-phone-error" data-error="请输入 11 位手机号。"></label>
+      <p class="demo-field-error" id="s30-phone-error"></p>
+      <button type="submit" class="s30-submit">提交开户申请</button>
+    </form>
+  </dialog>
+  <script type="application/json" data-s30-data>[{"id":"savings","name":"储蓄账户","balance":"¥86,420.00","rate":"年利率 2.10%","txs":[{"label":"工资入账","date":"11-10","amount":"+¥12,800.00"},{"label":"自动转存","date":"11-09","amount":"-¥1,000.00"},{"label":"利息入账","date":"11-01","amount":"+¥148.20"}]},{"id":"daily","name":"日常账户","balance":"¥12,350.50","rate":"年利率 0.35%","txs":[{"label":"超市 · 山姆会员店","date":"11-12","amount":"-¥486.20"},{"label":"地铁 · 交通卡充值","date":"11-11","amount":"-¥100.00"},{"label":"咖啡 · 街角咖啡馆","date":"11-11","amount":"-¥32.00"}]},{"id":"wealth","name":"理财账户","balance":"¥58,900.00","rate":"近一年收益 4.35%","txs":[{"label":"稳健理财 · 90 天","date":"11-08","amount":"+¥5,000.00"},{"label":"收益分配","date":"11-05","amount":"+¥212.40"},{"label":"定投扣款","date":"11-01","amount":"-¥2,000.00"}]}]</script>
+  <script>(function init() {
+  const root = document.querySelector(".s30"), D = window.PageDesignDemo, $ = s => root.querySelector(s);
+  const data = JSON.parse($("[data-s30-data]").textContent);
+  D.bindDialogs(root);
+  let current = 0;
+  let applied = false;
+  function draw() {
+    const a = data[current];
+    root.querySelectorAll("[data-s30-tab]").forEach((b, i) => {
+      b.setAttribute("aria-pressed", String(i === current));
+      b.classList.toggle("is-active", i === current);
+    });
+    $("[data-s30-balance]").textContent = a.balance;
+    $("[data-s30-rate]").textContent = a.rate;
+    $("[data-s30-txs]").innerHTML = a.txs.map(t => `<li><span class="s30-tx-label">${D.escapeHtml(t.label)}</span><span class="s30-tx-date">${t.date}</span><strong class="${t.amount.startsWith("+") ? "in" : "out"}">${t.amount}</strong></li>`).join("");
+    $("[data-s30-note]").textContent = `当前账户：${a.name}，余额 ${a.balance}，${a.rate}`;
+  }
+  root.querySelectorAll("[data-s30-tab]").forEach((b, i) => b.addEventListener("click", () => { current = i; draw(); }));
+  D.wireForm($("[data-s30-form]"), formData => {
+    applied = true;
+    const name = String(formData.get("name")).trim();
+    root.querySelectorAll("[data-s30-apply]").forEach(b => { b.textContent = "已提交申请 ✓"; b.disabled = true; });
+    D.closeDialog($("#s30-apply-dialog"));
+    D.toast(root, `申请已提交，${name}，我们会在 1 个工作日内联系你。`);
+  });
+  root.querySelectorAll("[data-s30-apply]").forEach(b => b.addEventListener("click", () => { if (!applied) D.openDialog($("#s30-apply-dialog")); }));
+  draw();
+})();</script></div></main>
+  <div class="demo-announcement" aria-live="polite"></div>
+<script>(function initializeControls() {
+  function bind() {
+    const controllers = [];
+    document.querySelectorAll('[data-choice]').forEach(box => {
+      const input = box.querySelector('input'), trigger = box.querySelector('.pd-choice-trigger'), list = box.querySelector('[role=listbox]'), options = [...list.querySelectorAll('[role=option]')];
+      const initialValue = input.value;
+      let active = 0, opened = false, search = '', searchTimer;
+      const enabled = i => options[i]?.getAttribute('aria-disabled') !== 'true';
+      const selectedIndex = () => Math.max(0, options.findIndex(option => option.dataset.value === input.value));
+      function highlight(i) { active = i; options.forEach((option,n) => option.classList.toggle('pd-active', n === i)); trigger.setAttribute('aria-activedescendant', options[i].id); options[i].scrollIntoView({block:'nearest'}); }
+      function position() {
+        const r = trigger.getBoundingClientRect(), below = innerHeight-r.bottom-12, above = r.top-12;
+        const height = Math.min(300, Math.max(90, Math.max(below, above))), up = below < 180 && above > below;
+        const width = Math.min(Math.max(r.width, 200), innerWidth-24);
+        Object.assign(list.style,{position:'fixed',margin:'0',left:`${Math.max(12,Math.min(r.left,innerWidth-width-12))}px`,width:`${width}px`,maxHeight:`${height}px`,top:up?'auto':`${r.bottom+6}px`,bottom:up?`${innerHeight-r.top+6}px`:'auto'});
+      }
+      function close() { if (!opened) return; opened = false; if (list.hidePopover && list.matches(':popover-open')) list.hidePopover(); list.hidden = true; trigger.setAttribute('aria-expanded','false'); trigger.removeAttribute('aria-activedescendant'); search='';clearTimeout(searchTimer); }
+      function open(index=selectedIndex()) { if(trigger.disabled)return;controllers.forEach(c=>c.close());opened=true;list.hidden=false;position();if(list.showPopover)list.showPopover();trigger.setAttribute('aria-expanded','true');highlight(index); }
+      function sync() { const i=selectedIndex(); box.querySelector('[data-choice-label]').textContent=options[i].querySelector('span').textContent; options.forEach((option,n)=>option.setAttribute('aria-selected',String(n===i))); }
+      function choose(i) { if(!enabled(i))return;input.value=options[i].dataset.value;sync();close();trigger.focus();input.dispatchEvent(new Event('input',{bubbles:true}));input.dispatchEvent(new Event('change',{bubbles:true})); }
+      trigger.addEventListener('click',()=>opened?close():open());
+      trigger.addEventListener('keydown',event=>{
+        const key=event.key;
+        if(['ArrowDown','ArrowUp','Home','End'].includes(key)) { event.preventDefault(); if(!opened){open(key==='Home'?0:key==='End'?options.length-1:selectedIndex());return;} let n=key==='Home'?0:key==='End'?options.length-1:active+(key==='ArrowDown'?1:-1); n=Math.max(0,Math.min(options.length-1,n));while(!enabled(n)&&n>=0&&n<options.length)n+=key==='ArrowUp'||key==='End'?-1:1;if(options[n]&&enabled(n))highlight(n); }
+        else if(key==='Escape'&&opened){event.preventDefault();event.stopPropagation();close();}
+        else if((key==='Enter'||key===' ')&&opened){event.preventDefault();choose(active);}
+        else if(key==='Tab')close();
+        else if(key.length===1&&!event.ctrlKey&&!event.metaKey&&key!==' '){event.preventDefault();search+=key.toLocaleLowerCase();clearTimeout(searchTimer);searchTimer=setTimeout(()=>search='',600);const n=options.findIndex((o,i)=>enabled(i)&&o.textContent.trim().toLocaleLowerCase().startsWith(search));if(n>=0){if(!opened)open(n);else highlight(n);}}
+      });
+      list.addEventListener('pointerdown',event=>event.preventDefault());
+      list.addEventListener('click',event=>{const option=event.target.closest('[role=option]');if(option){event.preventDefault();choose(options.indexOf(option));}});
+      document.addEventListener('pointerdown',event=>{if(!box.contains(event.target))close();});
+      document.addEventListener('focusin',event=>{if(!box.contains(event.target))close();});
+      box.closest('dialog')?.addEventListener('close',close);
+      box.closest('dialog')?.addEventListener('cancel',event=>{if(opened){event.preventDefault();close();}});
+      input.form?.addEventListener('reset',()=>setTimeout(()=>{input.value=initialValue;close();sync();},0));
+      controllers.push({close,position,isOpen:()=>opened});sync();
+    });
+    addEventListener('resize',()=>controllers.forEach(c=>c.isOpen()&&c.position()));
+    document.addEventListener('scroll',()=>controllers.forEach(c=>c.isOpen()&&c.position()),true);
+    document.querySelectorAll('.pd-stepper').forEach(box=>{
+      const input=box.querySelector('input'),buttons=[...box.querySelectorAll('button')];
+      function sync(){buttons[0].disabled=input.disabled||input.min!==''&&Number(input.value)<=Number(input.min);buttons[1].disabled=input.disabled||input.max!==''&&Number(input.value)>=Number(input.max);}
+      buttons.forEach(button=>button.addEventListener('click',()=>{try{Number(button.dataset.step)>0?input.stepUp():input.stepDown();}catch{return;}input.dispatchEvent(new Event('input',{bubbles:true}));input.dispatchEvent(new Event('change',{bubbles:true}));sync();}));
+      input.addEventListener('input',sync);input.form?.addEventListener('reset',()=>setTimeout(sync,0));
+      new MutationObserver(sync).observe(input,{attributes:true,attributeFilter:['min','max','disabled']});
+      input.closest('dialog')?.addEventListener('toggle',sync);sync();
+    });
+  }
+  document.readyState==='loading'?document.addEventListener('DOMContentLoaded',bind,{once:true}):bind();
+})();(function initializeDateControls() {
+  const iso = date => `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+  const parse = value => /^\d{4}-\d{2}-\d{2}$/.test(value || '') ? new Date(`${value}T12:00:00`) : null;
+  const addDays = (date, count) => { const next = new Date(date); next.setDate(next.getDate() + count); return next; };
+  const today = () => { const date = new Date(); date.setHours(12, 0, 0, 0); return date; };
+  let sequence = 0;
+  function bind() {
+    document.querySelectorAll('.demo-root input[data-calendar-field]').forEach(input => {
+      if (input.dataset.demoCalendar) return;
+      input.dataset.demoCalendar = 'true';
+      const root = input.closest('.demo-root'), value = input.value;
+      input.type = 'text'; input.value = value; input.readOnly = true; input.placeholder = '选择日期';
+      input.setAttribute('aria-haspopup', 'dialog'); input.setAttribute('aria-expanded', 'false');
+      const wrapper = document.createElement('span'); wrapper.className = 'demo-date';
+      input.before(wrapper); wrapper.appendChild(input);
+      const trigger = document.createElement('button'); trigger.type = 'button'; trigger.className = 'demo-date-trigger';
+      trigger.setAttribute('aria-label', '打开日期选择'); trigger.setAttribute('aria-haspopup', 'dialog'); trigger.setAttribute('aria-expanded', 'false');
+      trigger.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v15H5zM8 3v4m8-4v4M5 10h14M8 13h2m4 0h2m-8 4h2"/></svg>';
+      wrapper.appendChild(trigger);
+      const popup = document.createElement('div'), id = `demo-calendar-${++sequence}`;
+      popup.id = id; popup.className = `demo-calendar ${root.classList.contains('s07') ? 'demo-calendar-garden' : 'demo-calendar-reading'}`;
+      popup.setAttribute('role', 'dialog'); popup.setAttribute('aria-label', '选择日期'); popup.setAttribute('popover', 'manual');
+      popup.hidden = true;
+      popup.innerHTML = `<div class="demo-calendar-head"><button type="button" data-calendar-prev aria-label="上一个月">‹</button><strong data-calendar-month aria-live="polite"></strong><button type="button" data-calendar-next aria-label="下一个月">›</button></div><div class="demo-calendar-week" aria-hidden="true">${['一','二','三','四','五','六','日'].map(day => `<span>${day}</span>`).join('')}</div><div class="demo-calendar-days" role="group" aria-label="本月日期"></div><div class="demo-calendar-footer"><button type="button" data-calendar-today>今天</button><span data-calendar-selection role="status"></span><button type="button" data-calendar-clear>清空</button></div>`;
+      wrapper.appendChild(popup); input.setAttribute('aria-controls', id); trigger.setAttribute('aria-controls', id);
+      const monthLabel = popup.querySelector('[data-calendar-month]'), grid = popup.querySelector('.demo-calendar-days');
+      const previous = popup.querySelector('[data-calendar-prev]'), next = popup.querySelector('[data-calendar-next]');
+      let active = false, focused = today(), month = new Date(focused.getFullYear(), focused.getMonth(), 1, 12);
+      const valid = date => (!input.min || iso(date) >= input.min) && (!input.max || iso(date) <= input.max);
+      function clamp(date) {
+        if (input.min && iso(date) < input.min) return parse(input.min);
+        if (input.max && iso(date) > input.max) return parse(input.max);
+        return date;
+      }
+      function validate() {
+        const date = parse(input.value);
+        input.setCustomValidity(input.value && (!date || !valid(date)) ? '请选择允许范围内的日期。' : '');
+      }
+      function render(focusDay = false) {
+        monthLabel.textContent = `${month.getFullYear()} 年 ${month.getMonth() + 1} 月`;
+        const first = new Date(month.getFullYear(), month.getMonth(), 1, 12), offset = (first.getDay() + 6) % 7;
+        const days = new Date(month.getFullYear(), month.getMonth() + 1, 0).getDate();
+        previous.disabled = !!input.min && iso(new Date(month.getFullYear(), month.getMonth(), 0, 12)) < input.min;
+        next.disabled = !!input.max && iso(new Date(month.getFullYear(), month.getMonth() + 1, 1, 12)) > input.max;
+        grid.innerHTML = Array.from({length: offset}, () => '<span aria-hidden="true"></span>').join('') + Array.from({length: days}, (_, index) => {
+          const date = new Date(month.getFullYear(), month.getMonth(), index + 1, 12), key = iso(date), selected = input.value === key;
+          return `<button type="button" data-calendar-day="${key}" tabindex="${key === iso(focused) ? '0' : '-1'}" aria-label="${month.getFullYear()}年${month.getMonth() + 1}月${index + 1}日${selected ? '，已选中' : ''}" aria-pressed="${selected}"${key === iso(today()) ? ' aria-current="date"' : ''}${valid(date) ? '' : ' disabled'}>${index + 1}</button>`;
+        }).join('');
+        popup.querySelector('[data-calendar-today]').disabled = !valid(today());
+        popup.querySelector('[data-calendar-selection]').textContent = input.value ? `已选 ${input.value.slice(5).replace('-', ' / ')}` : '尚未选择';
+        if (focusDay) grid.querySelector(`[data-calendar-day="${iso(focused)}"]`)?.focus();
+      }
+      function position() {
+        const rect = wrapper.getBoundingClientRect(), width = Math.min(304, window.innerWidth - 24);
+        popup.style.width = `${width}px`;
+        const height = popup.getBoundingClientRect().height, below = window.innerHeight - rect.bottom - 12;
+        popup.style.left = `${Math.max(12, Math.min(rect.left, window.innerWidth - width - 12))}px`;
+        popup.style.top = `${Math.max(12, below >= height || rect.top < height + 12 ? Math.min(rect.bottom + 7, window.innerHeight - height - 12) : rect.top - height - 7)}px`;
+      }
+      function close(restore = false) {
+        if (!active) return;
+        active = false;
+        if (typeof popup.hidePopover === 'function' && popup.matches(':popover-open')) popup.hidePopover();
+        popup.hidden = true; input.setAttribute('aria-expanded', 'false'); trigger.setAttribute('aria-expanded', 'false');
+        if (restore) input.focus();
+      }
+      function open() {
+        if (active) { close(true); return; }
+        focused = clamp(parse(input.value) || today()); month = new Date(focused.getFullYear(), focused.getMonth(), 1, 12);
+        active = true; render(); popup.hidden = false;
+        if (typeof popup.showPopover === 'function') popup.showPopover();
+        input.setAttribute('aria-expanded', 'true'); trigger.setAttribute('aria-expanded', 'true'); position();
+        grid.querySelector(`[data-calendar-day="${iso(focused)}"]`)?.focus();
+      }
+      function choose(value) {
+        input.value = value; validate();
+        input.dispatchEvent(new Event('input', {bubbles: true})); input.dispatchEvent(new Event('change', {bubbles: true})); close(true);
+      }
+      function moveMonth(count) {
+        month = new Date(month.getFullYear(), month.getMonth() + count, 1, 12);
+        const end = new Date(month.getFullYear(), month.getMonth() + 1, 0).getDate();
+        focused = clamp(new Date(month.getFullYear(), month.getMonth(), Math.min(focused.getDate(), end), 12));
+        month = new Date(focused.getFullYear(), focused.getMonth(), 1, 12); render(true); position();
+      }
+      trigger.addEventListener('click', open); input.addEventListener('click', open);
+      input.addEventListener('keydown', event => { if (['ArrowDown','Enter',' '].includes(event.key)) {event.preventDefault(); open();} });
+      input.addEventListener('input', validate); input.addEventListener('change', validate);
+      previous.addEventListener('click', () => moveMonth(-1)); next.addEventListener('click', () => moveMonth(1));
+      popup.querySelector('[data-calendar-today]').addEventListener('click', () => choose(iso(today())));
+      popup.querySelector('[data-calendar-clear]').addEventListener('click', () => choose(''));
+      grid.addEventListener('click', event => {const button = event.target.closest('[data-calendar-day]'); if (button && !button.disabled) choose(button.dataset.calendarDay);});
+      // Some fields live inside a wrapping label; calendar clicks must not activate that label again.
+      popup.addEventListener('click', event => event.preventDefault());
+      popup.addEventListener('keydown', event => {
+        if (event.key === 'Escape') {event.preventDefault();event.stopPropagation();close(true);return;}
+        if (event.key === 'Tab') {
+          const controls = [...popup.querySelectorAll('button:not(:disabled)')].filter(button => button.tabIndex >= 0);
+          if (event.shiftKey && document.activeElement === controls[0]) {event.preventDefault(); controls.at(-1)?.focus();}
+          else if (!event.shiftKey && document.activeElement === controls.at(-1)) {event.preventDefault();controls[0]?.focus();}
+          return;
+        }
+        if (!event.target.matches('[data-calendar-day]')) return;
+        let change = ({ArrowLeft:-1,ArrowRight:1,ArrowUp:-7,ArrowDown:7})[event.key];
+        if (event.key === 'Home') change = -((focused.getDay()+6)%7);
+        if (event.key === 'End') change = 6-((focused.getDay()+6)%7);
+        if (change !== undefined) {event.preventDefault();focused = clamp(addDays(focused,change));month = new Date(focused.getFullYear(),focused.getMonth(),1,12);render(true);position();}
+        else if (event.key === 'PageUp' || event.key === 'PageDown') {event.preventDefault();moveMonth(event.key === 'PageUp' ? -1 : 1);}
+      });
+      document.addEventListener('pointerdown', event => { if (active && !wrapper.contains(event.target)) close(); });
+      const dialog = input.closest('dialog');
+      dialog?.addEventListener('close', () => close());
+      dialog?.addEventListener('cancel', event => {if (active) {event.preventDefault(); close(true);}});
+      input.form?.addEventListener('reset', () => setTimeout(validate,0));
+      window.addEventListener('resize', () => {if (active) position();});
+      document.addEventListener('scroll', event => {if (active && !popup.contains(event.target)) position();},true);
+      validate();
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', bind, {once:true}); else bind();
+})();</script>
+</body>
+</html>

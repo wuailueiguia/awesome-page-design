@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Style 28 - Mesh Gradient</title>
+<link rel="icon" href="../../previews/favicon.ico" type="image/x-icon">
+<link rel="icon" href="../../previews/favicon.svg" type="image/svg+xml" sizes="any">
+<style>
+*, *::before, *::after { box-sizing: border-box; min-width: 0; }
+html, body { max-width: 100%; }
+body { margin: 0; background: #fdfbff; color: #1a1a2e; color-scheme: light; }
+.preview-context-shell {
+  color: #1f2937;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  color-scheme: light;
+  font: 13px/1.4 ui-sans-serif, system-ui, sans-serif;
+}
+.preview-context {
+  width: 100%;
+  height: 47px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 0;
+  padding: 0 calc(24px + env(safe-area-inset-right)) 0 calc(24px + env(safe-area-inset-left));
+}
+.preview-context-identity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.preview-context-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  height: 24px;
+  min-width: 30px;
+  padding: 0 6px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  color: #374151;
+  background: #f3f4f6;
+  font: 500 11px/1 ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+}
+.preview-context-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .02em;
+}
+.preview-context-actions {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  gap: 20px;
+}
+.preview-context-back,
+.preview-context-use {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 44px;
+  text-decoration: none;
+  overflow-wrap: normal;
+  white-space: nowrap;
+  border-radius: 5px;
+}
+.preview-context svg {
+  width: 15px;
+  height: 15px;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.preview-context-back { color: #6b7280; }
+.preview-context-back:hover { color: #111827; }
+.preview-context-use { color: #f9fafb; }
+.preview-context-use-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 32px;
+  padding: 0 12px;
+  border: 1px solid #111827;
+  border-radius: 5px;
+  background: #111827;
+  color: #f9fafb;
+  font-weight: 600;
+  transition: background .15s ease, border-color .15s ease;
+}
+.preview-context-use:hover .preview-context-use-label { background: #374151; border-color: #374151; }
+.preview-context a:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 1px;
+}
+
+@media (max-width: 640px) {
+  .preview-context { gap: 10px; padding: 0 calc(12px + env(safe-area-inset-right)) 0 calc(12px + env(safe-area-inset-left)); font-size: 12px; }
+  .preview-context-identity { gap: 7px; }
+  .preview-context-name { font-size: 12px; }
+  .preview-context-actions { gap: 12px; }
+  .preview-context-use-label { gap: 5px; padding: 0 9px; }
+}
+
+body.demo-redesign .page { width: 100%; max-width: none; margin: 0; padding: 0; }
+.demo-root { isolation: isolate; min-height: calc(100vh - 48px); font-family: "PingFang SC", "Microsoft YaHei", ui-sans-serif, system-ui, sans-serif; }
+.demo-root *, .demo-root *::before, .demo-root *::after { box-sizing: border-box; min-width: 0; }
+.demo-root [hidden] { display: none !important; }
+.demo-root :is(button,input,select,textarea) { font: inherit; }
+.demo-root button { cursor: pointer; }
+.demo-root :is(h1,h2,h3,p) { margin: 0; color: inherit; }
+.demo-root :is(h1,h2,h3) { font-family: inherit; text-transform: none; }
+.demo-root a { color: inherit; }
+.demo-root :is(button,a,input,select,textarea):focus-visible { outline: 3px solid #5896e8; outline-offset: 3px; }
+.demo-root button:disabled { cursor: not-allowed; }
+.demo-root img, .demo-root svg { max-width: 100%; }
+.demo-root dialog { margin: auto; max-width: calc(100vw - 32px); max-height: calc(100dvh - 40px); overflow: auto; }
+.demo-root dialog::backdrop { background: rgb(4 8 18 / .68); }
+.demo-root .demo-close { width: 36px; height: 36px; min-height: 36px; padding: 0; display: grid; place-items: center; flex: 0 0 auto; }
+.demo-root .demo-close svg { width: 18px; height: 18px; display: block; fill: none; stroke: currentColor; stroke-width: 2; }
+.demo-field-error { display: block; min-height: 20px; font-size: 12px; line-height: 20px; color: #c23f38; }
+.demo-root input[aria-invalid=true], .demo-root textarea[aria-invalid=true] { border-color: #c23f38; }
+.demo-toast { position: fixed; z-index: 100; left: 50%; bottom: 24px; transform: translateX(-50%); max-width: calc(100vw - 32px); width: max-content; padding: 12px 20px; color: #ffffff; background: #202832; border: 1px solid #8794a3; border-radius: 5px; box-shadow: 0 5px 20px #0003; font-size: 13px; line-height: 1.5; }
+.demo-local-note { font-size: 11px; line-height: 1.6; opacity: .72; }
+@media (prefers-reduced-motion: reduce) { .demo-root *, .demo-root *::before, .demo-root *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+
+body.demo-style-28{background:#fdfbff}.s28{max-width:1180px;margin:auto;padding:0 32px 32px;color:#1a1a2e;font:13px/1.7 "PingFang SC","Microsoft YaHei",ui-sans-serif,system-ui,sans-serif}.s28 button{color:#1a1a2e;background:#fff;border:1px solid #e9e4f5;border-radius:999px;min-height:38px;padding:8px 16px;font-size:12px}.s28 button:hover{border-color:#7c3aed}.s28-header{min-height:76px;display:flex;align-items:center;gap:36px;justify-content:space-between;border-bottom:1px solid #e9e4f5}.s28-brand{display:flex;align-items:baseline;gap:12px;text-decoration:none;color:#1a1a2e}.s28-brand>span{display:grid;place-items:center;width:34px;height:34px;background:linear-gradient(135deg,#7c3aed,#ec4899 55%,#06b6d4);color:#fff;font-size:20px;border-radius:50%}.s28-brand b{font-size:22px;font-weight:700;letter-spacing:.1em}.s28-brand small{font:10px/1 ui-monospace,monospace;letter-spacing:.24em;color:#6b7280}.s28-header nav{display:flex;gap:28px;margin-right:auto;font-size:12px;color:#6b7280}.s28-header nav>span[aria-current]{color:#1a1a2e;border-bottom:2px solid #7c3aed;padding-bottom:4px}.s28-copy{background:#7c3aed!important;color:#fff!important;border-color:#7c3aed!important;font-weight:600}.s28-hero{padding:52px 0 32px;max-width:820px}.s28-eyebrow{font:11px/1.6 ui-monospace,monospace;letter-spacing:.3em;color:#7c3aed}.s28 h1{font-size:52px;line-height:1.25;font-weight:800;letter-spacing:-.01em;margin:16px 0 18px}.s28-lede{font-size:15px;line-height:1.9;color:#4b5563;max-width:620px}.s28-meta{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:24px;font:11px ui-monospace,monospace;letter-spacing:.08em;color:#6b7280}.s28-meta span{border-left:2px solid #ec4899;padding-left:10px}.s28-inspiration{margin:0 0 32px;border:1px solid #e9e4f5;border-radius:24px;overflow:hidden;background:#fff}.s28-inspiration img{display:block;width:100%;height:220px;object-fit:cover}.s28-inspiration figcaption{display:flex;justify-content:space-between;gap:12px;padding:12px 18px;font-size:11px;color:#6b7280}.s28-preview{height:300px;border-radius:24px;display:flex;align-items:flex-end;padding:20px;transition:background .4s ease;box-shadow:0 24px 80px rgba(124,58,237,.18)}.s28-preview span{display:inline-block;background:rgba(255,255,255,.85);backdrop-filter:blur(6px);border-radius:999px;padding:8px 16px;font:12px ui-monospace,monospace;color:#1a1a2e}.s28-tabs{display:flex;gap:10px;margin:22px 0;flex-wrap:wrap}.s28-tabs button.is-active{background:#1a1a2e;color:#fff;border-color:#1a1a2e;font-weight:600}.s28-stops{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.s28-stops button{display:flex;align-items:center;gap:12px;width:100%;text-align:left;padding:12px 14px;border-radius:16px}.s28-swatch{width:32px;height:32px;border-radius:50%;flex:0 0 auto;border:1px solid rgba(0,0,0,.08)}.s28-stop-name{font-weight:600}.s28-stops code{font:12px ui-monospace,monospace;color:#6b7280;margin-left:auto}.s28-copy-hint{font-size:11px;color:#7c3aed}.s28-code{display:flex;gap:12px;align-items:stretch;margin-top:20px;background:#1a1a2e;border-radius:16px;padding:18px}.s28-code pre{flex:1;margin:0;color:#e9e4f5;font:12px/1.8 ui-monospace,monospace;overflow-x:auto;white-space:pre-wrap;overflow-wrap:anywhere}.s28-code button{flex:0 0 auto;align-self:center}.s28-footer{display:flex;justify-content:space-between;gap:16px;padding-top:24px;font-size:11px;color:#9ca3af}
+@media(max-width:900px){.s28{padding:0 20px 24px}.s28-header nav{display:none}.s28-brand small{display:none}.s28 h1{font-size:38px}.s28-preview{height:240px}.s28-stops{grid-template-columns:1fr}}
+@media(max-width:640px){.s28{padding:0 16px 20px}.s28-hero{padding:40px 0 26px}.s28 h1{font-size:32px}.s28-inspiration img{height:170px}.s28-preview{height:200px}.s28-code{flex-direction:column}.s28-footer{display:block;line-height:2}}
+
+.demo-announcement { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+/* Shared interaction geometry; each demonstration supplies its own material palette. */
+.pd-choice,.pd-stepper{--control-bg:#fff;--control-ink:#344650;--control-line:#d6dfe3;--control-accent:#23879a;--control-hover:#eff6f7;--control-radius:5px;--control-shadow:0 12px 32px #172c3a20;color:var(--control-ink);font:inherit}
+.pd-choice{display:block;position:relative;width:100%;text-align:left}
+.pd-choice>input[type=hidden]{display:none!important}
+.demo-root .pd-choice-trigger,.stock-page .pd-choice-trigger{appearance:none;width:100%;min-height:44px;padding:10px 12px;margin:0;display:flex;align-items:center;justify-content:space-between;gap:14px;background:var(--control-bg);color:var(--control-ink);border:1px solid var(--control-line);border-radius:var(--control-radius);font:inherit;text-align:left;line-height:1.5;box-shadow:none;cursor:pointer}
+.pd-choice-trigger>[data-choice-label]{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pd-choice-trigger>svg{width:16px;height:16px;flex:none;fill:none;stroke:currentColor;stroke-width:1.5;transition:transform .15s}
+.pd-choice-trigger[aria-expanded=true]>svg{transform:rotate(180deg)}
+.demo-root .pd-choice-trigger:hover,.demo-root .pd-choice-trigger[aria-expanded=true]{border-color:var(--control-accent);background:var(--control-hover)}
+.demo-root .pd-choice-trigger:focus-visible{outline:2px solid var(--control-accent);outline-offset:3px}
+.pd-choice-list{box-sizing:border-box;z-index:1000;display:block;overflow-y:auto;overscroll-behavior:contain;padding:5px;background:var(--control-bg);color:var(--control-ink);border:1px solid var(--control-line);border-radius:var(--control-radius);box-shadow:var(--control-shadow);font:inherit;line-height:1.5;scroll-padding:5px}
+.pd-choice-list[hidden]{display:none!important}
+.pd-choice-option{display:flex;align-items:center;gap:10px;min-height:42px;padding:10px 11px;border-radius:max(0px,calc(var(--control-radius) - 3px));cursor:pointer;font-size:12px;line-height:1.5;white-space:normal}
+.pd-choice-option>span{flex:1}
+.pd-choice-option>svg{width:16px;height:16px;flex:none;fill:none;stroke:var(--control-accent);stroke-width:1.7;opacity:0}
+.pd-choice-option[aria-selected=true]{color:var(--control-accent);font-weight:600}
+.pd-choice-option[aria-selected=true]>svg{opacity:1}
+.pd-choice-option.pd-active,.pd-choice-option:hover{background:var(--control-hover)}
+.pd-choice-option[aria-disabled=true]{opacity:.4;cursor:not-allowed}
+.pd-swatch{width:24px;height:28px;flex:none;background:#f5f0df;border:1px solid #d6cfbd}
+.pd-swatch-1{background:repeating-linear-gradient(90deg,#d9d4c9 0 1px,#f5f3e9 1px 3px)}
+.pd-swatch-2{background-color:#e6ddc2;background-image:radial-gradient(#867d6099 .7px,transparent .7px);background-size:5px 6px}
+.pd-stepper{display:flex!important;align-items:stretch;width:100%;border:1px solid var(--control-line);border-radius:var(--control-radius);background:var(--control-bg);overflow:hidden}
+.pd-stepper:focus-within{outline:2px solid var(--control-accent);outline-offset:3px}
+.pd-stepper input[type=number]{appearance:textfield;-moz-appearance:textfield;min-width:0;width:100%;height:auto;min-height:42px;padding:8px 3px!important;margin:0!important;text-align:center;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:var(--control-ink);font:inherit;outline:0!important}
+.pd-stepper input::-webkit-inner-spin-button,.pd-stepper input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
+.demo-root .pd-stepper>button,.stock-dialog .pd-stepper>button{width:38px;min-width:32px;min-height:42px;padding:0;margin:0;flex:0 0 38px;display:grid;place-items:center;border:0;border-radius:0;background:transparent;color:var(--control-accent);font:18px/1 ui-sans-serif,system-ui;box-shadow:none;cursor:pointer}
+.demo-root .pd-stepper>button:hover,.stock-dialog .pd-stepper>button:hover{background:var(--control-hover)}
+.pd-stepper>button:disabled{opacity:.3;cursor:not-allowed}
+.pd-stepper>button[data-step="-1"]{order:-1}
+.pd-stepper>button:focus-visible{outline:2px solid var(--control-accent);outline-offset:-4px}
+.s05 .pd-choice,.pd-theme-05{--control-bg:#f7f5ef;--control-ink:#252521;--control-line:#9f9d95;--control-accent:#c8282b;--control-hover:#ece8df;--control-radius:0px;--control-shadow:4px 4px 0 #282824}
+.s05 .pd-choice-trigger{min-width:128px;font:12px ui-monospace,monospace}
+.s07 .pd-choice,.pd-theme-07{--control-bg:#fffdf5;--control-ink:#4b5845;--control-line:#cbd4b8;--control-accent:#476947;--control-hover:#edf2df;--control-radius:14px;--control-shadow:0 10px 0 -5px #d9ddc6,0 18px 35px #46543820}
+.s07 .pd-choice-trigger{border-width:2px;padding:11px 14px}
+.s08 .pd-choice,.s08 .pd-stepper,.pd-theme-08{--control-bg:#20231e;--control-ink:#d7dbcf;--control-line:#4c5346;--control-accent:#e2e9ce;--control-hover:#30372a;--control-radius:0px;--control-shadow:0 14px 36px #0008}
+.s08 .pd-choice-trigger{font-size:12px}
+.s09 .pd-choice,.s09 .pd-stepper,.pd-theme-09{--control-bg:#fff;--control-ink:#3d4a54;--control-line:#d8dfe3;--control-accent:#27343e;--control-hover:#f2f5f6;--control-radius:3px;--control-shadow:0 12px 28px #24313b1c}
+.s09 .pd-choice-trigger{font-size:11px;min-height:42px}
+.s09 .pd-choice-list{padding:5px}
+.s09 .pd-stepper{font-size:12px}
+.s12 .pd-stepper{--control-bg:#fffaff;--control-ink:#5e456c;--control-line:#d9c9e3;--control-accent:#79528e;--control-hover:#f0e8f5;--control-radius:6px}
+.s19 .pd-choice,.pd-theme-19{--control-bg:#fff;--control-ink:#382c4e;--control-line:#ddcfe9;--control-accent:#773ec9;--control-hover:#f2eafa;--control-radius:12px;--control-shadow:0 16px 36px #54298c24}
+.s19 .pd-choice{margin-bottom:16px}
+.s19 .pd-choice-trigger{font-size:13px;min-height:46px}
+.s22 .pd-choice,.pd-theme-22{--control-bg:#163f35;--control-ink:#f2e9d3;--control-line:#987d4b;--control-accent:#e2c58b;--control-hover:#284c3f;--control-radius:0px;--control-shadow:0 15px 35px #001d1acc}
+.s22 .pd-choice{margin-bottom:22px}
+.s22 .pd-choice-list{border-top:3px double #c8ac72;padding:6px}
+.s22 .pd-choice-option{border-bottom:1px solid #c8ac7220}
+.s23 .pd-choice,.pd-theme-23{--control-bg:#f8f5ed;--control-ink:#645846;--control-line:#cbbfa9;--control-accent:#806341;--control-hover:#eee5d4;--control-radius:6px;--control-shadow:0 15px 35px #51463320}
+.s23 .pd-choice{margin:8px 0 18px}
+.s23 .pd-choice-trigger{font-size:13px;min-height:46px}
+@media(max-width:640px){.pd-choice-option{min-height:46px}.demo-root .pd-stepper>button{flex-basis:34px;width:34px}.s05 .pd-choice-trigger{min-width:0}}
+@media(prefers-reduced-motion:reduce){.pd-choice-trigger>svg{transition:none}}
+
+
+.demo-root .demo-date{position:relative;display:block;width:100%;min-width:0}
+.demo-root .demo-date>input{width:100%;padding-right:42px;cursor:pointer;font-variant-numeric:tabular-nums}
+.demo-root .demo-date-trigger{position:absolute;right:5px;top:50%;transform:translateY(-50%);display:grid;place-items:center;width:32px;height:32px;min-height:0;padding:6px;border:0;border-radius:7px;color:inherit;background:transparent;box-shadow:none}
+.demo-root .demo-date-trigger svg{display:block;width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.5}
+.demo-root .demo-date-trigger:hover{background:#647a4920}
+.demo-calendar{--calendar-bg:#fffdf6;--calendar-ink:#4b5844;--calendar-muted:#7b896d;--calendar-line:#d8e1c9;--calendar-tint:#edf3e3;--calendar-accent:#597547;position:fixed;inset:auto;margin:0;width:304px;max-width:calc(100vw - 24px);max-height:calc(100dvh - 24px);overflow:auto;padding:15px;border:1.5px solid var(--calendar-line);border-radius:17px;background:var(--calendar-bg);color:var(--calendar-ink);box-shadow:0 12px 40px #293b2729;font:13px/1.5 "PingFang SC","Microsoft YaHei",sans-serif;z-index:1000}
+.demo-calendar-reading{--calendar-bg:#fffaff;--calendar-ink:#5e456c;--calendar-muted:#927d9d;--calendar-line:#d9c9e3;--calendar-tint:#f0e8f5;--calendar-accent:#79528e;border-radius:18px;box-shadow:0 12px 36px #513c6026}
+.demo-calendar[hidden]{display:none!important}
+.demo-calendar *{box-sizing:border-box}
+.demo-calendar button{font:inherit;cursor:pointer;box-shadow:none;min-width:0;min-height:0;line-height:1.5;letter-spacing:0}
+.demo-calendar button:focus-visible{outline:2px solid var(--calendar-accent);outline-offset:2px}
+.demo-calendar-head{display:grid;grid-template-columns:32px 1fr 32px;align-items:center;gap:8px;margin-bottom:13px}
+.demo-calendar-head strong{text-align:center;font-size:14px;font-weight:650}
+.demo-calendar-head button{border:1px solid var(--calendar-line);border-radius:8px;width:32px;height:32px;padding:0;background:var(--calendar-tint);color:var(--calendar-ink);font-size:23px}
+.demo-calendar-week,.demo-calendar-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}
+.demo-calendar-week{color:var(--calendar-muted);font-size:10px;text-align:center;margin-bottom:6px}
+.demo-calendar-days button{border:1px solid transparent;border-radius:8px;aspect-ratio:1;padding:0;background:transparent;color:var(--calendar-ink);font-size:12px;font-variant-numeric:tabular-nums}
+.demo-calendar-days button:not(:disabled):hover{background:var(--calendar-tint);border-color:var(--calendar-line)}
+.demo-calendar-days button[aria-current=date]{border-color:var(--calendar-accent)}
+.demo-calendar-days button[aria-pressed=true]{background:var(--calendar-accent);color:var(--calendar-bg);font-weight:700}
+.demo-calendar-days button[aria-pressed=true]:hover{background:var(--calendar-accent)}
+.demo-calendar button:disabled{opacity:.3;cursor:not-allowed}
+.demo-calendar-footer{display:flex;align-items:center;justify-content:space-between;gap:7px;border-top:1px dashed var(--calendar-line);margin-top:12px;padding-top:10px;font-size:10px;color:var(--calendar-muted)}
+.demo-calendar-footer button{padding:5px 7px;border:0;border-radius:6px;background:transparent;color:var(--calendar-accent);font-size:11px}
+.demo-calendar-footer button:hover{background:var(--calendar-tint)}
+
+</style>
+</head>
+<body class="mesh-gradient demo-redesign demo-style-28">
+  <header class="preview-context-shell">
+    <nav class="preview-context" aria-label="风格预览导航">
+      <div class="preview-context-identity" role="group" aria-label="风格 28：流光渐变" title="流光渐变"><span class="preview-context-number">28</span><strong class="preview-context-name" lang="zh-CN">流光渐变</strong></div>
+      <div class="preview-context-actions">
+        <a class="preview-context-back" href="../../previews/index.html" lang="zh-CN"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 5-7 7 7 7M5 12h14"/></svg><span>风格库</span></a>
+        <a class="preview-context-use" href="../../previews/index.html?style=28#style-28" lang="zh-CN"><span class="preview-context-use-label">选用此风格<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a>
+      </div>
+    </nav>
+  </header>
+  <script>(function initializePageDesignDemo() {
+  const escapeHtml = value => String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
+  const openers = new WeakMap();
+  function openDialog(dialog, opener) { if (!dialog || dialog.open) return; openers.set(dialog, opener || document.activeElement); dialog.showModal(); }
+  function closeDialog(dialog) { if (dialog?.open) dialog.close(); }
+  function bindDialogs(root) {
+    root.querySelectorAll('[data-demo-open]').forEach(button => button.addEventListener('click', () => openDialog(root.querySelector(button.dataset.demoOpen), button)));
+    root.querySelectorAll('[data-demo-close]').forEach(button => button.addEventListener('click', () => closeDialog(button.closest('dialog'))));
+    root.querySelectorAll('dialog').forEach(dialog => {
+      dialog.addEventListener('close', () => { const opener = openers.get(dialog); if (opener?.isConnected) opener.focus(); });
+      dialog.addEventListener('click', event => { const rect = dialog.getBoundingClientRect(); if (event.target === dialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) closeDialog(dialog); });
+    });
+  }
+  function wireForm(form, onValid) {
+    form.noValidate = true;
+    const fields = [...form.querySelectorAll('input:not([type=radio]):not([type=checkbox]), textarea, select')];
+    function errorNode(field) { return document.getElementById(field.getAttribute('aria-describedby')); }
+    function setError(field, message) { const error = errorNode(field); if (error) error.textContent = message; if (message) field.setAttribute('aria-invalid','true'); else field.removeAttribute('aria-invalid'); }
+    fields.forEach(field => field.addEventListener('input', () => { if (field.value.trim() && field.validity.valid) setError(field, ''); }));
+    form.addEventListener('submit', event => {
+      event.preventDefault(); let firstInvalid;
+      fields.forEach(field => { const invalid = (field.required && !field.value.trim()) || !field.validity.valid; setError(field, invalid ? (field.dataset.error || '请填写有效内容后再继续。') : ''); if (invalid && !firstInvalid) firstInvalid = field; });
+      if (firstInvalid) { firstInvalid.focus(); return; }
+      onValid(new FormData(form), form);
+    });
+  }
+  function download(filename, content, type = 'text/plain;charset=utf-8') {
+    const url = URL.createObjectURL(new Blob([content], {type})); const anchor = document.createElement('a'); anchor.href = url; anchor.download = filename; anchor.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+  async function copy(text) { try { await navigator.clipboard.writeText(text); return true; } catch { return false; } }
+  function toast(root, message) {
+    let node = root.querySelector('.demo-toast');
+    if (!node) { node = document.createElement('div'); node.className = 'demo-toast'; node.setAttribute('role','status'); node.setAttribute('aria-live','polite'); root.appendChild(node); }
+    node.textContent = message; node.hidden = false; clearTimeout(node._hideTimer); node._hideTimer = setTimeout(() => node.hidden = true, 2600);
+  }
+  const choiceLabel = input => input.closest("[data-choice]").querySelector("[data-choice-label]").textContent;
+  window.PageDesignDemo = { choiceLabel, escapeHtml, openDialog, closeDialog, bindDialogs, wireForm, download, copy, toast };
+})();</script>
+  <main id="top" class="page"><div class="demo-root s28">
+  <header class="s28-header"><a href="#top" class="s28-brand"><span aria-hidden="true">◐</span><b>虹光</b><small>RAINBOW LIGHT</small></a>
+  <nav aria-label="实验室导航"><span aria-current="page">渐变库</span><span>调色</span><span>导出</span></nav>
+  <button type="button" class="s28-copy" data-s28-copy>复制渐变 CSS</button></header>
+  <section class="s28-hero" aria-labelledby="s28-title">
+    <p class="s28-eyebrow">GRADIENT LAB / MESH</p>
+    <h1 id="s28-title">把光，调成你想要的颜色。</h1>
+    <p class="s28-lede">一个渐变实验室。3 套预设、12 个色标、1 键复制 CSS：紫罗兰、落日、薄荷三套渐变随调随看。</p>
+    <p class="s28-meta"><span>03 套预设</span><span>12 个色标</span><span>01 键复制</span></p>
+  </section>
+  <figure class="s28-inspiration"><img src="mesh-gradient-inspiration.jpg" alt="彩虹光斑渐变：紫色、粉色、青色与琥珀色丝滑流动"><figcaption><span>灵感参考 · 彩虹光斑</span><span>AI 生成示意</span></figcaption></figure>
+  <section class="s28-lab" aria-label="渐变实验室">
+    <div class="s28-preview" data-s28-preview><span data-s28-preview-name>紫罗兰 · 4 个色标</span></div>
+    <div class="s28-tabs" role="group" aria-label="选择预设"><button type="button" data-s28-preset="0" aria-pressed="true" class="is-active">紫罗兰</button><button type="button" data-s28-preset="1" aria-pressed="false" class="">落日</button><button type="button" data-s28-preset="2" aria-pressed="false" class="">薄荷</button></div>
+    <ul class="s28-stops" data-s28-stops></ul>
+    <div class="s28-code"><pre data-s28-code></pre><button type="button" data-s28-copy>复制 CSS</button></div>
+  </section>
+  <footer class="s28-footer"><span role="status" aria-live="polite" data-s28-note></span><span>演示数据只保存在本地 · 图片为 AI 生成示意</span></footer>
+  <script type="application/json" data-s28-data>[{"id":"violet","name":"紫罗兰","css":"linear-gradient(135deg, #7c3aed 0%, #a855f7 35%, #ec4899 70%, #06b6d4 100%)","stops":[{"hex":"#7C3AED","name":"紫罗兰"},{"hex":"#A855F7","name":"淡紫"},{"hex":"#EC4899","name":"玫瑰"},{"hex":"#06B6D4","name":"青"}]},{"id":"sunset","name":"落日","css":"linear-gradient(135deg, #f97316 0%, #ec4899 35%, #f59e0b 70%, #facc15 100%)","stops":[{"hex":"#F97316","name":"橙"},{"hex":"#EC4899","name":"玫瑰"},{"hex":"#F59E0B","name":"琥珀"},{"hex":"#FACC15","name":"亮黄"}]},{"id":"mint","name":"薄荷","css":"linear-gradient(135deg, #10b981 0%, #06b6d4 35%, #84cc16 70%, #a3e635 100%)","stops":[{"hex":"#10B981","name":"薄荷"},{"hex":"#06B6D4","name":"青"},{"hex":"#84CC16","name":"青柠"},{"hex":"#A3E635","name":"嫩绿"}]}]</script>
+  <script>(function init() {
+  const root = document.querySelector(".s28"), D = window.PageDesignDemo, $ = s => root.querySelector(s);
+  const data = JSON.parse($("[data-s28-data]").textContent);
+  let current = 0;
+  function draw() {
+    const p = data[current];
+    root.querySelectorAll("[data-s28-preset]").forEach((b, i) => {
+      b.setAttribute("aria-pressed", String(i === current));
+      b.classList.toggle("is-active", i === current);
+    });
+    $("[data-s28-preview]").style.background = p.css;
+    $("[data-s28-preview-name]").textContent = `${p.name} · ${p.stops.length} 个色标`;
+    $("[data-s28-stops]").innerHTML = p.stops.map((s, i) => `<li><button type="button" data-s28-stop="${i}" aria-label="复制色标 ${s.hex}"><span class="s28-swatch" style="background:${s.hex}"></span><span class="s28-stop-name">${D.escapeHtml(s.name)}</span><code>${s.hex}</code><span class="s28-copy-hint">复制</span></button></li>`).join("");
+    $("[data-s28-code]").textContent = `background: ${p.css};`;
+    $("[data-s28-note]").textContent = `当前预设：${p.name}，共 ${data.length} 套预设、12 个色标`;
+  }
+  root.querySelectorAll("[data-s28-preset]").forEach((b, i) => b.addEventListener("click", () => { current = i; draw(); }));
+  $("[data-s28-stops]").addEventListener("click", async event => {
+    const button = event.target.closest("[data-s28-stop]");
+    if (!button) return;
+    const hex = data[current].stops[Number(button.dataset.s28Stop)].hex;
+    const ok = await D.copy(hex);
+    D.toast(root, ok ? `已复制色标 ${hex}。` : `复制失败，请手动复制 ${hex}。`);
+  });
+  root.querySelectorAll("[data-s28-copy]").forEach(b => b.addEventListener("click", async () => {
+    const ok = await D.copy(`background: ${data[current].css};`);
+    D.toast(root, ok ? `已复制 ${data[current].name} 的渐变 CSS。` : "复制失败，请手动复制下方代码。");
+  }));
+  draw();
+})();</script></div></main>
+  <div class="demo-announcement" aria-live="polite"></div>
+<script>(function initializeControls() {
+  function bind() {
+    const controllers = [];
+    document.querySelectorAll('[data-choice]').forEach(box => {
+      const input = box.querySelector('input'), trigger = box.querySelector('.pd-choice-trigger'), list = box.querySelector('[role=listbox]'), options = [...list.querySelectorAll('[role=option]')];
+      const initialValue = input.value;
+      let active = 0, opened = false, search = '', searchTimer;
+      const enabled = i => options[i]?.getAttribute('aria-disabled') !== 'true';
+      const selectedIndex = () => Math.max(0, options.findIndex(option => option.dataset.value === input.value));
+      function highlight(i) { active = i; options.forEach((option,n) => option.classList.toggle('pd-active', n === i)); trigger.setAttribute('aria-activedescendant', options[i].id); options[i].scrollIntoView({block:'nearest'}); }
+      function position() {
+        const r = trigger.getBoundingClientRect(), below = innerHeight-r.bottom-12, above = r.top-12;
+        const height = Math.min(300, Math.max(90, Math.max(below, above))), up = below < 180 && above > below;
+        const width = Math.min(Math.max(r.width, 200), innerWidth-24);
+        Object.assign(list.style,{position:'fixed',margin:'0',left:`${Math.max(12,Math.min(r.left,innerWidth-width-12))}px`,width:`${width}px`,maxHeight:`${height}px`,top:up?'auto':`${r.bottom+6}px`,bottom:up?`${innerHeight-r.top+6}px`:'auto'});
+      }
+      function close() { if (!opened) return; opened = false; if (list.hidePopover && list.matches(':popover-open')) list.hidePopover(); list.hidden = true; trigger.setAttribute('aria-expanded','false'); trigger.removeAttribute('aria-activedescendant'); search='';clearTimeout(searchTimer); }
+      function open(index=selectedIndex()) { if(trigger.disabled)return;controllers.forEach(c=>c.close());opened=true;list.hidden=false;position();if(list.showPopover)list.showPopover();trigger.setAttribute('aria-expanded','true');highlight(index); }
+      function sync() { const i=selectedIndex(); box.querySelector('[data-choice-label]').textContent=options[i].querySelector('span').textContent; options.forEach((option,n)=>option.setAttribute('aria-selected',String(n===i))); }
+      function choose(i) { if(!enabled(i))return;input.value=options[i].dataset.value;sync();close();trigger.focus();input.dispatchEvent(new Event('input',{bubbles:true}));input.dispatchEvent(new Event('change',{bubbles:true})); }
+      trigger.addEventListener('click',()=>opened?close():open());
+      trigger.addEventListener('keydown',event=>{
+        const key=event.key;
+        if(['ArrowDown','ArrowUp','Home','End'].includes(key)) { event.preventDefault(); if(!opened){open(key==='Home'?0:key==='End'?options.length-1:selectedIndex());return;} let n=key==='Home'?0:key==='End'?options.length-1:active+(key==='ArrowDown'?1:-1); n=Math.max(0,Math.min(options.length-1,n));while(!enabled(n)&&n>=0&&n<options.length)n+=key==='ArrowUp'||key==='End'?-1:1;if(options[n]&&enabled(n))highlight(n); }
+        else if(key==='Escape'&&opened){event.preventDefault();event.stopPropagation();close();}
+        else if((key==='Enter'||key===' ')&&opened){event.preventDefault();choose(active);}
+        else if(key==='Tab')close();
+        else if(key.length===1&&!event.ctrlKey&&!event.metaKey&&key!==' '){event.preventDefault();search+=key.toLocaleLowerCase();clearTimeout(searchTimer);searchTimer=setTimeout(()=>search='',600);const n=options.findIndex((o,i)=>enabled(i)&&o.textContent.trim().toLocaleLowerCase().startsWith(search));if(n>=0){if(!opened)open(n);else highlight(n);}}
+      });
+      list.addEventListener('pointerdown',event=>event.preventDefault());
+      list.addEventListener('click',event=>{const option=event.target.closest('[role=option]');if(option){event.preventDefault();choose(options.indexOf(option));}});
+      document.addEventListener('pointerdown',event=>{if(!box.contains(event.target))close();});
+      document.addEventListener('focusin',event=>{if(!box.contains(event.target))close();});
+      box.closest('dialog')?.addEventListener('close',close);
+      box.closest('dialog')?.addEventListener('cancel',event=>{if(opened){event.preventDefault();close();}});
+      input.form?.addEventListener('reset',()=>setTimeout(()=>{input.value=initialValue;close();sync();},0));
+      controllers.push({close,position,isOpen:()=>opened});sync();
+    });
+    addEventListener('resize',()=>controllers.forEach(c=>c.isOpen()&&c.position()));
+    document.addEventListener('scroll',()=>controllers.forEach(c=>c.isOpen()&&c.position()),true);
+    document.querySelectorAll('.pd-stepper').forEach(box=>{
+      const input=box.querySelector('input'),buttons=[...box.querySelectorAll('button')];
+      function sync(){buttons[0].disabled=input.disabled||input.min!==''&&Number(input.value)<=Number(input.min);buttons[1].disabled=input.disabled||input.max!==''&&Number(input.value)>=Number(input.max);}
+      buttons.forEach(button=>button.addEventListener('click',()=>{try{Number(button.dataset.step)>0?input.stepUp():input.stepDown();}catch{return;}input.dispatchEvent(new Event('input',{bubbles:true}));input.dispatchEvent(new Event('change',{bubbles:true}));sync();}));
+      input.addEventListener('input',sync);input.form?.addEventListener('reset',()=>setTimeout(sync,0));
+      new MutationObserver(sync).observe(input,{attributes:true,attributeFilter:['min','max','disabled']});
+      input.closest('dialog')?.addEventListener('toggle',sync);sync();
+    });
+  }
+  document.readyState==='loading'?document.addEventListener('DOMContentLoaded',bind,{once:true}):bind();
+})();(function initializeDateControls() {
+  const iso = date => `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+  const parse = value => /^\d{4}-\d{2}-\d{2}$/.test(value || '') ? new Date(`${value}T12:00:00`) : null;
+  const addDays = (date, count) => { const next = new Date(date); next.setDate(next.getDate() + count); return next; };
+  const today = () => { const date = new Date(); date.setHours(12, 0, 0, 0); return date; };
+  let sequence = 0;
+  function bind() {
+    document.querySelectorAll('.demo-root input[data-calendar-field]').forEach(input => {
+      if (input.dataset.demoCalendar) return;
+      input.dataset.demoCalendar = 'true';
+      const root = input.closest('.demo-root'), value = input.value;
+      input.type = 'text'; input.value = value; input.readOnly = true; input.placeholder = '选择日期';
+      input.setAttribute('aria-haspopup', 'dialog'); input.setAttribute('aria-expanded', 'false');
+      const wrapper = document.createElement('span'); wrapper.className = 'demo-date';
+      input.before(wrapper); wrapper.appendChild(input);
+      const trigger = document.createElement('button'); trigger.type = 'button'; trigger.className = 'demo-date-trigger';
+      trigger.setAttribute('aria-label', '打开日期选择'); trigger.setAttribute('aria-haspopup', 'dialog'); trigger.setAttribute('aria-expanded', 'false');
+      trigger.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v15H5zM8 3v4m8-4v4M5 10h14M8 13h2m4 0h2m-8 4h2"/></svg>';
+      wrapper.appendChild(trigger);
+      const popup = document.createElement('div'), id = `demo-calendar-${++sequence}`;
+      popup.id = id; popup.className = `demo-calendar ${root.classList.contains('s07') ? 'demo-calendar-garden' : 'demo-calendar-reading'}`;
+      popup.setAttribute('role', 'dialog'); popup.setAttribute('aria-label', '选择日期'); popup.setAttribute('popover', 'manual');
+      popup.hidden = true;
+      popup.innerHTML = `<div class="demo-calendar-head"><button type="button" data-calendar-prev aria-label="上一个月">‹</button><strong data-calendar-month aria-live="polite"></strong><button type="button" data-calendar-next aria-label="下一个月">›</button></div><div class="demo-calendar-week" aria-hidden="true">${['一','二','三','四','五','六','日'].map(day => `<span>${day}</span>`).join('')}</div><div class="demo-calendar-days" role="group" aria-label="本月日期"></div><div class="demo-calendar-footer"><button type="button" data-calendar-today>今天</button><span data-calendar-selection role="status"></span><button type="button" data-calendar-clear>清空</button></div>`;
+      wrapper.appendChild(popup); input.setAttribute('aria-controls', id); trigger.setAttribute('aria-controls', id);
+      const monthLabel = popup.querySelector('[data-calendar-month]'), grid = popup.querySelector('.demo-calendar-days');
+      const previous = popup.querySelector('[data-calendar-prev]'), next = popup.querySelector('[data-calendar-next]');
+      let active = false, focused = today(), month = new Date(focused.getFullYear(), focused.getMonth(), 1, 12);
+      const valid = date => (!input.min || iso(date) >= input.min) && (!input.max || iso(date) <= input.max);
+      function clamp(date) {
+        if (input.min && iso(date) < input.min) return parse(input.min);
+        if (input.max && iso(date) > input.max) return parse(input.max);
+        return date;
+      }
+      function validate() {
+        const date = parse(input.value);
+        input.setCustomValidity(input.value && (!date || !valid(date)) ? '请选择允许范围内的日期。' : '');
+      }
+      function render(focusDay = false) {
+        monthLabel.textContent = `${month.getFullYear()} 年 ${month.getMonth() + 1} 月`;
+        const first = new Date(month.getFullYear(), month.getMonth(), 1, 12), offset = (first.getDay() + 6) % 7;
+        const days = new Date(month.getFullYear(), month.getMonth() + 1, 0).getDate();
+        previous.disabled = !!input.min && iso(new Date(month.getFullYear(), month.getMonth(), 0, 12)) < input.min;
+        next.disabled = !!input.max && iso(new Date(month.getFullYear(), month.getMonth() + 1, 1, 12)) > input.max;
+        grid.innerHTML = Array.from({length: offset}, () => '<span aria-hidden="true"></span>').join('') + Array.from({length: days}, (_, index) => {
+          const date = new Date(month.getFullYear(), month.getMonth(), index + 1, 12), key = iso(date), selected = input.value === key;
+          return `<button type="button" data-calendar-day="${key}" tabindex="${key === iso(focused) ? '0' : '-1'}" aria-label="${month.getFullYear()}年${month.getMonth() + 1}月${index + 1}日${selected ? '，已选中' : ''}" aria-pressed="${selected}"${key === iso(today()) ? ' aria-current="date"' : ''}${valid(date) ? '' : ' disabled'}>${index + 1}</button>`;
+        }).join('');
+        popup.querySelector('[data-calendar-today]').disabled = !valid(today());
+        popup.querySelector('[data-calendar-selection]').textContent = input.value ? `已选 ${input.value.slice(5).replace('-', ' / ')}` : '尚未选择';
+        if (focusDay) grid.querySelector(`[data-calendar-day="${iso(focused)}"]`)?.focus();
+      }
+      function position() {
+        const rect = wrapper.getBoundingClientRect(), width = Math.min(304, window.innerWidth - 24);
+        popup.style.width = `${width}px`;
+        const height = popup.getBoundingClientRect().height, below = window.innerHeight - rect.bottom - 12;
+        popup.style.left = `${Math.max(12, Math.min(rect.left, window.innerWidth - width - 12))}px`;
+        popup.style.top = `${Math.max(12, below >= height || rect.top < height + 12 ? Math.min(rect.bottom + 7, window.innerHeight - height - 12) : rect.top - height - 7)}px`;
+      }
+      function close(restore = false) {
+        if (!active) return;
+        active = false;
+        if (typeof popup.hidePopover === 'function' && popup.matches(':popover-open')) popup.hidePopover();
+        popup.hidden = true; input.setAttribute('aria-expanded', 'false'); trigger.setAttribute('aria-expanded', 'false');
+        if (restore) input.focus();
+      }
+      function open() {
+        if (active) { close(true); return; }
+        focused = clamp(parse(input.value) || today()); month = new Date(focused.getFullYear(), focused.getMonth(), 1, 12);
+        active = true; render(); popup.hidden = false;
+        if (typeof popup.showPopover === 'function') popup.showPopover();
+        input.setAttribute('aria-expanded', 'true'); trigger.setAttribute('aria-expanded', 'true'); position();
+        grid.querySelector(`[data-calendar-day="${iso(focused)}"]`)?.focus();
+      }
+      function choose(value) {
+        input.value = value; validate();
+        input.dispatchEvent(new Event('input', {bubbles: true})); input.dispatchEvent(new Event('change', {bubbles: true})); close(true);
+      }
+      function moveMonth(count) {
+        month = new Date(month.getFullYear(), month.getMonth() + count, 1, 12);
+        const end = new Date(month.getFullYear(), month.getMonth() + 1, 0).getDate();
+        focused = clamp(new Date(month.getFullYear(), month.getMonth(), Math.min(focused.getDate(), end), 12));
+        month = new Date(focused.getFullYear(), focused.getMonth(), 1, 12); render(true); position();
+      }
+      trigger.addEventListener('click', open); input.addEventListener('click', open);
+      input.addEventListener('keydown', event => { if (['ArrowDown','Enter',' '].includes(event.key)) {event.preventDefault(); open();} });
+      input.addEventListener('input', validate); input.addEventListener('change', validate);
+      previous.addEventListener('click', () => moveMonth(-1)); next.addEventListener('click', () => moveMonth(1));
+      popup.querySelector('[data-calendar-today]').addEventListener('click', () => choose(iso(today())));
+      popup.querySelector('[data-calendar-clear]').addEventListener('click', () => choose(''));
+      grid.addEventListener('click', event => {const button = event.target.closest('[data-calendar-day]'); if (button && !button.disabled) choose(button.dataset.calendarDay);});
+      // Some fields live inside a wrapping label; calendar clicks must not activate that label again.
+      popup.addEventListener('click', event => event.preventDefault());
+      popup.addEventListener('keydown', event => {
+        if (event.key === 'Escape') {event.preventDefault();event.stopPropagation();close(true);return;}
+        if (event.key === 'Tab') {
+          const controls = [...popup.querySelectorAll('button:not(:disabled)')].filter(button => button.tabIndex >= 0);
+          if (event.shiftKey && document.activeElement === controls[0]) {event.preventDefault(); controls.at(-1)?.focus();}
+          else if (!event.shiftKey && document.activeElement === controls.at(-1)) {event.preventDefault();controls[0]?.focus();}
+          return;
+        }
+        if (!event.target.matches('[data-calendar-day]')) return;
+        let change = ({ArrowLeft:-1,ArrowRight:1,ArrowUp:-7,ArrowDown:7})[event.key];
+        if (event.key === 'Home') change = -((focused.getDay()+6)%7);
+        if (event.key === 'End') change = 6-((focused.getDay()+6)%7);
+        if (change !== undefined) {event.preventDefault();focused = clamp(addDays(focused,change));month = new Date(focused.getFullYear(),focused.getMonth(),1,12);render(true);position();}
+        else if (event.key === 'PageUp' || event.key === 'PageDown') {event.preventDefault();moveMonth(event.key === 'PageUp' ? -1 : 1);}
+      });
+      document.addEventListener('pointerdown', event => { if (active && !wrapper.contains(event.target)) close(); });
+      const dialog = input.closest('dialog');
+      dialog?.addEventListener('close', () => close());
+      dialog?.addEventListener('cancel', event => {if (active) {event.preventDefault(); close(true);}});
+      input.form?.addEventListener('reset', () => setTimeout(validate,0));
+      window.addEventListener('resize', () => {if (active) position();});
+      document.addEventListener('scroll', event => {if (active && !popup.contains(event.target)) position();},true);
+      validate();
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', bind, {once:true}); else bind();
+})();</script>
+</body>
+</html>
